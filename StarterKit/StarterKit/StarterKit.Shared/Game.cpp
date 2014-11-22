@@ -52,31 +52,7 @@ void Game::CreateDeviceDependentResources()
 		m_meshModels)
 		.then([this]()
 	{
-		// Load the teapot from a separate file and add it to the vector of meshes.
-		return Mesh::LoadFromFileAsync(
-			m_graphics,
-			L"teapot.cmo",
-			L"",
-			L"",
-			m_meshModels,
-			false  // Do not clear the vector of meshes
-			);
-	})
-		.then([this]()
-	{
-		// Initialize animated models.
-		for (Mesh* m : m_meshModels)
-		{
-			if (m->BoneInfoCollection().empty() == false)
-			{
-				auto animState = new AnimationState();
-				animState->m_boneWorldTransforms.resize(m->BoneInfoCollection().size());
 
-				m->Tag = animState;
-			}
-		}
-		// Create a scaling transformation for the teapot model.
-		XMStoreFloat4x4(&m_teapotTransform, XMMatrixScaling(0.044f, 0.044f, 0.044f) * XMMatrixTranslation(0.0f, -1.6f, 0.0f));
 
 		// Each mesh object has its own "time" used to control the glow effect.
 		m_time.clear();
@@ -86,9 +62,9 @@ void Game::CreateDeviceDependentResources()
 		}
 	});
 
-	auto initializeSkinnedMeshRendererTask = m_skinnedMeshRenderer.InitializeAsync(m_deviceResources->GetD3DDevice(), m_deviceResources->GetD3DDeviceContext());
+	//auto initializeSkinnedMeshRendererTask = m_skinnedMeshRenderer.InitializeAsync(m_deviceResources->GetD3DDevice(), m_deviceResources->GetD3DDeviceContext());
 
-	(loadMeshTask && initializeSkinnedMeshRendererTask).then([this]()
+	(loadMeshTask).then([this]()
 	{
 		// Scene is ready to be rendered.
 		m_loadingComplete = true;
@@ -108,7 +84,7 @@ void Game::CreateWindowSizeDependentResources()
 
 	// Setup the camera parameters for our scene.
 	m_graphics.GetCamera().SetViewport((UINT)outputSize.Width, (UINT)outputSize.Height);
-	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 6.0f, -18.0f));
+	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 6.0f, -10.0f));
 	m_graphics.GetCamera().SetLookAt(XMFLOAT3(0.0f, 0.0f, 0.0f));
 
 	float aspectRatio = outputSize.Width / outputSize.Height;
@@ -174,7 +150,7 @@ void Game::Update(DX::StepTimer const& timer)
 	m_skinnedMeshRenderer.UpdateAnimation(timeDelta, m_meshModels);
 
 	// Rotate scene.
-	m_rotation = static_cast<float>(timer.GetTotalSeconds()) * 0.5f;
+	m_rotation = static_cast<float>(timer.GetTotalSeconds()) * -1.5f;
 
 	// Update the "time" variable for the glow effect.
 	for (float &time : m_time)
@@ -206,28 +182,21 @@ void Game::Render()
 	{
 		XMMATRIX modelTransform = rotation;
 
-		String^ meshName = ref new String(m_meshModels[i]->Name());
-		if (String::CompareOrdinal(meshName, L"Teapot_Node") == 0)
-		{
-			modelTransform = XMLoadFloat4x4(&m_teapotTransform) * modelTransform;
-		}
+
 
 		// Update the time shader variable for the objects in our scene.
 		m_miscConstants.Time = m_time[i];
 		m_graphics.UpdateMiscConstants(m_miscConstants);
 
 		// Draw the models.
-		if (m_meshModels[i]->Tag != nullptr)
-		{
-			// Mesh has animation - render skinned mesh.
-			m_skinnedMeshRenderer.RenderSkinnedMesh(m_meshModels[i], m_graphics, modelTransform);
-		}
-		else
-		{
-			// Mesh does not have animation - render as usual.
-			m_meshModels[i]->Render(m_graphics, modelTransform);
-		}
+
+		// Mesh does not have animation - render as usual.
+		m_meshModels[i]->Render(m_graphics, modelTransform);
+
 	}
+	//XMMATRIX translation = XMMatrixTranslation(2.0f, 2.0f, 2.0f);
+	//XMMATRIX rotation2 = XMMatrixRotationX(m_rotation);
+	//m_meshModels[0]->Render(m_graphics, rotation2*translation*rotation);
 }
 
 // Starts the glow animation for an object.
