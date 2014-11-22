@@ -92,7 +92,7 @@ void Game::CreateWindowSizeDependentResources()
 
 	// Setup the camera parameters for our scene.
 	m_graphics.GetCamera().SetViewport((UINT)outputSize.Width, (UINT)outputSize.Height);
-	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 6.0f, -10.0f));
+	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 10.0f, -5.0f));
 	m_graphics.GetCamera().SetLookAt(XMFLOAT3(0.0f, 0.0f, 0.0f));
 
 	float aspectRatio = outputSize.Width / outputSize.Height;
@@ -184,12 +184,15 @@ void Game::Render()
 	ID3D11RenderTargetView *const targets[1] = { rtv };
 	context->OMSetRenderTargets(1, targets, dsv);
 
+	//test transformation matrix
+	XMMATRIX translation = XMMatrixTranslation(0.0f, 0.0f, 3.0f);
+
 	// Draw our scene models.
 	XMMATRIX rotation = XMMatrixRotationY(m_rotation);
 	for (UINT i = 0; i < m_meshModels.size(); i++)
 	{
-		XMMATRIX modelTransform = rotation;
-
+		//XMMATRIX modelTransform = rotation;
+		XMMATRIX modelTransform = XMMatrixIdentity();
 
 
 		// Update the time shader variable for the objects in our scene.
@@ -202,6 +205,7 @@ void Game::Render()
 		m_meshModels[i]->Render(m_graphics, modelTransform);
 
 	}
+	m_meshModels[1]->Render(m_graphics, translation);
 	//XMMATRIX translation = XMMatrixTranslation(2.0f, 2.0f, 2.0f);
 	//XMMATRIX rotation2 = XMMatrixRotationX(m_rotation);
 	//m_meshModels[0]->Render(m_graphics, rotation2*translation*rotation);
