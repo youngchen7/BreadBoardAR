@@ -18,10 +18,10 @@
         </Style>
     </Page.Resources>
 
-    <Canvas>
+    <Grid>
         <TextBlock Canvas.ZIndex="0"  Text="Hello from behind XAML!"
                FontSize="30" Canvas.Left="41" Canvas.Top="162" />
-        <SwapChainPanel x:ConnectionId='1'  Canvas.ZIndex="1" Width="640"  Height="400" x:Name="swapChainPanel"                  >
+        <SwapChainPanel x:ConnectionId='1'  Canvas.ZIndex="1" Width="Auto"  Height="Auto" x:Name="swapChainPanel"                  >
             <!--<Border VerticalAlignment="Top" HorizontalAlignment="Center" Padding="10" Background="Black">
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock x:Name="HitCountCube" Text="0" Style="{StaticResource HudCounter}"/>
@@ -34,7 +34,7 @@
                 </StackPanel>
             </Border>-->
         </SwapChainPanel>
-    </Canvas>
+    </Grid>
 
     <!--<Page.BottomAppBar>
         <CommandBar>
