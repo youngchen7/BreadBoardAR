@@ -13,7 +13,6 @@ namespace Windows {
         namespace Xaml {
             namespace Controls {
                 ref class SwapChainPanel;
-                ref class TextBlock;
             }
         }
     }
@@ -32,11 +31,6 @@ namespace StarterKit
         bool _contentLoaded;
     
         private: ::Windows::UI::Xaml::Controls::SwapChainPanel^ swapChainPanel;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ HitCountCube;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ HitCountSphere;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ HitCountTeapot;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ HitCountCone;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ HitCountCylinder;
     };
 }
 

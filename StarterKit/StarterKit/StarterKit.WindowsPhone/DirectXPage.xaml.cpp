@@ -141,7 +141,7 @@ void DirectXPage::OnTapped(Object^ sender, TappedRoutedEventArgs^ e)
 	if (objName != nullptr)
 	{
 		m_main->ToggleHitEffect(objName);
-
+		/*
 		if (objName->Equals(L"Cylinder_Node"))
 		{
 			this->HitCountCylinder->Text = (++m_hitCountCylinder).ToString();
@@ -162,6 +162,7 @@ void DirectXPage::OnTapped(Object^ sender, TappedRoutedEventArgs^ e)
 		{
 			this->HitCountTeapot->Text = (++m_hitCountTeapot).ToString();
 		}
+		*/
 	}
 }
 

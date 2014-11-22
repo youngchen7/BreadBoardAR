@@ -51,5 +51,7 @@ namespace StarterKit
 
 		// Variables used with the rendering loop.
 		bool m_loadingComplete;
+
+
 	};
 }
