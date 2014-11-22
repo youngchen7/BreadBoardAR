@@ -324,7 +324,7 @@
     <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Lerp[40].lerp(x, y, s)" Label="lerp(x, y, s)" LabelResId="3238" PortType="Output" />
     <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.ColorConstant[41]" Label="Color Constant" LabelResId="3472" TypeId="Microsoft.VisualStudio.DSD.ColorConstant" />
     <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
-    <Node Category="Trait" Data="-5.409263 0.000000 -5.603508" DataType="Float3" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].Position" Label="Position" LabelResId="Position" />
+    <Node Category="Trait" Data="-5.947435 0.000000 -5.691199" DataType="Float3" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].Position" Label="Position" LabelResId="Position" />
     <Node Category="Trait" Data="0.170000 0.530000 0.930000 1.000000" DataType="Float4" Desc="4002" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].Color Constant" Label="Color Constant" LabelResId="3258" PortType="Output" ShowInPropertyWindow="True" />
     <Node Category="Trait" Data="1.000000 1.000000 1.000000" DataType="Float3" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].rgb" Label="rgb" LabelResId="3210" PortType="Output" />
     <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].r" Label="r" LabelResId="3211" PortType="Output" />
