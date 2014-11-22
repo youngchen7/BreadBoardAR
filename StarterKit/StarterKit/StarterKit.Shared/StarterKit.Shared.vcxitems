@@ -52,16 +52,20 @@
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\gamelevel.fbx">
-	      <FileType>Document</FileType>
+      <FileType>Document</FileType>
     </MeshContentTask>
-	<None Include="$(MSBuildThisFileDirectory)Assets\gamelevel.fbx"/>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\BreadBoard.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <None Include="$(MSBuildThisFileDirectory)Assets\gamelevel.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\GlowEffect.dgsl" />
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx">
-	      <FileType>Document</FileType>
+      <FileType>Document</FileType>
     </MeshContentTask>
-	<None Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx"/>
+    <None Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\BreadboardUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\CubeUVImage.png">
       <DeploymentContent>false</DeploymentContent>
     </Image>

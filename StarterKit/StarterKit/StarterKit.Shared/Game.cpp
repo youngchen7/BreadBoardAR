@@ -46,7 +46,7 @@ void Game::CreateDeviceDependentResources()
 	// Load the scene objects.
 	auto loadMeshTask = Mesh::LoadFromFileAsync(
 		m_graphics,
-		L"gamelevel.cmo",
+		L"breadboard.cmo",
 		L"",
 		L"",
 		m_meshModels)

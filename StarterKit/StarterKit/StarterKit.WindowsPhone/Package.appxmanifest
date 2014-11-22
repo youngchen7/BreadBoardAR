@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="VS3DStarterKit" Publisher="CN=VS3DStarterKit" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="5c954fab-0c31-42b6-aeb4-1be6adda35f0" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="InstructAR" Publisher="CN=VS3DStarterKit" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="885fbe17-3f87-428c-9d6f-fbe0cbe51002" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>VS 3D Starter Kit</DisplayName>
+    <DisplayName>InstructAR</DisplayName>
     <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -26,7 +26,13 @@
         <m3:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#742894" />
         <m3:ApplicationView MinWidth="width320" />
         <!--Used in XAML Designer. DO NOT REMOVE-->
+        <m3:InitialRotationPreference>
+          <m3:Rotation Preference="landscape" />
+        </m3:InitialRotationPreference>
       </m3:VisualElements>
     </Application>
   </Applications>
+  <Capabilities>
+    <DeviceCapability Name="webcam" />
+  </Capabilities>
 </Package>
