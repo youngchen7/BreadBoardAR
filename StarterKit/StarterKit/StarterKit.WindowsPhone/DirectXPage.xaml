@@ -18,21 +18,25 @@
         </Style>
     </Page.Resources>
 
-    <SwapChainPanel x:Name="swapChainPanel" Tapped="OnTapped">
-        <Border VerticalAlignment="Top" HorizontalAlignment="Center" Padding="10" Background="Black">
-            <StackPanel Orientation="Horizontal" >
-                <TextBlock x:Name="HitCountCube" Text="0" Style="{StaticResource HudCounter}"/>
-                <TextBlock x:Name="HitCountSphere" Text="0" Style="{StaticResource HudCounter}"/>
+    <Canvas>
+        <TextBlock Canvas.ZIndex="0"  Text="Hello from behind XAML!"
+               FontSize="30" Canvas.Left="41" Canvas.Top="162" />
+        <SwapChainPanel  Canvas.ZIndex="1" Width="640"  Height="400" x:Name="swapChainPanel" Tapped="OnTapped">
+            <!--<Border VerticalAlignment="Top" HorizontalAlignment="Center" Padding="10" Background="Black">
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock x:Name="HitCountCube" Text="0" Style="{StaticResource HudCounter}"/>
+                    <TextBlock x:Name="HitCountSphere" Text="0" Style="{StaticResource HudCounter}"/>
 
-                <TextBlock x:Name="HitCountTeapot" Text="0" Style="{StaticResource HudCounter}" Margin="5" FontSize="55"/>
+                    <TextBlock x:Name="HitCountTeapot" Text="0" Style="{StaticResource HudCounter}" Margin="5" FontSize="55"/>
 
-                <TextBlock x:Name="HitCountCone" Text="0" Style="{StaticResource HudCounter}"/>
-                <TextBlock x:Name="HitCountCylinder" Text="0" Style="{StaticResource HudCounter}"/>
-            </StackPanel>
-        </Border>
-    </SwapChainPanel>
+                    <TextBlock x:Name="HitCountCone" Text="0" Style="{StaticResource HudCounter}"/>
+                    <TextBlock x:Name="HitCountCylinder" Text="0" Style="{StaticResource HudCounter}"/>
+                </StackPanel>
+            </Border>-->
+        </SwapChainPanel>
+    </Canvas>
 
-    <Page.BottomAppBar>
+    <!--<Page.BottomAppBar>
         <CommandBar>
             <AppBarButton Label="previous"
                           AutomationProperties.Name="Previous"
@@ -45,5 +49,5 @@
                           Icon="Next"
                           Click="OnNextColorPressed"/>
         </CommandBar>
-    </Page.BottomAppBar>
+    </Page.BottomAppBar>-->
 </Page>
