@@ -185,7 +185,7 @@ void Game::Render()
 	context->OMSetRenderTargets(1, targets, dsv);
 
 	//test transformation matrix
-	XMMATRIX translation = XMMatrixTranslation(0.0f, 0.0f, 3.0f);
+	XMMATRIX translation = XMMatrixTranslation(-0.1f, 0.0f, 2.75f);
 
 	// Draw our scene models.
 	XMMATRIX rotation = XMMatrixRotationY(m_rotation);
