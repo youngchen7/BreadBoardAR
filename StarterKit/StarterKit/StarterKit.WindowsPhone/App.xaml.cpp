@@ -5,8 +5,7 @@
 
 #include "pch.h"
 #include "DirectXPage.xaml.h"
-// only for example purposes
-#include <opencv2\core\core.hpp>
+// only for example purposes 
 
 using namespace StarterKit;
 

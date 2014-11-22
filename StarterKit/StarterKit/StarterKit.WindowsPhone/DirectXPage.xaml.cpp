@@ -7,6 +7,10 @@
 #include "DirectXPage.xaml.h"
 #include "StarterKitMain.h"
 
+#include <opencv2\core\core.hpp>
+
+
+
 using namespace StarterKit;
 
 using namespace Platform;
