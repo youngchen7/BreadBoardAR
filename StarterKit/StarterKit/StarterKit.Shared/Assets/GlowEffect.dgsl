@@ -315,53 +315,53 @@
     <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Mad[39].a" Label="a" LabelResId="3106" PortType="Input" />
     <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Mad[39].b" Label="b" LabelResId="3107" PortType="Input" />
     <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Mad[39].(m * a) + b" Label="(m * a) + b" LabelResId="3240" PortType="Output" />
-    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.Lerp[48]" Label="Lerp" LabelResId="3458" TypeId="Microsoft.VisualStudio.DSD.Lerp" />
-    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.Lerp[48].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
-    <Node Category="Trait" Data="-0.963368 0.000000 -5.356006" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Lerp[48].Position" Label="Position" LabelResId="Position" />
-    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Lerp[48].x" Label="x" LabelResId="3102" PortType="Input" />
-    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Lerp[48].y" Label="y" LabelResId="3103" PortType="Input" />
-    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Lerp[48].s" Label="s" LabelResId="3104" PortType="Input" />
-    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Lerp[48].lerp(x, y, s)" Label="lerp(x, y, s)" LabelResId="3238" PortType="Output" />
-    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.ColorConstant[49]" Label="Color Constant" LabelResId="3472" TypeId="Microsoft.VisualStudio.DSD.ColorConstant" />
-    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.ColorConstant[49].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
-    <Node Category="Trait" Data="-4.913725 0.000000 -5.603508" DataType="Float3" Id="Microsoft.VisualStudio.DSD.ColorConstant[49].Position" Label="Position" LabelResId="Position" />
-    <Node Category="Trait" Data="1.000000 0.000000 0.000000 1.000000" DataType="Float4" Desc="4002" Id="Microsoft.VisualStudio.DSD.ColorConstant[49].Color Constant" Label="Color Constant" LabelResId="3258" PortType="Output" ShowInPropertyWindow="True" />
-    <Node Category="Trait" Data="1.000000 1.000000 1.000000" DataType="Float3" Id="Microsoft.VisualStudio.DSD.ColorConstant[49].rgb" Label="rgb" LabelResId="3210" PortType="Output" />
-    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[49].r" Label="r" LabelResId="3211" PortType="Output" />
-    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[49].g" Label="g" LabelResId="3212" PortType="Output" />
-    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[49].b" Label="b" LabelResId="3213" PortType="Output" />
-    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[49].a" Label="a" LabelResId="3214" PortType="Output" />
-    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.Fresnel[53]" Label="Fresnel" LabelResId="3439" TypeId="Microsoft.VisualStudio.DSD.Fresnel" />
-    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.Fresnel[53].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
-    <Node Category="Trait" Data="-1.390173 0.000000 -3.062284" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Fresnel[53].Position" Label="Position" LabelResId="Position" />
-    <Node Category="Trait" Data="0.000000 0.000000 1.000000" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Fresnel[53].SurfaceNormal" Label="SurfaceNormal" LabelResId="3116" PortType="Input" />
-    <Node Category="Trait" Data="0.100000" DataType="Float" Desc="4030" Id="Microsoft.VisualStudio.DSD.Fresnel[53].Exponent" Label="Exponent" LabelResId="3020" ShowInPropertyWindow="True" />
-    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.Fresnel[53].Fresnel" Label="Fresnel" LabelResId="3254" PortType="Output" />
-    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.Multiply[54]" Label="Multiply" LabelResId="3459" TypeId="Microsoft.VisualStudio.DSD.Multiply" />
-    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.Multiply[54].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
-    <Node Category="Trait" Data="2.381452 0.000000 -3.577538" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Multiply[54].Position" Label="Position" LabelResId="Position" />
-    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Multiply[54].x" Label="x" LabelResId="3102" PortType="Input" />
-    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Multiply[54].y" Label="y" LabelResId="3103" PortType="Input" />
-    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Multiply[54].x * y" Label="x * y" LabelResId="3239" PortType="Output" />
-    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.ColorConstant[57]" Label="Color Constant" LabelResId="3472" TypeId="Microsoft.VisualStudio.DSD.ColorConstant" />
-    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.ColorConstant[57].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
-    <Node Category="Trait" Data="-5.010397 0.000000 -2.547287" DataType="Float3" Id="Microsoft.VisualStudio.DSD.ColorConstant[57].Position" Label="Position" LabelResId="Position" />
-    <Node Category="Trait" Data="0.000000 0.000000 0.000000 0.000000" DataType="Float4" Desc="4002" Id="Microsoft.VisualStudio.DSD.ColorConstant[57].Color Constant" Label="Color Constant" LabelResId="3258" PortType="Output" ShowInPropertyWindow="True" />
-    <Node Category="Trait" Data="1.000000 1.000000 1.000000" DataType="Float3" Id="Microsoft.VisualStudio.DSD.ColorConstant[57].rgb" Label="rgb" LabelResId="3210" PortType="Output" />
-    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[57].r" Label="r" LabelResId="3211" PortType="Output" />
-    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[57].g" Label="g" LabelResId="3212" PortType="Output" />
-    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[57].b" Label="b" LabelResId="3213" PortType="Output" />
-    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[57].a" Label="a" LabelResId="3214" PortType="Output" />
-    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.Add[58]" Label="Add" LabelResId="3447" TypeId="Microsoft.VisualStudio.DSD.Add" />
-    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.Add[58].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
-    <Node Category="Trait" Data="4.945584 0.000000 0.880468" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Add[58].Position" Label="Position" LabelResId="Position" />
-    <Node Category="Trait" Data="0.000000 0.000000 0.000000 0.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Add[58].x" Label="x" LabelResId="3102" PortType="Input" />
-    <Node Category="Trait" Data="0.000000 0.000000 0.000000 0.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Add[58].y" Label="y" LabelResId="3103" PortType="Input" />
-    <Node Category="Trait" Data="0.000000 0.000000 0.000000 0.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Add[58].x + y" Label="x + y" LabelResId="3227" PortType="Output" />
-    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.Time[59]" Label="Time" LabelResId="3426" TypeId="Microsoft.VisualStudio.DSD.Time" />
-    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.Time[59].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
-    <Node Category="Trait" Data="-3.905845 0.000000 -7.924183" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Time[59].Position" Label="Position" LabelResId="Position" />
-    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.Time[59].Time" Label="Time" LabelResId="3221" PortType="Output" />
+    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.Lerp[40]" Label="Lerp" LabelResId="3458" TypeId="Microsoft.VisualStudio.DSD.Lerp" />
+    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.Lerp[40].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
+    <Node Category="Trait" Data="-0.963368 0.000000 -5.356006" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Lerp[40].Position" Label="Position" LabelResId="Position" />
+    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Lerp[40].x" Label="x" LabelResId="3102" PortType="Input" />
+    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Lerp[40].y" Label="y" LabelResId="3103" PortType="Input" />
+    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Lerp[40].s" Label="s" LabelResId="3104" PortType="Input" />
+    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Lerp[40].lerp(x, y, s)" Label="lerp(x, y, s)" LabelResId="3238" PortType="Output" />
+    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.ColorConstant[41]" Label="Color Constant" LabelResId="3472" TypeId="Microsoft.VisualStudio.DSD.ColorConstant" />
+    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
+    <Node Category="Trait" Data="-5.409263 0.000000 -5.603508" DataType="Float3" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].Position" Label="Position" LabelResId="Position" />
+    <Node Category="Trait" Data="0.170000 0.530000 0.930000 1.000000" DataType="Float4" Desc="4002" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].Color Constant" Label="Color Constant" LabelResId="3258" PortType="Output" ShowInPropertyWindow="True" />
+    <Node Category="Trait" Data="1.000000 1.000000 1.000000" DataType="Float3" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].rgb" Label="rgb" LabelResId="3210" PortType="Output" />
+    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].r" Label="r" LabelResId="3211" PortType="Output" />
+    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].g" Label="g" LabelResId="3212" PortType="Output" />
+    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].b" Label="b" LabelResId="3213" PortType="Output" />
+    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[41].a" Label="a" LabelResId="3214" PortType="Output" />
+    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.Fresnel[42]" Label="Fresnel" LabelResId="3439" TypeId="Microsoft.VisualStudio.DSD.Fresnel" />
+    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.Fresnel[42].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
+    <Node Category="Trait" Data="-1.390173 0.000000 -3.062284" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Fresnel[42].Position" Label="Position" LabelResId="Position" />
+    <Node Category="Trait" Data="0.000000 0.000000 1.000000" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Fresnel[42].SurfaceNormal" Label="SurfaceNormal" LabelResId="3116" PortType="Input" />
+    <Node Category="Trait" Data="0.100000" DataType="Float" Desc="4030" Id="Microsoft.VisualStudio.DSD.Fresnel[42].Exponent" Label="Exponent" LabelResId="3020" ShowInPropertyWindow="True" />
+    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.Fresnel[42].Fresnel" Label="Fresnel" LabelResId="3254" PortType="Output" />
+    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.Multiply[43]" Label="Multiply" LabelResId="3459" TypeId="Microsoft.VisualStudio.DSD.Multiply" />
+    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.Multiply[43].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
+    <Node Category="Trait" Data="2.381452 0.000000 -3.577538" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Multiply[43].Position" Label="Position" LabelResId="Position" />
+    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Multiply[43].x" Label="x" LabelResId="3102" PortType="Input" />
+    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Multiply[43].y" Label="y" LabelResId="3103" PortType="Input" />
+    <Node Category="Trait" Data="1.000000 1.000000 1.000000 1.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Multiply[43].x * y" Label="x * y" LabelResId="3239" PortType="Output" />
+    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.ColorConstant[44]" Label="Color Constant" LabelResId="3472" TypeId="Microsoft.VisualStudio.DSD.ColorConstant" />
+    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.ColorConstant[44].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
+    <Node Category="Trait" Data="-5.010397 0.000000 -2.547287" DataType="Float3" Id="Microsoft.VisualStudio.DSD.ColorConstant[44].Position" Label="Position" LabelResId="Position" />
+    <Node Category="Trait" Data="0.000000 0.000000 0.000000 0.000000" DataType="Float4" Desc="4002" Id="Microsoft.VisualStudio.DSD.ColorConstant[44].Color Constant" Label="Color Constant" LabelResId="3258" PortType="Output" ShowInPropertyWindow="True" />
+    <Node Category="Trait" Data="1.000000 1.000000 1.000000" DataType="Float3" Id="Microsoft.VisualStudio.DSD.ColorConstant[44].rgb" Label="rgb" LabelResId="3210" PortType="Output" />
+    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[44].r" Label="r" LabelResId="3211" PortType="Output" />
+    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[44].g" Label="g" LabelResId="3212" PortType="Output" />
+    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[44].b" Label="b" LabelResId="3213" PortType="Output" />
+    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.ColorConstant[44].a" Label="a" LabelResId="3214" PortType="Output" />
+    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.Add[45]" Label="Add" LabelResId="3447" TypeId="Microsoft.VisualStudio.DSD.Add" />
+    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.Add[45].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
+    <Node Category="Trait" Data="4.945584 0.000000 0.880468" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Add[45].Position" Label="Position" LabelResId="Position" />
+    <Node Category="Trait" Data="0.000000 0.000000 0.000000 0.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Add[45].x" Label="x" LabelResId="3102" PortType="Input" />
+    <Node Category="Trait" Data="0.000000 0.000000 0.000000 0.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Add[45].y" Label="y" LabelResId="3103" PortType="Input" />
+    <Node Category="Trait" Data="0.000000 0.000000 0.000000 0.000000" DataType="Float4" Id="Microsoft.VisualStudio.DSD.Add[45].x + y" Label="x + y" LabelResId="3227" PortType="Output" />
+    <Node Category="Element" Group="Expanded" Id="Microsoft.VisualStudio.DSD.Time[46]" Label="Time" LabelResId="3426" TypeId="Microsoft.VisualStudio.DSD.Time" />
+    <Node Category="Trait" Data="False" DataType="Bool" Id="Microsoft.VisualStudio.DSD.Time[46].PropertyWindowShowElementName" Label="PropertyWindowShowElementName" LabelResId="PropertyWindowShowElementName" />
+    <Node Category="Trait" Data="-3.905845 0.000000 -7.924183" DataType="Float3" Id="Microsoft.VisualStudio.DSD.Time[46].Position" Label="Position" LabelResId="Position" />
+    <Node Category="Trait" Data="1.000000" DataType="Float" Id="Microsoft.VisualStudio.DSD.Time[46].Time" Label="Time" LabelResId="3221" PortType="Output" />
   </Nodes>
   <Links>
     <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Root[1]" Target="Microsoft.VisualStudio.DSD.Root[1].PropertyWindowShowElementName" />
@@ -685,60 +685,60 @@
     <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Mad[39]" Target="Microsoft.VisualStudio.DSD.Mad[39].a" />
     <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Mad[39]" Target="Microsoft.VisualStudio.DSD.Mad[39].b" />
     <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Mad[39]" Target="Microsoft.VisualStudio.DSD.Mad[39].(m * a) + b" />
-    <Link Source="Microsoft.VisualStudio.DSD.Mad[39].(m * a) + b" Target="Microsoft.VisualStudio.DSD.Add[58].x" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.Lerp[48]" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[48]" Target="Microsoft.VisualStudio.DSD.Lerp[48].PropertyWindowShowElementName" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[48]" Target="Microsoft.VisualStudio.DSD.Lerp[48].Position" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[48]" Target="Microsoft.VisualStudio.DSD.Lerp[48].x" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[48]" Target="Microsoft.VisualStudio.DSD.Lerp[48].y" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[48]" Target="Microsoft.VisualStudio.DSD.Lerp[48].s" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[48]" Target="Microsoft.VisualStudio.DSD.Lerp[48].lerp(x, y, s)" />
-    <Link Source="Microsoft.VisualStudio.DSD.Lerp[48].lerp(x, y, s)" Target="Microsoft.VisualStudio.DSD.Multiply[54].y" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.ColorConstant[49]" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[49]" Target="Microsoft.VisualStudio.DSD.ColorConstant[49].PropertyWindowShowElementName" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[49]" Target="Microsoft.VisualStudio.DSD.ColorConstant[49].Position" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[49]" Target="Microsoft.VisualStudio.DSD.ColorConstant[49].Color Constant" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[49]" Target="Microsoft.VisualStudio.DSD.ColorConstant[49].rgb" />
-    <Link Source="Microsoft.VisualStudio.DSD.ColorConstant[49].rgb" Target="Microsoft.VisualStudio.DSD.Lerp[48].y" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[49]" Target="Microsoft.VisualStudio.DSD.ColorConstant[49].r" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[49]" Target="Microsoft.VisualStudio.DSD.ColorConstant[49].g" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[49]" Target="Microsoft.VisualStudio.DSD.ColorConstant[49].b" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[49]" Target="Microsoft.VisualStudio.DSD.ColorConstant[49].a" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.Fresnel[53]" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Fresnel[53]" Target="Microsoft.VisualStudio.DSD.Fresnel[53].PropertyWindowShowElementName" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Fresnel[53]" Target="Microsoft.VisualStudio.DSD.Fresnel[53].Position" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Fresnel[53]" Target="Microsoft.VisualStudio.DSD.Fresnel[53].SurfaceNormal" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Fresnel[53]" Target="Microsoft.VisualStudio.DSD.Fresnel[53].Exponent" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Fresnel[53]" Target="Microsoft.VisualStudio.DSD.Fresnel[53].Fresnel" />
-    <Link Source="Microsoft.VisualStudio.DSD.Fresnel[53].Fresnel" Target="Microsoft.VisualStudio.DSD.Multiply[54].x" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.Multiply[54]" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Multiply[54]" Target="Microsoft.VisualStudio.DSD.Multiply[54].PropertyWindowShowElementName" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Multiply[54]" Target="Microsoft.VisualStudio.DSD.Multiply[54].Position" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Multiply[54]" Target="Microsoft.VisualStudio.DSD.Multiply[54].x" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Multiply[54]" Target="Microsoft.VisualStudio.DSD.Multiply[54].y" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Multiply[54]" Target="Microsoft.VisualStudio.DSD.Multiply[54].x * y" />
-    <Link Source="Microsoft.VisualStudio.DSD.Multiply[54].x * y" Target="Microsoft.VisualStudio.DSD.Add[58].y" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.ColorConstant[57]" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[57]" Target="Microsoft.VisualStudio.DSD.ColorConstant[57].PropertyWindowShowElementName" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[57]" Target="Microsoft.VisualStudio.DSD.ColorConstant[57].Position" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[57]" Target="Microsoft.VisualStudio.DSD.ColorConstant[57].Color Constant" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[57]" Target="Microsoft.VisualStudio.DSD.ColorConstant[57].rgb" />
-    <Link Source="Microsoft.VisualStudio.DSD.ColorConstant[57].rgb" Target="Microsoft.VisualStudio.DSD.Lerp[48].x" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[57]" Target="Microsoft.VisualStudio.DSD.ColorConstant[57].r" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[57]" Target="Microsoft.VisualStudio.DSD.ColorConstant[57].g" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[57]" Target="Microsoft.VisualStudio.DSD.ColorConstant[57].b" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[57]" Target="Microsoft.VisualStudio.DSD.ColorConstant[57].a" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.Add[58]" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Add[58]" Target="Microsoft.VisualStudio.DSD.Add[58].PropertyWindowShowElementName" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Add[58]" Target="Microsoft.VisualStudio.DSD.Add[58].Position" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Add[58]" Target="Microsoft.VisualStudio.DSD.Add[58].x" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Add[58]" Target="Microsoft.VisualStudio.DSD.Add[58].y" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Add[58]" Target="Microsoft.VisualStudio.DSD.Add[58].x + y" />
-    <Link Source="Microsoft.VisualStudio.DSD.Add[58].x + y" Target="Microsoft.VisualStudio.DSD.PixelShaderTerminal[32].RGB" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.Time[59]" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Time[59]" Target="Microsoft.VisualStudio.DSD.Time[59].PropertyWindowShowElementName" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Time[59]" Target="Microsoft.VisualStudio.DSD.Time[59].Position" />
-    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Time[59]" Target="Microsoft.VisualStudio.DSD.Time[59].Time" />
-    <Link Source="Microsoft.VisualStudio.DSD.Time[59].Time" Target="Microsoft.VisualStudio.DSD.Lerp[48].s" />
+    <Link Source="Microsoft.VisualStudio.DSD.Mad[39].(m * a) + b" Target="Microsoft.VisualStudio.DSD.Add[45].x" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.Lerp[40]" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[40]" Target="Microsoft.VisualStudio.DSD.Lerp[40].PropertyWindowShowElementName" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[40]" Target="Microsoft.VisualStudio.DSD.Lerp[40].Position" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[40]" Target="Microsoft.VisualStudio.DSD.Lerp[40].x" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[40]" Target="Microsoft.VisualStudio.DSD.Lerp[40].y" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[40]" Target="Microsoft.VisualStudio.DSD.Lerp[40].s" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Lerp[40]" Target="Microsoft.VisualStudio.DSD.Lerp[40].lerp(x, y, s)" />
+    <Link Source="Microsoft.VisualStudio.DSD.Lerp[40].lerp(x, y, s)" Target="Microsoft.VisualStudio.DSD.Multiply[43].y" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.ColorConstant[41]" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[41]" Target="Microsoft.VisualStudio.DSD.ColorConstant[41].PropertyWindowShowElementName" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[41]" Target="Microsoft.VisualStudio.DSD.ColorConstant[41].Position" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[41]" Target="Microsoft.VisualStudio.DSD.ColorConstant[41].Color Constant" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[41]" Target="Microsoft.VisualStudio.DSD.ColorConstant[41].rgb" />
+    <Link Source="Microsoft.VisualStudio.DSD.ColorConstant[41].rgb" Target="Microsoft.VisualStudio.DSD.Lerp[40].y" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[41]" Target="Microsoft.VisualStudio.DSD.ColorConstant[41].r" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[41]" Target="Microsoft.VisualStudio.DSD.ColorConstant[41].g" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[41]" Target="Microsoft.VisualStudio.DSD.ColorConstant[41].b" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[41]" Target="Microsoft.VisualStudio.DSD.ColorConstant[41].a" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.Fresnel[42]" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Fresnel[42]" Target="Microsoft.VisualStudio.DSD.Fresnel[42].PropertyWindowShowElementName" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Fresnel[42]" Target="Microsoft.VisualStudio.DSD.Fresnel[42].Position" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Fresnel[42]" Target="Microsoft.VisualStudio.DSD.Fresnel[42].SurfaceNormal" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Fresnel[42]" Target="Microsoft.VisualStudio.DSD.Fresnel[42].Exponent" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Fresnel[42]" Target="Microsoft.VisualStudio.DSD.Fresnel[42].Fresnel" />
+    <Link Source="Microsoft.VisualStudio.DSD.Fresnel[42].Fresnel" Target="Microsoft.VisualStudio.DSD.Multiply[43].x" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.Multiply[43]" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Multiply[43]" Target="Microsoft.VisualStudio.DSD.Multiply[43].PropertyWindowShowElementName" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Multiply[43]" Target="Microsoft.VisualStudio.DSD.Multiply[43].Position" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Multiply[43]" Target="Microsoft.VisualStudio.DSD.Multiply[43].x" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Multiply[43]" Target="Microsoft.VisualStudio.DSD.Multiply[43].y" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Multiply[43]" Target="Microsoft.VisualStudio.DSD.Multiply[43].x * y" />
+    <Link Source="Microsoft.VisualStudio.DSD.Multiply[43].x * y" Target="Microsoft.VisualStudio.DSD.Add[45].y" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.ColorConstant[44]" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[44]" Target="Microsoft.VisualStudio.DSD.ColorConstant[44].PropertyWindowShowElementName" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[44]" Target="Microsoft.VisualStudio.DSD.ColorConstant[44].Position" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[44]" Target="Microsoft.VisualStudio.DSD.ColorConstant[44].Color Constant" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[44]" Target="Microsoft.VisualStudio.DSD.ColorConstant[44].rgb" />
+    <Link Source="Microsoft.VisualStudio.DSD.ColorConstant[44].rgb" Target="Microsoft.VisualStudio.DSD.Lerp[40].x" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[44]" Target="Microsoft.VisualStudio.DSD.ColorConstant[44].r" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[44]" Target="Microsoft.VisualStudio.DSD.ColorConstant[44].g" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[44]" Target="Microsoft.VisualStudio.DSD.ColorConstant[44].b" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.ColorConstant[44]" Target="Microsoft.VisualStudio.DSD.ColorConstant[44].a" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.Add[45]" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Add[45]" Target="Microsoft.VisualStudio.DSD.Add[45].PropertyWindowShowElementName" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Add[45]" Target="Microsoft.VisualStudio.DSD.Add[45].Position" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Add[45]" Target="Microsoft.VisualStudio.DSD.Add[45].x" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Add[45]" Target="Microsoft.VisualStudio.DSD.Add[45].y" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Add[45]" Target="Microsoft.VisualStudio.DSD.Add[45].x + y" />
+    <Link Source="Microsoft.VisualStudio.DSD.Add[45].x + y" Target="Microsoft.VisualStudio.DSD.PixelShaderTerminal[32].RGB" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.PixelShader[2]" Target="Microsoft.VisualStudio.DSD.Time[46]" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Time[46]" Target="Microsoft.VisualStudio.DSD.Time[46].PropertyWindowShowElementName" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Time[46]" Target="Microsoft.VisualStudio.DSD.Time[46].Position" />
+    <Link Category="Contains" Source="Microsoft.VisualStudio.DSD.Time[46]" Target="Microsoft.VisualStudio.DSD.Time[46].Time" />
+    <Link Source="Microsoft.VisualStudio.DSD.Time[46].Time" Target="Microsoft.VisualStudio.DSD.Lerp[40].s" />
   </Links>
 </DirectedGraph>

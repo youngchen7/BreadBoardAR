@@ -52,8 +52,6 @@ void Game::CreateDeviceDependentResources()
 		m_meshModels)
 		.then([this]()
 	{
-
-
 		// Each mesh object has its own "time" used to control the glow effect.
 		m_time.clear();
 		for (size_t i = 0; i < m_meshModels.size(); i++)
