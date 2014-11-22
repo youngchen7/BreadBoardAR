@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 12.0.30324.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BreadBoard", "BreadBoard", "{5F5A5483-95C4-41C0-94BE-F4D4DE713844}"
 EndProject
@@ -26,6 +26,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv_video", "..\opencv-winrt\binWP8_1\modules\video\opencv_video.vcxproj", "{091A5D48-271E-4C6F-9CF0-AAECA68E744A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv_calib3d", "..\opencv-winrt\binWP8_1\modules\calib3d\opencv_calib3d.vcxproj", "{23F08799-E02E-420D-B9EE-F2CC48131DDD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{144830C8-FDB2-44E6-80A9-1816ADB13D04} = {144830C8-FDB2-44E6-80A9-1816ADB13D04}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv_features2d", "..\opencv-winrt\binWP8_1\modules\features2d\opencv_features2d.vcxproj", "{E526AF75-B84A-44AD-9D45-E2A380A7D7CD}"
 EndProject

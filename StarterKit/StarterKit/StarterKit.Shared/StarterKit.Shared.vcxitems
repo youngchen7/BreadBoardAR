@@ -57,12 +57,16 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\BreadBoard.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <None Include="$(MSBuildThisFileDirectory)Assets\BreadBoard.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\gamelevel.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\GlowEffect.dgsl" />
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx" />
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Wire.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BreadboardUVImage.png" />

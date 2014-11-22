@@ -78,6 +78,9 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\BreadBoard.fbx">
       <Filter>Assets</Filter>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Wire.fbx">
+      <Filter>Assets</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\CubeUVImage.png">
