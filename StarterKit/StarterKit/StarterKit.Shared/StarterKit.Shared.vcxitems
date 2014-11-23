@@ -74,6 +74,8 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Wire2.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Wire1.fbx" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\Wire2.fbx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BreadboardUVImage.png" />

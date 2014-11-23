@@ -27,6 +27,7 @@ namespace StarterKit
 		void ReleaseDeviceDependentResources();
 		void Update(DX::StepTimer const& timer);
 		void Render();
+		DirectX::XMMATRIX computeMatrix(int xPos, int yPos, int zPos, int orientation);
 
 		// Methods used to manipulate the objects in the scene.
 		Platform::String^ OnHitObject(int x, int y);

@@ -54,7 +54,7 @@ void Game::CreateDeviceDependentResources()
 	{
 		return Mesh::LoadFromFileAsync(
 			m_graphics,
-			L"Wire2.cmo",
+			L"Wire1.cmo",
 			L"",
 			L"",
 			m_meshModels,
@@ -92,7 +92,7 @@ void Game::CreateWindowSizeDependentResources()
 
 	// Setup the camera parameters for our scene.
 	m_graphics.GetCamera().SetViewport((UINT)outputSize.Width, (UINT)outputSize.Height);
-	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 10.0f, -8.0f));
+	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 15.0f, -12.0f)); //pitch, roll, yaw type
 	m_graphics.GetCamera().SetLookAt(XMFLOAT3(0.0f, 0.0f, 0.0f));
 
 	float aspectRatio = outputSize.Width / outputSize.Height;
@@ -158,13 +158,27 @@ void Game::Update(DX::StepTimer const& timer)
 	m_skinnedMeshRenderer.UpdateAnimation(timeDelta, m_meshModels);
 
 	// Rotate scene.
-	m_rotation = static_cast<float>(timer.GetTotalSeconds()) * -.1f;
+	m_rotation = static_cast<float>(timer.GetTotalSeconds()) * -.5f;
 
 	// Update the "time" variable for the glow effect.
 	for (float &time : m_time)
 	{
 		time = std::max<float>(0.0f, time - timeDelta);
 	}
+}
+
+// Computes rotation and translation matrix to move a component to its proper location
+XMMATRIX Game::computeMatrix(int xPos, int yPos, int zPos, int degrees){
+	XMMATRIX transformation = XMMatrixIdentity();	//final translation matrix
+	float MatRotate = degrees * -3.14159f/180.0f;	//degrees to radians
+	XMMATRIX rotation = XMMatrixRotationY(MatRotate);	//computes rotation matrix
+	transformation = transformation*rotation;		//mulitplies in
+
+	XMMATRIX translation = XMMatrixTranslation(11.6f - xPos*0.8f, 0.0f, 
+		-4.3f + zPos*0.8 + (zPos / 5)*1.4);	//translation, 3rd term to bridge the partition
+	transformation = transformation*translation;
+
+	return transformation;
 }
 
 // Renders one frame using the Starter Kit helpers.
@@ -185,7 +199,7 @@ void Game::Render()
 	context->OMSetRenderTargets(1, targets, dsv);
 
 	//test transformation matrix
-	XMMATRIX translation = XMMatrixTranslation(0.25f, 0.0f, 2.75f);
+	//XMMATRIX translation = XMMatrixTranslation(0.25f, 0.0f, 2.75f);
 
 	// Draw our scene models.
 	XMMATRIX rotation = XMMatrixRotationY(m_rotation);
@@ -193,7 +207,7 @@ void Game::Render()
 	for (UINT i = 0; i < m_meshModels.size(); i++)
 	{
 		//XMMATRIX modelTransform = rotation;
-		XMMATRIX modelTransform = XMMatrixIdentity()*rotation2;
+		XMMATRIX modelTransform = XMMatrixIdentity()*rotation;
 
 
 		// Update the time shader variable for the objects in our scene.
@@ -204,10 +218,10 @@ void Game::Render()
 
 		// Mesh does not have animation - render as usual.
 		if (i == 1){
-			m_meshModels[i]->Render(m_graphics, translation*modelTransform);
+			m_meshModels[i]->Render(m_graphics, computeMatrix(0, 0, 0, 0)*modelTransform);
 		}
 		else 
-			m_meshModels[i]->Render(m_graphics, modelTransform);
+			m_meshModels[i]->Render(m_graphics,  modelTransform);
 
 	}
 	
