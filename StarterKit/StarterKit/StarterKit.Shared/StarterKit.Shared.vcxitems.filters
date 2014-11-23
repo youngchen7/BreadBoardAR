@@ -81,12 +81,21 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\Wire.fbx">
       <Filter>Assets</Filter>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Wire1.fbx">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Wire2.fbx">
+      <Filter>Assets</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\CubeUVImage.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BreadboardUVImage.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\RedWireUVImage.png">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>

@@ -54,7 +54,7 @@ void Game::CreateDeviceDependentResources()
 	{
 		return Mesh::LoadFromFileAsync(
 			m_graphics,
-			L"Wire.cmo",
+			L"Wire2.cmo",
 			L"",
 			L"",
 			m_meshModels,
@@ -92,7 +92,7 @@ void Game::CreateWindowSizeDependentResources()
 
 	// Setup the camera parameters for our scene.
 	m_graphics.GetCamera().SetViewport((UINT)outputSize.Width, (UINT)outputSize.Height);
-	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 10.0f, -5.0f));
+	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 10.0f, -8.0f));
 	m_graphics.GetCamera().SetLookAt(XMFLOAT3(0.0f, 0.0f, 0.0f));
 
 	float aspectRatio = outputSize.Width / outputSize.Height;
@@ -158,7 +158,7 @@ void Game::Update(DX::StepTimer const& timer)
 	m_skinnedMeshRenderer.UpdateAnimation(timeDelta, m_meshModels);
 
 	// Rotate scene.
-	m_rotation = static_cast<float>(timer.GetTotalSeconds()) * -1.5f;
+	m_rotation = static_cast<float>(timer.GetTotalSeconds()) * -.1f;
 
 	// Update the "time" variable for the glow effect.
 	for (float &time : m_time)
@@ -185,14 +185,15 @@ void Game::Render()
 	context->OMSetRenderTargets(1, targets, dsv);
 
 	//test transformation matrix
-	XMMATRIX translation = XMMatrixTranslation(-0.1f, 0.0f, 2.75f);
+	XMMATRIX translation = XMMatrixTranslation(0.25f, 0.0f, 2.75f);
 
 	// Draw our scene models.
 	XMMATRIX rotation = XMMatrixRotationY(m_rotation);
+	XMMATRIX rotation2 = XMMatrixRotationX(m_rotation);
 	for (UINT i = 0; i < m_meshModels.size(); i++)
 	{
 		//XMMATRIX modelTransform = rotation;
-		XMMATRIX modelTransform = XMMatrixIdentity();
+		XMMATRIX modelTransform = XMMatrixIdentity()*rotation2;
 
 
 		// Update the time shader variable for the objects in our scene.
@@ -202,10 +203,14 @@ void Game::Render()
 		// Draw the models.
 
 		// Mesh does not have animation - render as usual.
-		m_meshModels[i]->Render(m_graphics, modelTransform);
+		if (i == 1){
+			m_meshModels[i]->Render(m_graphics, translation*modelTransform);
+		}
+		else 
+			m_meshModels[i]->Render(m_graphics, modelTransform);
 
 	}
-	m_meshModels[1]->Render(m_graphics, translation);
+	
 	//XMMATRIX translation = XMMatrixTranslation(2.0f, 2.0f, 2.0f);
 	//XMMATRIX rotation2 = XMMatrixRotationX(m_rotation);
 	//m_meshModels[0]->Render(m_graphics, rotation2*translation*rotation);
