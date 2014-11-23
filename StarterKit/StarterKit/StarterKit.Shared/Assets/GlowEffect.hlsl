@@ -274,7 +274,7 @@ P2F main(V2P pixel)
 		float3 local4 = SpecularContribution(tangentToEyeVec, tangentLightDir, float3(0.000000f, 0.000000f, 1.000000f), MaterialSpecular.rgb, MaterialSpecularPower, LightSpecularIntensity[0], LightColor[0].rgb);
 		float3 local5 = mad(local1, Texture1.Sample(TexSampler, pixel.uv).rgb, local4);
 		float local6 = 1; // Used to be: Fresnel(float3(0.000000f,0.000000f,1.000000f), tangentToEyeVec, 0.100000f);
-	float3 local10 = lerp(float4(0.000000f, 0.000000f, 0.000000f, 0.000000f).rgb, float4(1.000000f, 0.000000f, 0.000000f, 1.000000f).rgb, Time);
+	float3 local10 = lerp(float4(0.000000f, 0.000000f, 0.000000f, 0.000000f).rgb, float4(0.170000f, 0.530000f, 0.930000f, 1.000000f).rgb, Time);
 		float3 local11 = local6 * local10;
 		float3 local12 = local5 + local11;
 		float local13 = Texture1.Sample(TexSampler, pixel.uv).a * pixel.diffuse.a;
