@@ -175,7 +175,7 @@ XMMATRIX Game::computeMatrix(int xPos, int yPos, int zPos, int degrees){
 	transformation = transformation*rotation;		//mulitplies in
 
 	XMMATRIX translation = XMMatrixTranslation(11.6f - xPos*0.8f, 0.0f, 
-		-4.3f + zPos*0.8 + (zPos / 5)*1.4);	//translation, 3rd term to bridge the partition
+		-4.3f + zPos*0.8f + (zPos / 5)*1.4f);	//translation, 3rd term to bridge the partition
 	transformation = transformation*translation;
 
 	return transformation;
