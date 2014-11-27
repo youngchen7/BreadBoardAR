@@ -59,9 +59,27 @@
       <FileType>Document</FileType>
     </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\BreadBoard.fbx" />
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Cap.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Cap1.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\gamelevel.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\GlowEffect.dgsl" />
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\LED.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\LED1.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Resistor.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Resistor1.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx" />
@@ -77,9 +95,19 @@
     </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\Wire1.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Wire2.fbx" />
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Wire3.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Wire4.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\WireBridge.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BreadboardUVImage.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Assets\CapUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\CubeUVImage.png">
       <DeploymentContent>false</DeploymentContent>
     </Image>

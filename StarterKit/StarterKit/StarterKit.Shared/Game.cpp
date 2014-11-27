@@ -58,7 +58,77 @@ void Game::CreateDeviceDependentResources()
 			L"",
 			L"",
 			m_meshModels,
-			false);
+			false)
+			.then([this]()
+		{
+			return Mesh::LoadFromFileAsync(
+				m_graphics,
+				L"Wire2.cmo",
+				L"",
+				L"",
+				m_meshModels,
+				false)
+				.then([this]()
+			{
+				return Mesh::LoadFromFileAsync(
+					m_graphics,
+					L"Wire3.cmo",
+					L"",
+					L"",
+					m_meshModels,
+					false)
+					.then([this]()
+				{
+					return Mesh::LoadFromFileAsync(
+						m_graphics,
+						L"Wire4.cmo",
+						L"",
+						L"",
+						m_meshModels,
+						false)
+						.then([this]()
+					{
+						return Mesh::LoadFromFileAsync(
+							m_graphics,
+							L"WireBridge.cmo",
+							L"",
+							L"",
+							m_meshModels,
+							false)
+							.then([this]()
+						{
+							return Mesh::LoadFromFileAsync(
+								m_graphics,
+								L"Cap1.cmo",
+								L"",
+								L"",
+								m_meshModels,
+								false)
+								.then([this]()
+							{
+								return Mesh::LoadFromFileAsync(
+									m_graphics,
+									L"LED1.cmo",
+									L"",
+									L"",
+									m_meshModels,
+									false)
+									.then([this]()
+								{
+									return Mesh::LoadFromFileAsync(
+										m_graphics,
+										L"Resistor1.cmo",
+										L"",
+										L"",
+										m_meshModels,
+										false);
+								});
+							});
+						});
+					});
+				});
+			});
+		});
 	})
 		.then([this]()
 	{
@@ -174,9 +244,9 @@ XMMATRIX Game::computeMatrix(int xPos, int yPos, int zPos, int degrees){
 	XMMATRIX rotation = XMMatrixRotationY(MatRotate);	//computes rotation matrix
 	transformation = transformation*rotation;		//mulitplies in
 
-	XMMATRIX translation = XMMatrixTranslation(11.6f - xPos*0.8f, 0.0f, 
-		-4.3f + zPos*0.8f + (zPos / 5)*1.4f);	//translation, 3rd term to bridge the partition
-	transformation = transformation*translation;
+	XMMATRIX translation = XMMatrixTranslation(11.6f - xPos*0.795f, 0.0f, 
+		-4.3f + zPos*0.795f + (zPos / 5)*1.4f);	//translation, 3rd term to bridge the partition
+	transformation = transformation*translation; 
 
 	return transformation;
 }
@@ -219,6 +289,27 @@ void Game::Render()
 		// Mesh does not have animation - render as usual.
 		if (i == 1){
 			m_meshModels[i]->Render(m_graphics, computeMatrix(0, 0, 0, 0)*modelTransform);
+		}
+		else if (i == 2){
+			m_meshModels[i]->Render(m_graphics, computeMatrix(2, 0, 0, 0)*modelTransform);
+		}
+		else if (i == 3){
+			m_meshModels[i]->Render(m_graphics, computeMatrix(4, 0, 0, 0)*modelTransform);
+		}
+		else if (i == 4){
+			m_meshModels[i]->Render(m_graphics, computeMatrix(6, 0, 0, 0)*modelTransform);
+		}
+		else if (i == 5){
+			m_meshModels[i]->Render(m_graphics, computeMatrix(8, 0, 4, 0)*modelTransform);
+		}
+		else if (i == 6){
+			m_meshModels[i]->Render(m_graphics, computeMatrix(10, 0, 2, 0)*modelTransform);
+		}
+		else if (i == 7){
+			m_meshModels[i]->Render(m_graphics, computeMatrix(12, 0, 0, 0)*modelTransform);
+		}
+		else if (i == 8){
+			m_meshModels[i]->Render(m_graphics, computeMatrix(14, 0, 2, 0)*modelTransform);
 		}
 		else 
 			m_meshModels[i]->Render(m_graphics,  modelTransform);
