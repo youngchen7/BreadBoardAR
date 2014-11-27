@@ -88,6 +88,18 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\Wire2.fbx">
       <Filter>Assets</Filter>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)WireGroundR.fbx">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)WireGroundL.fbx">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)WirePowerR.fbx">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)WirePowerL.fbx">
+      <Filter>Assets</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\CubeUVImage.png">

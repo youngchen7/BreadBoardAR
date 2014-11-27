@@ -99,7 +99,7 @@ void Game::CreateDeviceDependentResources()
 						{
 							return Mesh::LoadFromFileAsync(
 								m_graphics,
-								L"Cap1.cmo",
+								L"WirePowerL.cmo",
 								L"",
 								L"",
 								m_meshModels,
@@ -108,20 +108,60 @@ void Game::CreateDeviceDependentResources()
 							{
 								return Mesh::LoadFromFileAsync(
 									m_graphics,
-									L"LED1.cmo",
+									L"WirePowerR.cmo",
 									L"",
 									L"",
 									m_meshModels,
 									false)
 									.then([this]()
 								{
-									return Mesh::LoadFromFileAsync( 
+									return Mesh::LoadFromFileAsync(
 										m_graphics,
-										L"Resistor1.cmo",
+										L"WireGroundL.cmo",
 										L"",
 										L"",
 										m_meshModels,
-										false);
+										false)
+										.then([this]()
+									{
+										return Mesh::LoadFromFileAsync(
+											m_graphics,
+											L"WireGroundR.cmo",
+											L"",
+											L"",
+											m_meshModels,
+											false)
+										.then([this]()
+										{
+											return Mesh::LoadFromFileAsync(
+												m_graphics,
+												L"Cap1.cmo",
+												L"",
+												L"",
+												m_meshModels,
+												false)
+												.then([this]()
+											{
+												return Mesh::LoadFromFileAsync(
+													m_graphics,
+													L"LED1.cmo",
+													L"",
+													L"",
+													m_meshModels,
+													false)
+													.then([this]()
+												{
+													return Mesh::LoadFromFileAsync(
+														m_graphics,
+														L"Resistor1.cmo",
+														L"",
+														L"",
+														m_meshModels,
+														false);
+												});
+											});
+										});
+									});
 								});
 							});
 						});

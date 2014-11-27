@@ -104,6 +104,22 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\WireBridge.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)WirePower.fbx">
+      <FileType>Discomap</FileType>
+      <DeploymentContent>true</DeploymentContent>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)WireGroundR.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)WireGroundL.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)WirePowerR.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)WirePowerL.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BreadboardUVImage.png" />
