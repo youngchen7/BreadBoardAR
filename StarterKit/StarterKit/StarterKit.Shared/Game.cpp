@@ -115,7 +115,7 @@ void Game::CreateDeviceDependentResources()
 									false)
 									.then([this]()
 								{
-									return Mesh::LoadFromFileAsync(
+									return Mesh::LoadFromFileAsync( 
 										m_graphics,
 										L"Resistor1.cmo",
 										L"",
@@ -271,54 +271,30 @@ void Game::Render()
 	//test transformation matrix
 	//XMMATRIX translation = XMMatrixTranslation(0.25f, 0.0f, 2.75f);
 
-	// Draw our scene models.
+	// Transform matrices
 	XMMATRIX rotation = XMMatrixRotationY(m_rotation);
 	XMMATRIX rotation2 = XMMatrixRotationX(m_rotation);
-	for (UINT i = 0; i < m_meshModels.size(); i++)
-	{
-		//XMMATRIX modelTransform = rotation;
-		XMMATRIX modelTransform = XMMatrixIdentity()*rotation;
+	XMMATRIX modelTransform = XMMatrixIdentity()*rotation;
 
-
+	instructAR::componentsFactory my_factory;
+	vector<instructAR::Component> my_build = my_factory.createBuild(0);
+	int xPos = 0;
+	int yPos = 0;
+	int zPos = 0; 
+	int degrees = 0;
+	int index;
+	m_meshModels[0]->Render(m_graphics, modelTransform);
+	for (int i = 0; i < int(my_build.size()); ++i){
 		// Update the time shader variable for the objects in our scene.
 		m_miscConstants.Time = m_time[i];
 		m_graphics.UpdateMiscConstants(m_miscConstants);
-
-		// Draw the models.
-
-		// Mesh does not have animation - render as usual.
-		if (i == 1){
-			m_meshModels[i]->Render(m_graphics, computeMatrix(0, 0, 0, 0)*modelTransform);
-		}
-		else if (i == 2){
-			m_meshModels[i]->Render(m_graphics, computeMatrix(2, 0, 0, 0)*modelTransform);
-		}
-		else if (i == 3){
-			m_meshModels[i]->Render(m_graphics, computeMatrix(4, 0, 0, 0)*modelTransform);
-		}
-		else if (i == 4){
-			m_meshModels[i]->Render(m_graphics, computeMatrix(6, 0, 0, 0)*modelTransform);
-		}
-		else if (i == 5){
-			m_meshModels[i]->Render(m_graphics, computeMatrix(8, 0, 4, 0)*modelTransform);
-		}
-		else if (i == 6){
-			m_meshModels[i]->Render(m_graphics, computeMatrix(10, 0, 2, 0)*modelTransform);
-		}
-		else if (i == 7){
-			m_meshModels[i]->Render(m_graphics, computeMatrix(12, 0, 0, 0)*modelTransform);
-		}
-		else if (i == 8){
-			m_meshModels[i]->Render(m_graphics, computeMatrix(14, 0, 2, 0)*modelTransform);
-		}
-		else 
-			m_meshModels[i]->Render(m_graphics,  modelTransform);
-
+		index = my_build.at(i).getModel();
+		xPos = my_build.at(i).getX();
+		yPos = my_build.at(i).getY();
+		zPos = my_build.at(i).getZ();
+		degrees = my_build.at(i).getOrientation();
+		m_meshModels[index]->Render(m_graphics, computeMatrix(xPos, yPos, zPos, degrees)*modelTransform);
 	}
-	
-	//XMMATRIX translation = XMMatrixTranslation(2.0f, 2.0f, 2.0f);
-	//XMMATRIX rotation2 = XMMatrixRotationX(m_rotation);
-	//m_meshModels[0]->Render(m_graphics, rotation2*translation*rotation);
 }
 
 // Starts the glow animation for an object.
