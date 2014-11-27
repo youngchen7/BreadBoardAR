@@ -6,7 +6,6 @@
 #pragma once
 
 #include "DirectXPage.g.h"
-
 #include "Common\DeviceResources.h"
 
 namespace StarterKit

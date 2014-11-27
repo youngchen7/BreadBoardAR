@@ -17,6 +17,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)DirectXTex\DDSTextureLoader.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Game.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Animation\Animation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ARComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DirectXTex\DDSTextureLoader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Game.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)HitTestingHelpers.h" />

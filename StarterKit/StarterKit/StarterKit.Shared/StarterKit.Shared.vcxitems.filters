@@ -25,6 +25,7 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Game.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)HitTestingHelpers.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ARComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)StarterKitMain.cpp" />
