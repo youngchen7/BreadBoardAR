@@ -65,6 +65,8 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Cap1.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Cap.fbx" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\Cap1.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\gamelevel.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\GlowEffect.dgsl" />
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx">
@@ -82,6 +84,10 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Resistor1.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <None Include="$(MSBuildThisFileDirectory)Assets\LED.fbx" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\LED1.fbx" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\Resistor.fbx" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\Resistor1.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx" />
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Wire.fbx">
       <FileType>Document</FileType>
@@ -104,10 +110,6 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\WireBridge.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
-    <MeshContentTask Include="$(MSBuildThisFileDirectory)WirePower.fbx">
-      <FileType>Discomap</FileType>
-      <DeploymentContent>true</DeploymentContent>
-    </MeshContentTask>
     <MeshContentTask Include="$(MSBuildThisFileDirectory)WireGroundR.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
@@ -120,13 +122,23 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)WirePowerL.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Wire3.fbx" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\Wire4.fbx" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\WireBridge.fbx" />
+    <None Include="$(MSBuildThisFileDirectory)WirePower.fbx">
+      <FileType>Document</FileType>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\BlackWireUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\BreadboardUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\CapUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\CubeUVImage.png">
       <DeploymentContent>false</DeploymentContent>
     </Image>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\LEDSphereUVImage.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Assets\LEDUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\RedWireUVImage.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Assets\ResistorUVImage.png" />
   </ItemGroup>
 </Project>
