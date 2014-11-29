@@ -24,6 +24,26 @@ void ::StarterKit::DirectXPage::InitializeComponent()
 
     // Get the SwapChainPanel named 'swapChainPanel'
     swapChainPanel = safe_cast<::Windows::UI::Xaml::Controls::SwapChainPanel^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"swapChainPanel"));
+    // Get the Border named 'circuits_window'
+    circuits_window = safe_cast<::Windows::UI::Xaml::Controls::Border^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"circuits_window"));
+    // Get the ListView named 'circuits_list'
+    circuits_list = safe_cast<::Windows::UI::Xaml::Controls::ListView^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"circuits_list"));
+    // Get the Button named 'circuits_select'
+    circuits_select = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"circuits_select"));
+    // Get the Button named 'schematics_btn'
+    schematics_btn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"schematics_btn"));
+    // Get the Button named 'next_btn'
+    next_btn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"next_btn"));
+    // Get the Button named 'prev_btn'
+    prev_btn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"prev_btn"));
+    // Get the Button named 'circuits_btn'
+    circuits_btn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"circuits_btn"));
+    // Get the TextBlock named 'progress_percent'
+    progress_percent = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"progress_percent"));
+    // Get the ProgressBar named 'progress_bar'
+    progress_bar = safe_cast<::Windows::UI::Xaml::Controls::ProgressBar^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"progress_bar"));
+    // Get the TextBlock named 'progress_fraction'
+    progress_fraction = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"progress_fraction"));
 }
 
 void ::StarterKit::DirectXPage::Connect(int connectionId, Platform::Object^ target)
@@ -33,6 +53,14 @@ void ::StarterKit::DirectXPage::Connect(int connectionId, Platform::Object^ targ
     case 1:
         (safe_cast<::Windows::UI::Xaml::UIElement^>(target))->Tapped +=
             ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::StarterKit::DirectXPage::*)(Platform::Object^, Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&DirectXPage::OnTapped);
+        break;
+    case 2:
+        (safe_cast<::Windows::UI::Xaml::UIElement^>(target))->Tapped +=
+            ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::StarterKit::DirectXPage::*)(Platform::Object^, Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&DirectXPage::schematics_btn_click);
+        break;
+    case 3:
+        (safe_cast<::Windows::UI::Xaml::UIElement^>(target))->Tapped +=
+            ref new ::Windows::UI::Xaml::Input::TappedEventHandler(this, (void (::StarterKit::DirectXPage::*)(Platform::Object^, Windows::UI::Xaml::Input::TappedRoutedEventArgs^))&DirectXPage::circuits_btn_click);
         break;
     }
     (void)connectionId; // Unused parameter

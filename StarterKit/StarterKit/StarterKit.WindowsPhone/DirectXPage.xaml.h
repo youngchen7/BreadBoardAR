@@ -23,9 +23,7 @@ namespace StarterKit
 		DirectXPage();
 		virtual ~DirectXPage();
 
-		// Event handlers for the app bar buttons.
-		void OnPreviousColorPressed(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-		void OnNextColorPressed(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+
 
 		void SaveInternalState(Windows::Foundation::Collections::IPropertySet^ state);
 		void LoadInternalState(Windows::Foundation::Collections::IPropertySet^ state);
@@ -34,19 +32,7 @@ namespace StarterKit
 		// Called when the SwapChainPanel is tapped.
 		void OnTapped(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
 
-		// Helper method to change an object's color.
-		void ChangeObjectColor(Platform::String^ objectName, int colorIndex);
-
-		// Used to keep count of clicks in the various objects in our scene.
-		int m_hitCountCube;
-		int m_hitCountSphere;
-		int m_hitCountCone;
-		int m_hitCountCylinder;
-		int m_hitCountTeapot;
-
-		// Used to keep track of the teapot color (change with the app bar button).
-		std::vector<Windows::UI::Color>::size_type m_colorIndex;
-		std::vector<Windows::UI::Color> m_colors;
+		
 
 		// ----- Members below come with the default DirectX (XAML) template. ----------------------------------------------
 
@@ -69,6 +55,9 @@ namespace StarterKit
 		std::shared_ptr<DX::DeviceResources> m_deviceResources;
 		std::unique_ptr<StarterKitMain> m_main;
 		bool m_windowVisible;
+		void schematics_btn_click(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
+		void circuits_btn_click(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
+		
 	};
 }
 

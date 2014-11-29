@@ -7,47 +7,46 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Page.Resources>
-        <Style x:Key="HudCounter" TargetType="TextBlock">
-            <Setter Property="Width" Value="60"/>
-            <Setter Property="Height" Value="64"/>
-            <Setter Property="FontSize" Value="40"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-        </Style>
-    </Page.Resources>
+
 
     <Grid>
-        <TextBlock Canvas.ZIndex="0"  Text="Hello from behind XAML!"
-               FontSize="30" Canvas.Left="41" Canvas.Top="162" />
-        <SwapChainPanel  Canvas.ZIndex="1" Width="Auto"  Height="Auto" x:Name="swapChainPanel" Tapped="OnTapped">
-            <!--<Border VerticalAlignment="Top" HorizontalAlignment="Center" Padding="10" Background="Black">
+        <TextBlock Canvas.ZIndex="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Text="Hello from &#x0a; behind XAML!"
+               FontSize="80"  />
+        <SwapChainPanel   Width="Auto"  Height="Auto" x:Name="swapChainPanel" Tapped="OnTapped">
+            <!-- Top Progress Bar -->
+            <Border VerticalAlignment="Top" HorizontalAlignment="Center"  Background="Transparent">
                 <StackPanel Orientation="Horizontal" >
-                    <TextBlock x:Name="HitCountCube" Text="0" Style="{StaticResource HudCounter}"/>
-                    <TextBlock x:Name="HitCountSphere" Text="0" Style="{StaticResource HudCounter}"/>
-
-                    <TextBlock x:Name="HitCountTeapot" Text="0" Style="{StaticResource HudCounter}" Margin="5" FontSize="55"/>
-
-                    <TextBlock x:Name="HitCountCone" Text="0" Style="{StaticResource HudCounter}"/>
-                    <TextBlock x:Name="HitCountCylinder" Text="0" Style="{StaticResource HudCounter}"/>
+                    <TextBlock Name ="progress_percent" Text="10%" />
+                    <ProgressBar Name ="progress_bar" Width="200" IsIndeterminate="False" Maximum="100" Value="10"/>
+                    <TextBlock Name ="progress_fraction" Text="2/20"/>
                 </StackPanel>
-            </Border>-->
+            </Border>
+            <!-- Left Side Buttons -->
+            <Border VerticalAlignment="Bottom" HorizontalAlignment="Left"  Background="Transparent">
+                <StackPanel Orientation="Horizontal" >
+                    <Button Name ="prev_btn" Content ="&lt; &lt;" Background ="Black" Margin="5,5,5,5"/>
+                    <Button Name ="circuits_btn" Content ="Circuits" Background ="Black" Margin="5,5,5,5" Tapped="circuits_btn_click"/>
+                </StackPanel>
+            </Border>
+            <!-- Right Side Buttons -->
+            <Border VerticalAlignment="Bottom" HorizontalAlignment="Right"  Background="Transparent">
+                <StackPanel Orientation="Horizontal" >
+                    <Button Name ="schematics_btn" Content ="Schematics" Background ="Black" Margin="5,5,5,5" Tapped="schematics_btn_click"/>
+                    <Button Name ="next_btn" Content ="&gt; &gt;" Background ="Black" Margin="5,5,5,5"/>
+                </StackPanel>
+            </Border>
+            <Border Name ="circuits_window" BorderBrush="White" BorderThickness="2" Background ="Black" HorizontalAlignment="Center" Height="250"  VerticalAlignment="Center" Width="400">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment ="Center" TextWrapping="Wrap" Margin="5,5,5,5" Text="Circuits" FontSize="20" FontWeight="SemiBold"/>
+                    <ListView Name = "circuits_list" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Grid >
+                        <Button Name ="circuits_select" Content ="Select" Margin ="10,10,10,10" Background ="#FF1BA1E2" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                        <Button Name ="circuits_cancel" Content ="Cancel" Margin ="10,10,10,10" Background ="#FF1BA1E2" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
         </SwapChainPanel>
+
     </Grid>
 
-    <!--<Page.BottomAppBar>
-        <CommandBar>
-            <AppBarButton Label="previous"
-                          AutomationProperties.Name="Previous"
-                          AutomationProperties.AutomationId="PreviousAppBarButton"
-                          Icon="Previous"
-                          Click="OnPreviousColorPressed"/>
-            <AppBarButton Label="next"
-                          AutomationProperties.Name="Next"
-                          AutomationProperties.AutomationId="NextAppBarButton"
-                          Icon="Next"
-                          Click="OnNextColorPressed"/>
-        </CommandBar>
-    </Page.BottomAppBar>-->
 </Page>

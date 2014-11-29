@@ -125,9 +125,6 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\Wire3.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Wire4.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\WireBridge.fbx" />
-    <None Include="$(MSBuildThisFileDirectory)WirePower.fbx">
-      <FileType>Document</FileType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BlackWireUVImage.png" />

@@ -13,6 +13,11 @@ namespace Windows {
         namespace Xaml {
             namespace Controls {
                 ref class SwapChainPanel;
+                ref class Border;
+                ref class ListView;
+                ref class Button;
+                ref class TextBlock;
+                ref class ProgressBar;
             }
         }
     }
@@ -31,6 +36,16 @@ namespace StarterKit
         bool _contentLoaded;
     
         private: ::Windows::UI::Xaml::Controls::SwapChainPanel^ swapChainPanel;
+        private: ::Windows::UI::Xaml::Controls::Border^ circuits_window;
+        private: ::Windows::UI::Xaml::Controls::ListView^ circuits_list;
+        private: ::Windows::UI::Xaml::Controls::Button^ circuits_select;
+        private: ::Windows::UI::Xaml::Controls::Button^ schematics_btn;
+        private: ::Windows::UI::Xaml::Controls::Button^ next_btn;
+        private: ::Windows::UI::Xaml::Controls::Button^ prev_btn;
+        private: ::Windows::UI::Xaml::Controls::Button^ circuits_btn;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ progress_percent;
+        private: ::Windows::UI::Xaml::Controls::ProgressBar^ progress_bar;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ progress_fraction;
     };
 }
 

@@ -5,6 +5,9 @@
       <UniqueIdentifier>$guid2$</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
     </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{b2a55e6a-ba97-4d48-8ef2-acb84b7c7b40}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -12,10 +15,12 @@
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp" />
     <ClCompile Include="DirectXPage.xaml.cpp" />
+    <ClCompile Include="SchematicsPage.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.xaml.h" />
     <ClInclude Include="DirectXPage.xaml.h" />
+    <ClInclude Include="SchematicsPage.xaml.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Logo.scale-240.png">

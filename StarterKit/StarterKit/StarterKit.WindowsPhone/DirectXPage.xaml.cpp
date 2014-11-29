@@ -31,24 +31,11 @@ using namespace Windows::UI::Xaml::Navigation;
 using namespace concurrency;
 
 DirectXPage::DirectXPage() :
-m_windowVisible(true),
-m_hitCountCube(0),
-m_hitCountCylinder(0),
-m_hitCountCone(0),
-m_hitCountSphere(0),
-m_hitCountTeapot(0),
-m_colorIndex(0)
+m_windowVisible(true)
 {
 	InitializeComponent();
 
-	// Initialize Starter Kit state.
-	m_colors.push_back(Colors::Red);
-	m_colors.push_back(Colors::Violet);
-	m_colors.push_back(Colors::Indigo);
-	m_colors.push_back(Colors::Blue);
-	m_colors.push_back(Colors::Green);
-	m_colors.push_back(Colors::Yellow);
-	m_colors.push_back(Colors::Orange);
+
 
 	// Register event handlers for page lifecycle.
 	CoreWindow^ window = Window::Current->CoreWindow;
@@ -80,6 +67,9 @@ m_colorIndex(0)
 
 	m_main = std::unique_ptr<StarterKitMain>(new StarterKitMain(m_deviceResources));
 	m_main->StartRenderLoop();
+
+	//Set up our popup windows
+	circuits_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
 }
 
 DirectXPage::~DirectXPage()
@@ -88,29 +78,7 @@ DirectXPage::~DirectXPage()
 	m_main->StopRenderLoop();
 }
 
-// Called when the Previous Color app bar button is pressed.
-void DirectXPage::OnPreviousColorPressed(Object^ sender, RoutedEventArgs^ e)
-{
-	if (m_colorIndex == 0)
-	{
-		m_colorIndex = m_colors.size() - 1;
-	}
-	else
-	{
-		m_colorIndex--;
-	}
-	ChangeObjectColor(L"Teapot_Node", m_colorIndex);
-}
 
-// Called when the Next Color app bar button is pressed.
-void DirectXPage::OnNextColorPressed(Object^ sender, RoutedEventArgs^ e)
-{
-	m_colorIndex++;
-	if (m_colorIndex >= m_colors.size())
-		m_colorIndex = 0;
-
-	ChangeObjectColor(L"Teapot_Node", m_colorIndex);
-}
 
 // Saves the current state of the app for suspend and terminate events.
 void DirectXPage::SaveInternalState(IPropertySet^ state)
@@ -141,37 +109,11 @@ void DirectXPage::OnTapped(Object^ sender, TappedRoutedEventArgs^ e)
 	if (objName != nullptr)
 	{
 		m_main->ToggleHitEffect(objName);
-		/*
-		if (objName->Equals(L"Cylinder_Node"))
-		{
-			this->HitCountCylinder->Text = (++m_hitCountCylinder).ToString();
-		}
-		else if (objName->Equals(L"Cube_Node"))
-		{
-			this->HitCountCube->Text = (++m_hitCountCube).ToString();
-		}
-		else if (objName->Equals(L"Sphere_Node"))
-		{
-			this->HitCountSphere->Text = (++m_hitCountSphere).ToString();
-		}
-		else if (objName->Equals(L"Cone_Node"))
-		{
-			this->HitCountCone->Text = (++m_hitCountCone).ToString();
-		}
-		else if (objName->Equals(L"Teapot_Node"))
-		{
-			this->HitCountTeapot->Text = (++m_hitCountTeapot).ToString();
-		}
-		*/
+
 	}
 }
 
-// Helper method to change an object's color.
-void DirectXPage::ChangeObjectColor(String^ objectName, int colorIndex)
-{
-	auto color = m_colors[colorIndex];
-	m_main->ChangeMaterialColor(objectName, color.R / 255.0f, color.G / 255.0f, color.B / 255.0f);
-}
+
 
 // Window event handlers.
 
@@ -192,6 +134,7 @@ void DirectXPage::OnVisibilityChanged(CoreWindow^ sender, VisibilityChangedEvent
 
 void DirectXPage::OnDpiChanged(DisplayInformation^ sender, Object^ args)
 {
+	OutputDebugString(L"SwapChainPanel dpi changed");
 	critical_section::scoped_lock lock(m_main->GetCriticalSection());
 	m_deviceResources->SetDpi(sender->LogicalDpi);
 	m_main->CreateWindowSizeDependentResources();
@@ -199,6 +142,7 @@ void DirectXPage::OnDpiChanged(DisplayInformation^ sender, Object^ args)
 
 void DirectXPage::OnOrientationChanged(DisplayInformation^ sender, Object^ args)
 {
+	OutputDebugString(L"SwapChainPanel orientation changed");
 	critical_section::scoped_lock lock(m_main->GetCriticalSection());
 	m_deviceResources->SetCurrentOrientation(sender->CurrentOrientation);
 	m_main->CreateWindowSizeDependentResources();
@@ -206,12 +150,14 @@ void DirectXPage::OnOrientationChanged(DisplayInformation^ sender, Object^ args)
 
 void DirectXPage::OnDisplayContentsInvalidated(DisplayInformation^ sender, Object^ args)
 {
+	OutputDebugString(L"SwapChainPanel display contents invalidated changed");
 	critical_section::scoped_lock lock(m_main->GetCriticalSection());
 	m_deviceResources->ValidateDevice();
 }
 
 void DirectXPage::OnCompositionScaleChanged(SwapChainPanel^ sender, Object^ args)
 {
+	OutputDebugString(L"SwapChainPanel composition scale changed");
 	critical_section::scoped_lock lock(m_main->GetCriticalSection());
 	m_deviceResources->SetCompositionScale(sender->CompositionScaleX, sender->CompositionScaleY);
 	m_main->CreateWindowSizeDependentResources();
@@ -219,7 +165,28 @@ void DirectXPage::OnCompositionScaleChanged(SwapChainPanel^ sender, Object^ args
 
 void DirectXPage::OnSwapChainPanelSizeChanged(Object^ sender, SizeChangedEventArgs^ e)
 {
+	OutputDebugString(L"SwapChainPanel size changed");
 	critical_section::scoped_lock lock(m_main->GetCriticalSection());
 	m_deviceResources->SetLogicalSize(e->NewSize);
 	m_main->CreateWindowSizeDependentResources();
+}
+
+
+
+void StarterKit::DirectXPage::schematics_btn_click(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e)
+{	
+
+}
+
+
+void StarterKit::DirectXPage::circuits_btn_click(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e)
+{
+	if (circuits_window->Visibility == Windows::UI::Xaml::Visibility::Visible)
+	{
+		circuits_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+	}
+	else
+	{
+		circuits_window->Visibility = Windows::UI::Xaml::Visibility::Visible;
+	}
 }
