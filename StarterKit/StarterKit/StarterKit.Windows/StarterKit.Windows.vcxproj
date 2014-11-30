@@ -100,7 +100,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
-      <AdditionalDependencies>d2d1.lib; d3d11.lib; dxgi.lib; ole32.lib; windowscodecs.lib; dwrite.lib; %(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d2d1.lib;d3d11.lib;dxgi.lib;ole32.lib;windowscodecs.lib;dwrite.lib;mfplat.lib;mfuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories); $(VCInstallDir)\lib\store\arm; $(VCInstallDir)\lib\arm</AdditionalLibraryDirectories>
     </Link>
     <ClCompile>
@@ -221,6 +221,29 @@
     <Page Include="DirectXPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\opencv-winrt\binWinRT\3rdparty\zlib\zlib.vcxproj">
+      <Project>{656a658b-3ee2-4f94-8899-c65543317d01}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\opencv-winrt\binWinRT\modules\calib3d\opencv_calib3d.vcxproj">
+      <Project>{4b531696-a8ba-4a19-95ad-346fe45b201f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\opencv-winrt\binWinRT\modules\core\opencv_core.vcxproj">
+      <Project>{015a92e7-9fb3-428f-99d0-9b2088c54426}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\opencv-winrt\binWinRT\modules\features2d\opencv_features2d.vcxproj">
+      <Project>{bb1abc95-4975-4814-8097-508b1f99063d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\opencv-winrt\binWinRT\modules\flann\opencv_flann.vcxproj">
+      <Project>{26bbd092-c917-43bd-b339-824b036ff8fe}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\opencv-winrt\binWinRT\modules\imgproc\opencv_imgproc.vcxproj">
+      <Project>{1320606c-4689-48f6-b6dd-12ec932c9cef}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\opencv-winrt\binWinRT\modules\video\opencv_video.vcxproj">
+      <Project>{0025707c-a217-4c6d-bcce-8283d63e0ece}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

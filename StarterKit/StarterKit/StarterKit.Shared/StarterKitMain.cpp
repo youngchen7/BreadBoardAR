@@ -50,7 +50,7 @@ void StarterKitMain::CreateWindowSizeDependentResources()
 void StarterKitMain::StartRenderLoop()
 {
 	// If the animation render loop is already running then do not start another thread.
-	if (m_renderLoopWorker != nullptr && m_renderLoopWorker->Status == AsyncStatus::Started)
+	if (m_renderLoopWorker != nullptr && m_renderLoopWorker->Status == Windows::Foundation::AsyncStatus::Started)
 	{
 		return;
 	}
@@ -59,7 +59,7 @@ void StarterKitMain::StartRenderLoop()
 	auto workItemHandler = ref new WorkItemHandler([this](IAsyncAction ^ action)
 	{
 		// Calculate the updated frame and render once per vertical blanking interval.
-		while (action->Status == AsyncStatus::Started)
+		while (action->Status == Windows::Foundation::AsyncStatus::Started)
 		{
 			critical_section::scoped_lock lock(m_criticalSection);
 			Update();

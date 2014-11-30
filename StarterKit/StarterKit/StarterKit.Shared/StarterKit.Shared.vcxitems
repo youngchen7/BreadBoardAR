@@ -14,6 +14,15 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\opencv-winrt\modules\highgui\src\cap_winrt\CaptureFrameGrabber.cpp">
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\opencv-winrt\modules\highgui\src\cap_winrt\MediaStreamSink.cpp">
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\opencv-winrt\modules\highgui\src\cap_winrt\WinRTVideoCapture.cpp">
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)DirectXTex\DDSTextureLoader.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Game.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Animation\Animation.h" />

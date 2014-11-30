@@ -40,6 +40,9 @@
       <Filter>DirectXTex</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Game.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\opencv-winrt\modules\highgui\src\cap_winrt\CaptureFrameGrabber.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\opencv-winrt\modules\highgui\src\cap_winrt\MediaStreamSink.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\opencv-winrt\modules\highgui\src\cap_winrt\WinRTVideoCapture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="$(MSBuildThisFileDirectory)Animation\SkinningVertexShader.hlsl">
