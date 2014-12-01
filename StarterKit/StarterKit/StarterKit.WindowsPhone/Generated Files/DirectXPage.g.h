@@ -12,8 +12,8 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
-                ref class SwapChainPanel;
                 ref class Image;
+                ref class SwapChainPanel;
                 ref class Border;
                 ref class ListView;
                 ref class Button;
@@ -36,8 +36,8 @@ namespace StarterKit
     private:
         bool _contentLoaded;
     
-        private: ::Windows::UI::Xaml::Controls::SwapChainPanel^ swapChainPanel;
         private: ::Windows::UI::Xaml::Controls::Image^ Preview;
+        private: ::Windows::UI::Xaml::Controls::SwapChainPanel^ swapChainPanel;
         private: ::Windows::UI::Xaml::Controls::Border^ circuits_window;
         private: ::Windows::UI::Xaml::Controls::Border^ schematic_window;
         private: ::Windows::UI::Xaml::Controls::Image^ schematic_img;

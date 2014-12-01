@@ -182,13 +182,11 @@ void StarterKit::DirectXPage::schematics_btn_click(Platform::Object^ sender, Win
 	if (schematic_window->Visibility == Windows::UI::Xaml::Visibility::Visible)
 	{
 		schematic_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
-		m_main->StartRenderLoop();
 	}
 	else
 	{
 		schematic_window->Visibility = Windows::UI::Xaml::Visibility::Visible;
 		circuits_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
-		m_main->StopRenderLoop();
 	}
 }
 
@@ -198,12 +196,10 @@ void StarterKit::DirectXPage::circuits_btn_click(Platform::Object^ sender, Windo
 	if (circuits_window->Visibility == Windows::UI::Xaml::Visibility::Visible)
 	{
 		circuits_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
-		m_main->StartRenderLoop();
 	}
 	else
 	{
 		circuits_window->Visibility = Windows::UI::Xaml::Visibility::Visible;
 		schematic_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
-		m_main->StopRenderLoop();
 	}
 }
