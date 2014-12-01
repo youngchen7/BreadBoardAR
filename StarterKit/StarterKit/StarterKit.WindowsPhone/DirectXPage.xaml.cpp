@@ -65,7 +65,7 @@ m_windowVisible(true)
 	m_deviceResources = std::make_shared<DX::DeviceResources>();
 	m_deviceResources->SetSwapChainPanel(swapChainPanel);
 
-	m_main = std::unique_ptr<StarterKitMain>(new StarterKitMain(m_deviceResources));
+	m_main = std::unique_ptr<StarterKitMain>(new StarterKitMain(m_deviceResources, Preview));
 	m_main->StartRenderLoop();
 
 	//Set up our popup windows

@@ -24,6 +24,8 @@ void ::StarterKit::DirectXPage::InitializeComponent()
 
     // Get the SwapChainPanel named 'swapChainPanel'
     swapChainPanel = safe_cast<::Windows::UI::Xaml::Controls::SwapChainPanel^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"swapChainPanel"));
+    // Get the Image named 'Preview'
+    Preview = safe_cast<::Windows::UI::Xaml::Controls::Image^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"Preview"));
     // Get the Border named 'circuits_window'
     circuits_window = safe_cast<::Windows::UI::Xaml::Controls::Border^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"circuits_window"));
     // Get the Border named 'schematic_window'

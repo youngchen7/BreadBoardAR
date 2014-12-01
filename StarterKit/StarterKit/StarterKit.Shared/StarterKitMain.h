@@ -12,13 +12,16 @@
 #include "Content\SampleFpsTextRenderer.h"
 #include "Game.h"
 
+#include <opencv2\highgui\cap_winrt\WinRTVideoCapture.h>
+
+
 // Renders Direct2D and 3D content on the screen.
 namespace StarterKit
 {
 	class StarterKitMain : public DX::IDeviceNotify
 	{
 	public:
-		StarterKitMain(const std::shared_ptr<DX::DeviceResources>& deviceResources);
+		StarterKitMain(const std::shared_ptr<DX::DeviceResources>& deviceResources, Windows::UI::Xaml::Controls::Image^ image);
 		~StarterKitMain();
 
 		// Public methods passed straight to the Game renderer.
@@ -51,5 +54,12 @@ namespace StarterKit
 
 		// Rendering loop timer.
 		DX::StepTimer m_timer;
+
+		Windows::UI::Xaml::Media::Imaging::WriteableBitmap^ m_bitmap;
+		HWinRTVideoCapture m_capture;
+		unsigned int m_width;
+		unsigned int m_height;
+
+		Windows::UI::Xaml::Controls::Image^ m_image;
 	};
 }
