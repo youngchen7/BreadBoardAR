@@ -30,6 +30,7 @@ namespace StarterKit
 		void ChangeMaterialColor(Platform::String^ object, float r, float g, float b) { m_sceneRenderer->ChangeMaterialColor(object, r, g, b); }
 
 		void CreateWindowSizeDependentResources();
+		void StartRenderLoop(int width, int height);
 		void StartRenderLoop();
 		void StopRenderLoop();
 		Concurrency::critical_section& GetCriticalSection() { return m_criticalSection; }
@@ -41,7 +42,6 @@ namespace StarterKit
 	private:
 		void Update();
 		bool Render();
-
 		// Cached pointer to device resources.
 		std::shared_ptr<DX::DeviceResources> m_deviceResources;
 

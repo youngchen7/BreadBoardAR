@@ -10,7 +10,7 @@
 
 
     <Grid>
-        <Image Name="Preview" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="40"></Image>
+        <Image Name="Preview" HorizontalAlignment="Center" VerticalAlignment="Center" Height="1040" Width="480"></Image>
         <SwapChainPanel x:ConnectionId='1'   Width="Auto"  Height="Auto" x:Name="swapChainPanel"                  >
             <!-- Top Progress Bar -->
             <Border VerticalAlignment="Top" HorizontalAlignment="Center"  Background="Transparent">

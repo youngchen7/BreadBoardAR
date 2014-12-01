@@ -33,8 +33,8 @@ using namespace Windows::Storage::Streams;
 #include <opencv2\core\core.hpp>
 #include <opencv2\imgproc\imgproc.hpp>
 
-static const int sWidth = 640;
-static const int sHeight = 360;
+static const int sWidth = 960;//640;
+static const int sHeight = 540;//360;
 
 // Loads and initializes application assets when the application is loaded.
 StarterKitMain::StarterKitMain(const std::shared_ptr<DX::DeviceResources>& deviceResources, Windows::UI::Xaml::Controls::Image^ image) :
@@ -97,7 +97,12 @@ byte* GetPointerToPixelData(IBuffer^ buffer)
 	ThrowIfFailed(bufferByteAccess->Buffer(&pixels));
 	return pixels;
 }
-
+void StarterKitMain::StartRenderLoop(int width, int height)
+{
+	m_width = width;
+	m_height = height;
+	StartRenderLoop();
+}
 void StarterKitMain::StartRenderLoop()
 {
 	// If the animation render loop is already running then do not start another thread.

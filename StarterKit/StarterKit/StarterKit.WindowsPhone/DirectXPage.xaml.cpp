@@ -35,7 +35,7 @@ m_windowVisible(true)
 {
 	InitializeComponent();
 
-
+	Windows::UI::ViewManagement::StatusBar::GetForCurrentView()->HideAsync();
 
 	// Register event handlers for page lifecycle.
 	CoreWindow^ window = Window::Current->CoreWindow;
@@ -66,7 +66,9 @@ m_windowVisible(true)
 	m_deviceResources->SetSwapChainPanel(swapChainPanel);
 
 	m_main = std::unique_ptr<StarterKitMain>(new StarterKitMain(m_deviceResources, Preview));
-	m_main->StartRenderLoop();
+	m_main->StartRenderLoop(Preview->Width, Preview->Height);
+
+	
 
 	//Set up our popup windows
 	circuits_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
