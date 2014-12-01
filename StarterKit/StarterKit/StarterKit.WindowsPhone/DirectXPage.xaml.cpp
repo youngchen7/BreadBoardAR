@@ -66,7 +66,7 @@ m_windowVisible(true)
 	m_deviceResources->SetSwapChainPanel(swapChainPanel);
 
 	m_main = std::unique_ptr<StarterKitMain>(new StarterKitMain(m_deviceResources, Preview));
-	m_main->StartRenderLoop(Preview->Width, Preview->Height);
+	m_main->StartRenderLoop(int(Preview->Width), int(Preview->Height));
 
 	
 
