@@ -26,6 +26,19 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Game.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)HitTestingHelpers.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ARComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ar_omp.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)subpixelcorner.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)exports.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cameraparameters.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)marker.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)board.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)arucofidmarkers.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)highlyreliablemarkers.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)aruco.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cvdrawingutils.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)boarddetector.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)markerdetector.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)chromaticmask.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)StarterKitMain.cpp" />
@@ -43,6 +56,17 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\opencv-winrt\modules\highgui\src\cap_winrt\CaptureFrameGrabber.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\opencv-winrt\modules\highgui\src\cap_winrt\MediaStreamSink.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\opencv-winrt\modules\highgui\src\cap_winrt\WinRTVideoCapture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ar_omp.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)subpixelcorner.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cameraparameters.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)marker.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)board.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)arucofidmarkers.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)highlyreliablemarkers.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cvdrawingutils.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)boarddetector.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)markerdetector.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)chromaticmask.cpp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="$(MSBuildThisFileDirectory)Animation\SkinningVertexShader.hlsl">

@@ -19,19 +19,7 @@
   <ItemGroup>
     <ClInclude Include="App.xaml.h" />
     <ClInclude Include="DirectXPage.xaml.h" />
-    <ClInclude Include="ar_omp.h" />
-    <ClInclude Include="aruco.h" />
-    <ClInclude Include="arucofidmarkers.h" />
-    <ClInclude Include="board.h" />
-    <ClInclude Include="boarddetector.h" />
-    <ClInclude Include="cameraparameters.h" />
-    <ClInclude Include="chromaticmask.h" />
-    <ClInclude Include="cvdrawingutils.h" />
     <ClInclude Include="exports.h" />
-    <ClInclude Include="highlyreliablemarkers.h" />
-    <ClInclude Include="marker.h" />
-    <ClInclude Include="markerdetector.h" />
-    <ClInclude Include="subpixelcorner.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Logo.scale-240.png">

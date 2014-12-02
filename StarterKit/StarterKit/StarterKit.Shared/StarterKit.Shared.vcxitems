@@ -23,13 +23,36 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\opencv-winrt\modules\highgui\src\cap_winrt\WinRTVideoCapture.cpp">
       <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)arucofidmarkers.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ar_omp.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)board.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)boarddetector.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cameraparameters.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)chromaticmask.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cvdrawingutils.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)DirectXTex\DDSTextureLoader.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Game.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)highlyreliablemarkers.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)marker.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)markerdetector.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)subpixelcorner.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Animation\Animation.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ARComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)aruco.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)arucofidmarkers.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ar_omp.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)board.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)boarddetector.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cameraparameters.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)chromaticmask.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cvdrawingutils.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DirectXTex\DDSTextureLoader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)exports.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Game.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)highlyreliablemarkers.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)HitTestingHelpers.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)marker.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)markerdetector.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ppltasks_extra.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)StarterKitMain.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)StarterKitMain.cpp" />
@@ -43,6 +66,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\StepTimer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Content\SampleFpsTextRenderer.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Content\SampleFpsTextRenderer.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)subpixelcorner.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)VSD3DStarter.h" />
   </ItemGroup>
   <ItemGroup>

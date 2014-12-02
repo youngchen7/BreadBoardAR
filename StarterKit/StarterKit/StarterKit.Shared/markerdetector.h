@@ -312,7 +312,7 @@ private:
     * Detection of candidates to be markers, i.e., rectangles.
     * This function returns in candidates all the rectangles found in a thresolded image
     */
-    void detectRectangles( vector<cv::Mat> &vimages,vector<MarkerCandidate> & candidates);
+    void detectRectangles( const cv::Mat &vimages,vector<MarkerCandidate> & candidates);
     //Current threshold method
     ThresholdMethods _thresMethod;
     //Threshold parameters
@@ -324,6 +324,10 @@ private:
 
     //is corner locked 
     bool _useLockedCorners;
+
+	bool _doErosion;
+	int pyrdown_level;
+	cv::Mat thres2, reduced;
 
     //Speed control
     int _speed;

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 12.0.30324.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BreadBoard", "BreadBoard", "{5F5A5483-95C4-41C0-94BE-F4D4DE713844}"
 EndProject
@@ -53,6 +53,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv_imgproc", "..\opencv-winrt\binWinRT\modules\imgproc\opencv_imgproc.vcxproj", "{1320606C-4689-48F6-B6DD-12EC932C9CEF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv_video", "..\opencv-winrt\binWinRT\modules\video\opencv_video.vcxproj", "{0025707C-A217-4C6D-BCCE-8283D63E0ECE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv_ml", "..\opencv-winrt\binWP8_1\modules\ml\opencv_ml.vcxproj", "{DF337849-8DE5-44AF-A831-3A6BAFEDDC62}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv_ml", "..\opencv-winrt\binWinRT\modules\ml\opencv_ml.vcxproj", "{C4964E13-976D-401D-9EA5-E789510B5262}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -255,6 +259,28 @@ Global
 		{0025707C-A217-4C6D-BCCE-8283D63E0ECE}.Release|Win32.Build.0 = Release|Win32
 		{0025707C-A217-4C6D-BCCE-8283D63E0ECE}.Release|x64.ActiveCfg = Release|x64
 		{0025707C-A217-4C6D-BCCE-8283D63E0ECE}.Release|x64.Build.0 = Release|x64
+		{DF337849-8DE5-44AF-A831-3A6BAFEDDC62}.Debug|ARM.ActiveCfg = Debug|ARM
+		{DF337849-8DE5-44AF-A831-3A6BAFEDDC62}.Debug|ARM.Build.0 = Debug|ARM
+		{DF337849-8DE5-44AF-A831-3A6BAFEDDC62}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF337849-8DE5-44AF-A831-3A6BAFEDDC62}.Debug|Win32.Build.0 = Debug|Win32
+		{DF337849-8DE5-44AF-A831-3A6BAFEDDC62}.Debug|x64.ActiveCfg = Debug|Win32
+		{DF337849-8DE5-44AF-A831-3A6BAFEDDC62}.Release|ARM.ActiveCfg = Release|ARM
+		{DF337849-8DE5-44AF-A831-3A6BAFEDDC62}.Release|ARM.Build.0 = Release|ARM
+		{DF337849-8DE5-44AF-A831-3A6BAFEDDC62}.Release|Win32.ActiveCfg = Release|Win32
+		{DF337849-8DE5-44AF-A831-3A6BAFEDDC62}.Release|Win32.Build.0 = Release|Win32
+		{DF337849-8DE5-44AF-A831-3A6BAFEDDC62}.Release|x64.ActiveCfg = Release|Win32
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Debug|ARM.ActiveCfg = Debug|ARM
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Debug|ARM.Build.0 = Debug|ARM
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Debug|Win32.Build.0 = Debug|Win32
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Debug|x64.ActiveCfg = Debug|x64
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Debug|x64.Build.0 = Debug|x64
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Release|ARM.ActiveCfg = Release|ARM
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Release|ARM.Build.0 = Release|ARM
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Release|Win32.ActiveCfg = Release|Win32
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Release|Win32.Build.0 = Release|Win32
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Release|x64.ActiveCfg = Release|x64
+		{C4964E13-976D-401D-9EA5-E789510B5262}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -279,5 +305,7 @@ Global
 		{26BBD092-C917-43BD-B339-824B036FF8FE} = {63D0F939-0C69-487D-8D92-522E8C14A568}
 		{1320606C-4689-48F6-B6DD-12EC932C9CEF} = {63D0F939-0C69-487D-8D92-522E8C14A568}
 		{0025707C-A217-4C6D-BCCE-8283D63E0ECE} = {63D0F939-0C69-487D-8D92-522E8C14A568}
+		{DF337849-8DE5-44AF-A831-3A6BAFEDDC62} = {28286B6D-F1CB-40E2-8DEF-42D6C5087CD5}
+		{C4964E13-976D-401D-9EA5-E789510B5262} = {63D0F939-0C69-487D-8D92-522E8C14A568}
 	EndGlobalSection
 EndGlobal

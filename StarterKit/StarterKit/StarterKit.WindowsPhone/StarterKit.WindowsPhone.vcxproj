@@ -76,9 +76,13 @@
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir);$(ProjectDir)..\..\..\opencv-winrt\binWP8_1\;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </UndefinePreprocessorDefinitions>
     </ClCompile>
     <ClCompile>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir);$(ProjectDir)..\..\..\opencv-winrt\binWP8_1\;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </UndefinePreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Platform)'=='ARM'">
@@ -89,9 +93,13 @@
     <ClCompile>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(ProjectDir);$(ProjectDir)..\..\..\opencv-winrt\binWP8_1\;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</BrowseInformation>
+      <UndefinePreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </UndefinePreprocessorDefinitions>
     </ClCompile>
     <ClCompile>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(ProjectDir);$(ProjectDir)..\..\..\opencv-winrt\binWP8_1\;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+      </UndefinePreprocessorDefinitions>
     </ClCompile>
     <Bscmake>
       <PreserveSbr Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</PreserveSbr>
@@ -122,22 +130,10 @@
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
     </ClInclude>
-    <ClInclude Include="aruco.h" />
-    <ClInclude Include="arucofidmarkers.h" />
-    <ClInclude Include="ar_omp.h" />
-    <ClInclude Include="board.h" />
-    <ClInclude Include="boarddetector.h" />
-    <ClInclude Include="cameraparameters.h" />
-    <ClInclude Include="chromaticmask.h" />
-    <ClInclude Include="cvdrawingutils.h" />
     <ClInclude Include="DirectXPage.xaml.h">
       <DependentUpon>DirectXPage.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="exports.h" />
-    <ClInclude Include="highlyreliablemarkers.h" />
-    <ClInclude Include="marker.h" />
-    <ClInclude Include="markerdetector.h" />
-    <ClInclude Include="subpixelcorner.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp">
@@ -164,6 +160,9 @@
     <ProjectReference Include="..\..\..\opencv-winrt\binWP8_1\3rdparty\zlib\zlib.vcxproj">
       <Project>{a7b441a0-6efe-43a6-8af2-82ddc57709b7}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\opencv-winrt\binWP8_1\modules\calib3d\opencv_calib3d.vcxproj">
+      <Project>{23f08799-e02e-420d-b9ee-f2cc48131ddd}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\opencv-winrt\binWP8_1\modules\core\opencv_core.vcxproj">
       <Project>{6bdc727f-6c6b-4b21-9b4f-19b52d22d009}</Project>
     </ProjectReference>
@@ -175,6 +174,9 @@
     </ProjectReference>
     <ProjectReference Include="..\..\..\opencv-winrt\binWP8_1\modules\imgproc\opencv_imgproc.vcxproj">
       <Project>{13fba904-b1b8-4de3-ae7b-d6abaed9e24c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\opencv-winrt\binWP8_1\modules\ml\opencv_ml.vcxproj">
+      <Project>{df337849-8de5-44af-a831-3a6bafeddc62}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\..\opencv-winrt\binWP8_1\modules\video\opencv_video.vcxproj">
       <Project>{091a5d48-271e-4c6f-9cf0-aaeca68e744a}</Project>

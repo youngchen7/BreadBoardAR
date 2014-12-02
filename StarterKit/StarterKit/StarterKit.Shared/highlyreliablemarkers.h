@@ -28,8 +28,6 @@ or implied, of Rafael Muñoz Salinas.
 
 #ifndef HIGHLYRELIABLEMARKERS_H
 #define HIGHLYRELIABLEMARKERS_H
-
-
 #include <vector>
 #include <math.h>
 #include <string>

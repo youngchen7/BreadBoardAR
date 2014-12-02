@@ -28,6 +28,8 @@ using namespace Windows::Media::MediaProperties;
 using namespace Windows::UI::Xaml::Media::Imaging;
 using namespace Windows::Storage::Streams;
 
+#include <aruco.h>
+#include <cvdrawingutils.h>
 #include <opencv2\highgui\cap_winrt\WinRTVideoCapture.h>
 #include <opencv2\imgproc\types_c.h>
 #include <opencv2\core\core.hpp>
@@ -135,13 +137,24 @@ void StarterKitMain::StartRenderLoop()
 
 	// start capturing video. Callback will happen on the UI thread
 	m_capture->start([this](const cv::Mat& mat) {
+
+		using namespace cv;
 		// convert to grayscale
-		cv::Mat intermediateMat;
-		cv::cvtColor(mat, intermediateMat, CV_RGB2GRAY);
+		Mat intermediateMat;
+		cvtColor(mat, intermediateMat, CV_RGB2GRAY);
+
+		aruco::MarkerDetector MDetector;
+		vector<aruco::Marker> Markers;
+
+		MDetector.detect(intermediateMat, Markers);
+
+		for (unsigned int i = 0; i < Markers.size(); i++) {
+			Markers[i].draw(intermediateMat, Scalar(0, 0, 255), 2);
+		}
 
 		// convert to BGRA
-		cv::Mat output;
-		cv::cvtColor(intermediateMat, output, CV_GRAY2BGRA);
+		Mat output;
+		cvtColor(intermediateMat, output, CV_GRAY2BGRA);
 
 		// copy processed image into the WriteableBitmap
 		memcpy(GetPointerToPixelData(m_bitmap->PixelBuffer), output.data, m_width * m_height * 4);

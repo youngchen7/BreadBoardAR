@@ -241,6 +241,9 @@
     <ProjectReference Include="..\..\..\opencv-winrt\binWinRT\modules\imgproc\opencv_imgproc.vcxproj">
       <Project>{1320606c-4689-48f6-b6dd-12ec932c9cef}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\opencv-winrt\binWinRT\modules\ml\opencv_ml.vcxproj">
+      <Project>{c4964e13-976d-401d-9ea5-e789510b5262}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\opencv-winrt\binWinRT\modules\video\opencv_video.vcxproj">
       <Project>{0025707c-a217-4c6d-bcce-8283d63e0ece}</Project>
     </ProjectReference>
