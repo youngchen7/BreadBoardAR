@@ -28,8 +28,7 @@ using namespace Windows::Media::MediaProperties;
 using namespace Windows::UI::Xaml::Media::Imaging;
 using namespace Windows::Storage::Streams;
 
-#include <aruco.h>
-#include <cvdrawingutils.h>
+
 #include <opencv2\highgui\cap_winrt\WinRTVideoCapture.h>
 #include <opencv2\imgproc\types_c.h>
 #include <opencv2\core\core.hpp>
@@ -143,13 +142,13 @@ void StarterKitMain::StartRenderLoop()
 		Mat intermediateMat;
 		cvtColor(mat, intermediateMat, CV_RGB2GRAY);
 
-		aruco::MarkerDetector MDetector;
-		vector<aruco::Marker> Markers;
+		//aruco::MarkerDetector MDetector;
+		//vector<aruco::Marker> Markers;
 
-		MDetector.detect(intermediateMat, Markers);
+		m_mdetector.detect(intermediateMat, m_markers);
 
-		for (unsigned int i = 0; i < Markers.size(); i++) {
-			Markers[i].draw(intermediateMat, Scalar(0, 0, 255), 2);
+		for (unsigned int i = 0; i < m_markers.size(); i++) {
+			m_markers[i].draw(intermediateMat, Scalar(0, 0, 255), 2);
 		}
 
 		// convert to BGRA

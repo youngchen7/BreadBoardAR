@@ -12,6 +12,8 @@
 #include "Content\SampleFpsTextRenderer.h"
 #include "Game.h"
 
+#include <aruco.h>
+#include <cvdrawingutils.h>
 #include <opencv2\highgui\cap_winrt\WinRTVideoCapture.h>
 
 
@@ -55,11 +57,13 @@ namespace StarterKit
 		// Rendering loop timer.
 		DX::StepTimer m_timer;
 
+		//Image Processing
 		Windows::UI::Xaml::Media::Imaging::WriteableBitmap^ m_bitmap;
 		HWinRTVideoCapture m_capture;
 		unsigned int m_width;
 		unsigned int m_height;
-
 		Windows::UI::Xaml::Controls::Image^ m_image;
+		aruco::MarkerDetector m_mdetector;
+		vector<aruco::Marker> m_markers; 
 	};
 }
