@@ -8,6 +8,7 @@
 #include "pch.h"
 #include "StarterKitMain.h"
 #include "Common\DirectXHelper.h"
+#include <sstream>
 
 using namespace StarterKit;
 using namespace Windows::Foundation;
@@ -60,6 +61,16 @@ m_deviceResources(deviceResources)
 	*/
 	image->Width = sWidth;
 	image->Height = sHeight;
+
+	
+	cv::Mat camMatrix = (cv::Mat_<double>(3, 3)
+		<< 6.57591187e+002, 0, 3.16504272e+002, 0, 6.60952637e+002, 2.27605789 + 002, 0, 0, 1);
+
+	cv::Mat camDistortion = (cv::Mat_<double>(1, 4)
+		<< -1.49060376e-002, 2.05916256e-001, -5.76808210e-003, -8.43471102e-002);
+	cv::Size camSize(sWidth, sHeight) ;
+	camParam.setParams(camMatrix, camDistortion, camSize);
+
 }
 
 StarterKitMain::~StarterKitMain()
@@ -139,21 +150,53 @@ void StarterKitMain::StartRenderLoop()
 
 		using namespace cv;
 		// convert to grayscale
-		Mat intermediateMat;
-		cvtColor(mat, intermediateMat, CV_RGB2GRAY);
-
+		//Mat output = mat.clone();
+		Mat intermediate;
+		cvtColor(mat, intermediate, CV_RGB2GRAY);
+		Mat output = mat.clone();
 		//aruco::MarkerDetector MDetector;
 		//vector<aruco::Marker> Markers;
 
-		m_mdetector.detect(intermediateMat, m_markers);
+		m_mdetector.detect(intermediate, m_markers, camParam, 0.05f, false);
 
 		for (unsigned int i = 0; i < m_markers.size(); i++) {
-			m_markers[i].draw(intermediateMat, Scalar(0, 0, 255), 2);
+			m_markers[i].draw(output, Scalar(0, 0, 255), 2);
+			if (m_markers[i].id == 10)
+			{
+				/*
+				Mat Rot;
+				Rodrigues(m_markers[i].Rvec, Rot);
+				DirectX::XMMATRIX universal_transform = {	Rot.at<float>(0, 0), Rot.at<float>(0, 1), Rot.at<float>(0, 2), 0,
+															Rot.at<float>(1, 0), Rot.at<float>(1, 1), Rot.at<float>(1, 2), 0,
+															Rot.at<float>(2, 0), Rot.at<float>(2, 1), Rot.at<float>(2, 2), 0,
+															0, 0, 0, 1 };
+				m_sceneRenderer->setUniversalTransform(universal_transform);
+
+				wstringstream ws;
+
+				ws << L"Marker Transform Matrix: " << endl <<
+					Rot.at<float>(0, 0) << " " << Rot.at<float>(0, 1) << " " << Rot.at<float>(0, 2) << " " << m_markers[i].Tvec.at<float>(0) << endl <<
+					Rot.at<float>(1, 0) << " " << Rot.at<float>(1, 1) << " " << Rot.at<float>(1, 2) << " " << m_markers[i].Tvec.at<float>(1) << endl <<
+					Rot.at<float>(2, 0) << " " << Rot.at<float>(2, 1) << " " << Rot.at<float>(2, 2) << " " << m_markers[i].Tvec.at<float>(2) << endl;
+
+				OutputDebugString(ws.str().c_str());
+				*/
+				double transform_matrix[16];
+				m_markers[i].glGetModelViewMatrix(transform_matrix);
+
+				DirectX::XMMATRIX universal_transform = {	(float)transform_matrix[0], (float)transform_matrix[1], (float)transform_matrix[1], (float)transform_matrix[3],
+															(float)transform_matrix[4], (float)transform_matrix[5], (float)transform_matrix[6], (float)transform_matrix[7],
+															(float)transform_matrix[8], (float)transform_matrix[9], (float)transform_matrix[10], (float)transform_matrix[11],
+															(float)transform_matrix[12], (float)transform_matrix[13], (float)transform_matrix[14], (float)transform_matrix[15] };
+				m_sceneRenderer->setUniversalTransform(universal_transform);
+
+			}
 		}
 
+
+
 		// convert to BGRA
-		Mat output;
-		cvtColor(intermediateMat, output, CV_GRAY2BGRA);
+		//cvtColor(intermediate, output, CV_GRAY2BGRA);
 
 		// copy processed image into the WriteableBitmap
 		memcpy(GetPointerToPixelData(m_bitmap->PixelBuffer), output.data, m_width * m_height * 4);

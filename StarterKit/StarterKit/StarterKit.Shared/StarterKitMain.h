@@ -65,5 +65,9 @@ namespace StarterKit
 		Windows::UI::Xaml::Controls::Image^ m_image;
 		aruco::MarkerDetector m_mdetector;
 		vector<aruco::Marker> m_markers; 
+		aruco::CameraParameters camParam;
+
+		//3D Model Position
+		
 	};
 }

@@ -29,6 +29,7 @@ namespace StarterKit
 		void ReleaseDeviceDependentResources();
 		void Update(DX::StepTimer const& timer);
 		void Render();
+		void setUniversalTransform(DirectX::XMMATRIX & universal_transform);
 		DirectX::XMMATRIX computeMatrix(int xPos, int yPos, int zPos, int orientation);
 
 		// Methods used to manipulate the objects in the scene.
@@ -55,6 +56,7 @@ namespace StarterKit
 		// Variables used with the rendering loop.
 		bool m_loadingComplete;
 
+		DirectX::XMMATRIX m_universal_transform = DirectX::XMMatrixIdentity();
 
 	};
 }
