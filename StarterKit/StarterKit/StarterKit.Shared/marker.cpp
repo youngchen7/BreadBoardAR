@@ -99,17 +99,17 @@ void Marker::glGetModelViewMatrix(   double modelview_matrix[16])throw(cv::Excep
     // R1C2
     modelview_matrix[0 + 1*4] = para[0][1];
     modelview_matrix[0 + 2*4] = para[0][2];
-    modelview_matrix[0 + 3*4] = para[0][3];
+    modelview_matrix[0 + 3*4] = para[0][3]; //TX
     // R2
     modelview_matrix[1 + 0*4] = para[1][0];
     modelview_matrix[1 + 1*4] = para[1][1];
     modelview_matrix[1 + 2*4] = para[1][2];
-    modelview_matrix[1 + 3*4] = para[1][3];
+    modelview_matrix[1 + 3*4] = para[1][3]; //TY
     // R3
     modelview_matrix[2 + 0*4] = -para[2][0];
     modelview_matrix[2 + 1*4] = -para[2][1];
     modelview_matrix[2 + 2*4] = -para[2][2];
-    modelview_matrix[2 + 3*4] = -para[2][3];
+    modelview_matrix[2 + 3*4] = -para[2][3]; //TZ
     modelview_matrix[3 + 0*4] = 0.0;
     modelview_matrix[3 + 1*4] = 0.0;
     modelview_matrix[3 + 2*4] = 0.0;

@@ -30,6 +30,7 @@ namespace StarterKit
 		void Update(DX::StepTimer const& timer);
 		void Render();
 		void setUniversalTransform(DirectX::XMMATRIX & universal_transform);
+		void setProjection(DirectX::XMMATRIX & projection);
 		DirectX::XMMATRIX computeMatrix(int xPos, int yPos, int zPos, int orientation);
 
 		// Methods used to manipulate the objects in the scene.

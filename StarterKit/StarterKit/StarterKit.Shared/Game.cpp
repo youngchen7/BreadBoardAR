@@ -202,8 +202,9 @@ void Game::CreateWindowSizeDependentResources()
 
 	// Setup the camera parameters for our scene.
 	m_graphics.GetCamera().SetViewport((UINT)outputSize.Width, (UINT)outputSize.Height);
-	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 0.0f, 24.0f)); //pitch, roll, yaw type
+	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 0.0f, -24.0f)); //pitch, roll, yaw type
 	m_graphics.GetCamera().SetLookAt(XMFLOAT3(0.0f, 0.0f, 0.0f));
+	
 
 	float aspectRatio = outputSize.Width / outputSize.Height;
 	float fovAngleY = 70.0f * XM_PI / 180.0f;
@@ -291,9 +292,14 @@ XMMATRIX Game::computeMatrix(int xPos, int yPos, int zPos, int degrees){
 	return transformation;
 }
 
+void Game::setProjection(XMMATRIX & projection)
+{
+	m_graphics.GetCamera().SetProjection(projection);
+}
+
 void Game::setUniversalTransform(XMMATRIX & universal_transform)
 {
-	m_universal_transform = universal_transform;
+	m_graphics.GetCamera().SetView(universal_transform);
 }
 
 // Renders one frame using the Starter Kit helpers.
@@ -319,7 +325,7 @@ void Game::Render()
 	// Transform matrices
 	XMMATRIX rotation = XMMatrixRotationY(m_rotation);
 	//XMMATRIX rotation2 = XMMatrixRotationX(m_rotation);
-	XMMATRIX modelTransform = XMMatrixIdentity()*m_universal_transform;
+	XMMATRIX modelTransform = XMMatrixIdentity();
 
 	instructAR::componentsFactory my_factory;
 	vector<instructAR::Component> my_build = my_factory.createBuild(0);

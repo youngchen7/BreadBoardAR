@@ -785,7 +785,7 @@ namespace VSD3DStarter
 		UINT                ActiveLights;
 		float               Padding0;
 		float               Padding1;
-		float               Padding2;
+float               Padding2;
 	};
 
 	struct ObjectConstants
@@ -882,6 +882,16 @@ namespace VSD3DStarter
 		{
 			m_viewWidth = w;
 			m_viewHeight = h;
+		}
+
+		void SetView(DirectX::XMMATRIX& view)
+		{
+			XMStoreFloat4x4(&m_view, view);
+		}
+
+		void SetProjection(DirectX::XMMATRIX& proj)
+		{
+			XMStoreFloat4x4(&m_proj, proj);
 		}
 
 		void SetProjection(float fovY, float aspect, float zn, float zf)

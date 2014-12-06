@@ -9,6 +9,7 @@
 #include "StarterKitMain.h"
 #include "Common\DirectXHelper.h"
 #include <sstream>
+#include <math.h>
 
 using namespace StarterKit;
 using namespace Windows::Foundation;
@@ -140,6 +141,8 @@ void StarterKitMain::StartRenderLoop()
 
 	// Run task on a dedicated high priority background thread.
 	m_renderLoopWorker = ThreadPool::RunAsync(workItemHandler, WorkItemPriority::High, WorkItemOptions::TimeSliced);
+
+	//IMAGE PROCESSING====================================================
 	m_bitmap = ref new WriteableBitmap(m_width, m_height);
 
 	// create the Video Capture device
@@ -184,19 +187,33 @@ void StarterKitMain::StartRenderLoop()
 				double transform_matrix[16];
 				m_markers[i].glGetModelViewMatrix(transform_matrix);
 
-				DirectX::XMMATRIX universal_transform = {	(float)transform_matrix[0], (float)transform_matrix[1], (float)transform_matrix[1], (float)transform_matrix[3],
-															(float)transform_matrix[4], (float)transform_matrix[5], (float)transform_matrix[6], (float)transform_matrix[7],
-															(float)transform_matrix[8], (float)transform_matrix[9], (float)transform_matrix[10], (float)transform_matrix[11],
-															(float)transform_matrix[12], (float)transform_matrix[13], (float)transform_matrix[14], (float)transform_matrix[15] };
+				DirectX::XMMATRIX universal_transform = {	(float)transform_matrix[0], (float)transform_matrix[1], -(float)transform_matrix[2], (float)transform_matrix[3],
+															(float)transform_matrix[4], (float)transform_matrix[5], -(float)transform_matrix[6], (float)transform_matrix[7],
+															-(float)transform_matrix[8], -(float)transform_matrix[9], (float)transform_matrix[10],-(float)transform_matrix[11],
+															(float)transform_matrix[12], (float)transform_matrix[13], -(float)transform_matrix[14], (float)transform_matrix[15] };
+				
 				m_sceneRenderer->setUniversalTransform(universal_transform);
+
+				
+				wstringstream ws;
+
+
+				ws << L"Marker Transform Matrix: " << endl <<
+					(float)transform_matrix[0] << " " << (float)transform_matrix[1] << " " << -(float)transform_matrix[2] << " " << (float)transform_matrix[3] << endl <<
+					(float)transform_matrix[4] << " " << (float)transform_matrix[5] << " " << -(float)transform_matrix[6] << " " << (float)transform_matrix[7] << endl <<
+					-(float)transform_matrix[8] << " " << -(float)transform_matrix[9] << " " << (float)transform_matrix[10]<< " " << -(float)transform_matrix[11]<< endl <<
+					(float)transform_matrix[12]<< " " << (float)transform_matrix[13]<< " " << -(float)transform_matrix[14]<< " " << (float)transform_matrix[15]<< endl <<
+					L"Rotation: " << endl <<
+					L" >>X: " << atan2(-transform_matrix[6], transform_matrix[10])/DirectX::XM_PI*180.0f << endl <<
+					L" >>Y: " << atan2(-transform_matrix[2], sqrt(transform_matrix[6] * transform_matrix[6] + transform_matrix[10] * transform_matrix[10])) / DirectX::XM_PI*180.0f << endl <<
+					L" >>Z: " << atan2(transform_matrix[1], transform_matrix[0]) / DirectX::XM_PI*180.0f << endl;
+
+				OutputDebugString(ws.str().c_str());
+				
 
 			}
 		}
 
-
-
-		// convert to BGRA
-		//cvtColor(intermediate, output, CV_GRAY2BGRA);
 
 		// copy processed image into the WriteableBitmap
 		memcpy(GetPointerToPixelData(m_bitmap->PixelBuffer), output.data, m_width * m_height * 4);
