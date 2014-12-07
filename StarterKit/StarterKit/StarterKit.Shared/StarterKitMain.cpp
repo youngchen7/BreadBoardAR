@@ -37,8 +37,8 @@ using namespace Windows::Storage::Streams;
 #include <opencv2\imgproc\imgproc.hpp>
 #include "cvdrawingutils.h"
 
-static const int sWidth = 760;//640;
-static const int sHeight = 400;//360;
+static const int sWidth = 875;//640;
+static const int sHeight = 500;//360;
 
 // Loads and initializes application assets when the application is loaded.
 StarterKitMain::StarterKitMain(const std::shared_ptr<DX::DeviceResources>& deviceResources, Windows::UI::Xaml::Controls::Image^ image) :
