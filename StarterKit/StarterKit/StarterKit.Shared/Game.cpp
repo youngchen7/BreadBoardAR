@@ -326,11 +326,11 @@ void Game::Render()
 	// Transform matrices
 	XMMATRIX rotation = XMMatrixRotationY(m_rotation); //continuous spin
 	//XMMATRIX rotation2 = XMMatrixRotationX(m_rotation);
-	XMMATRIX scaleDown = {	(float).2, (float)0, (float)0, (float)0,
-							(float)0, (float).2, (float)0, (float)0,
-							(float)0, (float)0, (float).2, (float)0, 
+	XMMATRIX scaleDown = {	(float).3, (float)0, (float)0, (float)0,
+							(float)0, (float).3, (float)0, (float)0,
+							(float)0, (float)0, (float).3, (float)0, 
 							(float)0, (float)0, (float)0, (float)1 };
-	XMMATRIX modelTransform = XMMatrixIdentity()* XMMatrixRotationX(-XM_PI/2.0f)*scaleDown*m_universal_transform;
+	XMMATRIX modelTransform = XMMatrixIdentity()* XMMatrixRotationX(-XM_PI/2.0f)*scaleDown*m_universal_transform*XMMatrixTranslation(0.0f,0.0f,0.0f);
 
 	instructAR::componentsFactory my_factory;
 	vector<instructAR::Component> my_build = my_factory.createBuild(0);

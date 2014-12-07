@@ -170,7 +170,7 @@ void StarterKitMain::StartRenderLoop()
 
 			if (m_markers[i].id == 10)
 			{
-				
+				/*
 				Mat Rot(3,3, CV_32FC1);
 				Rodrigues(m_markers[i].Rvec, Rot);
 				//construct 4D matrix, insert 3D rotation matrix 
@@ -191,16 +191,16 @@ void StarterKitMain::StartRenderLoop()
 															m44.at<float>(2, 0), m44.at<float>(2, 1), m44.at<float>(2, 2), m44.at<float>(2, 3),
 															-m44.at<float>(3, 0), -m44.at<float>(3, 1), m44.at<float>(3, 2), m44.at<float>(3, 3) };
 				
-				/*
+				
 				DirectX::XMMATRIX universal_transform = {	Rot.at<float>(0, 0), Rot.at<float>(0, 1), Rot.at<float>(0, 2), 0,
 															Rot.at<float>(1, 0), Rot.at<float>(1, 1), Rot.at<float>(1, 2), 0,
 															Rot.at<float>(2, 0), Rot.at<float>(2, 1), Rot.at<float>(2, 2), 0,
 															0, 0, 0, 1 };
-				*/
+				
 				m_sceneRenderer->setUniversalTransform(universal_transform);
 
 				wstringstream ws;
-
+				 
 				ws << L"Marker Transform Matrix: " << endl <<
 					m44.at<float>(0, 0) << " " << m44.at<float>(0, 1) << " " << m44.at<float>(0, 2) << " " << endl <<
 					m44.at<float>(1, 0) << " " << m44.at<float>(1, 1) << " " << m44.at<float>(1, 2) << " " << endl <<
@@ -208,17 +208,32 @@ void StarterKitMain::StartRenderLoop()
 					L"Transformation " << m_markers[i].Tvec.at<float>(0) << " " << m_markers[i].Tvec.at<float>(1) << " " << m_markers[i].Tvec.at<float>(2) << endl;
 
 				OutputDebugString(ws.str().c_str());
-				
+				*/
 
-				/*
+				
 				double transform_matrix[16];
 				m_markers[i].glGetModelViewMatrix(transform_matrix);
+				cv::Mat m44 = cv::Mat::eye(4, 4, CV_32FC1);
+				for (int i = 0; i<4; i++)
+					for (int j = 0; j<4; j++)
+						m44.at<float>(i, j) = transform_matrix[i*4+j];
 
-				DirectX::XMMATRIX universal_transform = {	(float)transform_matrix[0], (float)transform_matrix[1], (float)transform_matrix[2], (float)transform_matrix[3],
-															(float)transform_matrix[4], (float)transform_matrix[5], (float)transform_matrix[6], (float)transform_matrix[7],
-															(float)transform_matrix[8], (float)transform_matrix[9], (float)transform_matrix[10],(float)transform_matrix[11],
-															(float)transform_matrix[12], (float)transform_matrix[13], (float)transform_matrix[14], (float)transform_matrix[15] };
-				
+				//for (int i = 0; i < 4; ++i)
+					//m44.at<float>(i, 2) *= -1;
+				//for (int i = 0; i < 4; ++i)
+					//m44.at<float>(2, i) *= -1;
+
+				//m44 = m44.inv();
+
+
+				DirectX::XMMATRIX universal_transform = {	m44.at<float>(0, 0), m44.at<float>(0, 1), m44.at<float>(0, 2), m44.at<float>(0, 3),
+															m44.at<float>(1, 0), m44.at<float>(1, 1), m44.at<float>(1, 2), m44.at<float>(1, 3),
+															m44.at<float>(2, 0), m44.at<float>(2, 1), m44.at<float>(2, 2), m44.at<float>(2, 3),
+															-m44.at<float>(3, 0), -m44.at<float>(3, 1), -m44.at<float>(3, 2), m44.at<float>(3, 3) };
+
+				DirectX::XMFLOAT3 z_floats = { 0.0f, 0.0f, 1.0f };
+				DirectX::XMVECTOR z_axis = DirectX::XMLoadFloat3(&z_floats);
+				DirectX::XMMATRIX mirror_x = DirectX::XMMatrixReflect(z_axis);
 				m_sceneRenderer->setUniversalTransform(universal_transform);
 
 				
@@ -226,18 +241,14 @@ void StarterKitMain::StartRenderLoop()
 
 
 				ws << L"Marker Transform Matrix: " << endl <<
-					(float)transform_matrix[0] << " " << (float)transform_matrix[1] << " " << (float)transform_matrix[2] << " " << (float)transform_matrix[3] << endl <<
-					(float)transform_matrix[4] << " " << (float)transform_matrix[5] << " " << (float)transform_matrix[6] << " " << (float)transform_matrix[7] << endl <<
-					(float)transform_matrix[8] << " " << (float)transform_matrix[9] << " " << (float)transform_matrix[10]<< " " << (float)transform_matrix[11]<< endl <<
-					(float)transform_matrix[12]<< " " << (float)transform_matrix[13]<< " " << (float)transform_matrix[14]<< " " << (float)transform_matrix[15]<< endl <<
-					L"Rotation: " << endl <<
-					L" >>X: " << atan2(-transform_matrix[6], transform_matrix[10])/DirectX::XM_PI*180.0f << endl <<
-					L" >>Y: " << atan2(-transform_matrix[2], sqrt(transform_matrix[6] * transform_matrix[6] + transform_matrix[10] * transform_matrix[10])) / DirectX::XM_PI*180.0f << endl <<
-					L" >>Z: " << atan2(transform_matrix[1], transform_matrix[0]) / DirectX::XM_PI*180.0f << endl;
+					m44.at<float>(0, 0) << " " << m44.at<float>(0, 1) << " " << m44.at<float>(0, 2) << " " << m44.at<float>(0, 3) << endl <<
+					m44.at<float>(1, 0) << " " << m44.at<float>(1, 1) << " " << m44.at<float>(1, 2) << " " << m44.at<float>(1, 3) << endl <<
+					m44.at<float>(2, 0) << " " << m44.at<float>(2, 1) << " " << m44.at<float>(2, 2) << " " << m44.at<float>(2, 3) << endl <<
+					-m44.at<float>(3, 0) << " " << -m44.at<float>(3, 1) << " " << -m44.at<float>(3, 2) << " " << m44.at<float>(3, 3) << endl;
 
 				OutputDebugString(ws.str().c_str());
 				
-				*/
+				
 			}
 		}
 

@@ -93,7 +93,7 @@ void Marker::glGetModelViewMatrix(   double modelview_matrix[16])throw(cv::Excep
     para[0][3]=Tvec.at<float>(0,0);
     para[1][3]=Tvec.at<float>(1,0);
     para[2][3]=Tvec.at<float>(2,0);
-    double scale=1;
+    double scale=25.0;
 
     modelview_matrix[0 + 0*4] = para[0][0];
     // R1C2
