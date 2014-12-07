@@ -205,3 +205,10 @@ void StarterKit::DirectXPage::circuits_btn_click(Platform::Object^ sender, Windo
 		schematic_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
 	}
 }
+
+
+void StarterKit::DirectXPage::circuits_selection_changed(Platform::Object^ sender, Windows::UI::Xaml::Controls::SelectionChangedEventArgs^ e)
+{
+	int index = circuits_list->SelectedIndex;
+	circuits_selected->Text = "Circuit " + index;
+}

@@ -72,7 +72,7 @@
   <ItemDefinitionGroup Condition="'$(Platform)'=='Win32'">
     <Link>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\aruco1.2.5\lib\;%(AdditionalLibraryDirectories);$(WindowsPhoneSDK_LibraryPath_x86)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>aruco125.lib;WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;DXGI.lib;D3D11.lib;D2D1.lib;DWrite.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>aruco125.lib;WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;DXGI.lib;D3D11.lib;D2D1.lib;DWrite.lib;mfplat.lib;mfuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir);$(ProjectDir)..\..\..\opencv-winrt\binWP8_1\;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
