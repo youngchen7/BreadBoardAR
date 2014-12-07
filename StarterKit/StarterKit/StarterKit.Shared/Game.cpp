@@ -202,8 +202,8 @@ void Game::CreateWindowSizeDependentResources()
 
 	// Setup the camera parameters for our scene.
 	m_graphics.GetCamera().SetViewport((UINT)outputSize.Width, (UINT)outputSize.Height);
-	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 0.0f, -24.0f)); //pitch, roll, yaw type
-	m_graphics.GetCamera().SetLookAt(XMFLOAT3(0.0f, 0.0f, 0.0f));
+	m_graphics.GetCamera().SetPosition(XMFLOAT3(0.0f, 0.0f, 0.0f)); //pitch, roll, yaw type
+	m_graphics.GetCamera().SetLookAt(XMFLOAT3(0.0f, 0.0f, 1.0f));
 	
 
 	float aspectRatio = outputSize.Width / outputSize.Height;
@@ -294,12 +294,13 @@ XMMATRIX Game::computeMatrix(int xPos, int yPos, int zPos, int degrees){
 
 void Game::setProjection(XMMATRIX & projection)
 {
-	m_graphics.GetCamera().SetProjection(projection);
+	m_graphics.GetCamera().SetProjection(projection); 
 }
 
 void Game::setUniversalTransform(XMMATRIX & universal_transform)
 {
-	m_graphics.GetCamera().SetView(universal_transform);
+	//m_graphics.GetCamera().SetView(universal_transform); //changes camera view
+	m_universal_transform = universal_transform;			//set object transform
 }
 
 // Renders one frame using the Starter Kit helpers.
@@ -323,9 +324,13 @@ void Game::Render()
 	//XMMATRIX translation = XMMatrixTranslation(0.25f, 0.0f, 2.75f);
 
 	// Transform matrices
-	XMMATRIX rotation = XMMatrixRotationY(m_rotation);
+	XMMATRIX rotation = XMMatrixRotationY(m_rotation); //continuous spin
 	//XMMATRIX rotation2 = XMMatrixRotationX(m_rotation);
-	XMMATRIX modelTransform = XMMatrixIdentity();
+	XMMATRIX scaleDown = {	(float).2, (float)0, (float)0, (float)0,
+							(float)0, (float).2, (float)0, (float)0,
+							(float)0, (float)0, (float).2, (float)0, 
+							(float)0, (float)0, (float)0, (float)1 };
+	XMMATRIX modelTransform = XMMatrixIdentity()* XMMatrixRotationX(-XM_PI/2.0f)*scaleDown*m_universal_transform;
 
 	instructAR::componentsFactory my_factory;
 	vector<instructAR::Component> my_build = my_factory.createBuild(0);

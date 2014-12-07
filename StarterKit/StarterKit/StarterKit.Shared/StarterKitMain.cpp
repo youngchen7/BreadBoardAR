@@ -35,9 +35,10 @@ using namespace Windows::Storage::Streams;
 #include <opencv2\imgproc\types_c.h>
 #include <opencv2\core\core.hpp>
 #include <opencv2\imgproc\imgproc.hpp>
+#include "cvdrawingutils.h"
 
-static const int sWidth = 960;//640;
-static const int sHeight = 540;//360;
+static const int sWidth = 760;//640;
+static const int sHeight = 400;//360;
 
 // Loads and initializes application assets when the application is loaded.
 StarterKitMain::StarterKitMain(const std::shared_ptr<DX::DeviceResources>& deviceResources, Windows::UI::Xaml::Controls::Image^ image) :
@@ -160,37 +161,63 @@ void StarterKitMain::StartRenderLoop()
 		//aruco::MarkerDetector MDetector;
 		//vector<aruco::Marker> Markers;
 
-		m_mdetector.detect(intermediate, m_markers, camParam, 0.05f, false);
+		m_mdetector.detect(intermediate, m_markers, camParam, .04f, false); //marker size
 
 		for (unsigned int i = 0; i < m_markers.size(); i++) {
 			m_markers[i].draw(output, Scalar(0, 0, 255), 2);
+			aruco::CvDrawingUtils::draw3dCube(output, m_markers[i], camParam);
+			aruco::CvDrawingUtils::draw3dAxis(output, m_markers[i], camParam);
+
 			if (m_markers[i].id == 10)
 			{
-				/*
-				Mat Rot;
+				
+				Mat Rot(3,3, CV_32FC1);
 				Rodrigues(m_markers[i].Rvec, Rot);
+				//construct 4D matrix, insert 3D rotation matrix 
+				cv::Mat m44 = cv::Mat::eye(4, 4, CV_32FC1);
+				//for (int i = 0; i<3; i++)
+				//	for (int j = 0; j<3; j++)
+				//		m44.at<float>(i, j) = Rot.at<float>(i, j);
+
+				//add in translations
+				for (int z = 0; z<3; z++)
+					m44.at<float>(3, z) = m_markers[i].Tvec.at<float>(z)*150.0f;
+
+				//invert
+				//m44 = m44.inv();
+				
+				DirectX::XMMATRIX universal_transform = {	m44.at<float>(0, 0), m44.at<float>(0, 1), m44.at<float>(0, 2), m44.at<float>(0, 3),
+															m44.at<float>(1, 0), m44.at<float>(1, 1), m44.at<float>(1, 2), m44.at<float>(1, 3),
+															m44.at<float>(2, 0), m44.at<float>(2, 1), m44.at<float>(2, 2), m44.at<float>(2, 3),
+															-m44.at<float>(3, 0), -m44.at<float>(3, 1), m44.at<float>(3, 2), m44.at<float>(3, 3) };
+				
+				/*
 				DirectX::XMMATRIX universal_transform = {	Rot.at<float>(0, 0), Rot.at<float>(0, 1), Rot.at<float>(0, 2), 0,
 															Rot.at<float>(1, 0), Rot.at<float>(1, 1), Rot.at<float>(1, 2), 0,
 															Rot.at<float>(2, 0), Rot.at<float>(2, 1), Rot.at<float>(2, 2), 0,
 															0, 0, 0, 1 };
+				*/
 				m_sceneRenderer->setUniversalTransform(universal_transform);
 
 				wstringstream ws;
 
 				ws << L"Marker Transform Matrix: " << endl <<
-					Rot.at<float>(0, 0) << " " << Rot.at<float>(0, 1) << " " << Rot.at<float>(0, 2) << " " << m_markers[i].Tvec.at<float>(0) << endl <<
-					Rot.at<float>(1, 0) << " " << Rot.at<float>(1, 1) << " " << Rot.at<float>(1, 2) << " " << m_markers[i].Tvec.at<float>(1) << endl <<
-					Rot.at<float>(2, 0) << " " << Rot.at<float>(2, 1) << " " << Rot.at<float>(2, 2) << " " << m_markers[i].Tvec.at<float>(2) << endl;
+					m44.at<float>(0, 0) << " " << m44.at<float>(0, 1) << " " << m44.at<float>(0, 2) << " " << endl <<
+					m44.at<float>(1, 0) << " " << m44.at<float>(1, 1) << " " << m44.at<float>(1, 2) << " " << endl <<
+					m44.at<float>(2, 0) << " " << m44.at<float>(2, 1) << " " << m44.at<float>(2, 2) << " " << m44.at<float>(3, 3) << endl <<
+					L"Transformation " << m_markers[i].Tvec.at<float>(0) << " " << m_markers[i].Tvec.at<float>(1) << " " << m_markers[i].Tvec.at<float>(2) << endl;
 
 				OutputDebugString(ws.str().c_str());
-				*/
+				
+
+				/*
 				double transform_matrix[16];
 				m_markers[i].glGetModelViewMatrix(transform_matrix);
 
-				DirectX::XMMATRIX universal_transform = {	(float)transform_matrix[0], (float)transform_matrix[1], -(float)transform_matrix[2], (float)transform_matrix[3],
-															(float)transform_matrix[4], (float)transform_matrix[5], -(float)transform_matrix[6], (float)transform_matrix[7],
-															-(float)transform_matrix[8], -(float)transform_matrix[9], (float)transform_matrix[10],-(float)transform_matrix[11],
-															(float)transform_matrix[12], (float)transform_matrix[13], -(float)transform_matrix[14], (float)transform_matrix[15] };
+				DirectX::XMMATRIX universal_transform = {	(float)transform_matrix[0], (float)transform_matrix[1], (float)transform_matrix[2], (float)transform_matrix[3],
+															(float)transform_matrix[4], (float)transform_matrix[5], (float)transform_matrix[6], (float)transform_matrix[7],
+															(float)transform_matrix[8], (float)transform_matrix[9], (float)transform_matrix[10],(float)transform_matrix[11],
+															(float)transform_matrix[12], (float)transform_matrix[13], (float)transform_matrix[14], (float)transform_matrix[15] };
 				
 				m_sceneRenderer->setUniversalTransform(universal_transform);
 
@@ -199,10 +226,10 @@ void StarterKitMain::StartRenderLoop()
 
 
 				ws << L"Marker Transform Matrix: " << endl <<
-					(float)transform_matrix[0] << " " << (float)transform_matrix[1] << " " << -(float)transform_matrix[2] << " " << (float)transform_matrix[3] << endl <<
-					(float)transform_matrix[4] << " " << (float)transform_matrix[5] << " " << -(float)transform_matrix[6] << " " << (float)transform_matrix[7] << endl <<
-					-(float)transform_matrix[8] << " " << -(float)transform_matrix[9] << " " << (float)transform_matrix[10]<< " " << -(float)transform_matrix[11]<< endl <<
-					(float)transform_matrix[12]<< " " << (float)transform_matrix[13]<< " " << -(float)transform_matrix[14]<< " " << (float)transform_matrix[15]<< endl <<
+					(float)transform_matrix[0] << " " << (float)transform_matrix[1] << " " << (float)transform_matrix[2] << " " << (float)transform_matrix[3] << endl <<
+					(float)transform_matrix[4] << " " << (float)transform_matrix[5] << " " << (float)transform_matrix[6] << " " << (float)transform_matrix[7] << endl <<
+					(float)transform_matrix[8] << " " << (float)transform_matrix[9] << " " << (float)transform_matrix[10]<< " " << (float)transform_matrix[11]<< endl <<
+					(float)transform_matrix[12]<< " " << (float)transform_matrix[13]<< " " << (float)transform_matrix[14]<< " " << (float)transform_matrix[15]<< endl <<
 					L"Rotation: " << endl <<
 					L" >>X: " << atan2(-transform_matrix[6], transform_matrix[10])/DirectX::XM_PI*180.0f << endl <<
 					L" >>Y: " << atan2(-transform_matrix[2], sqrt(transform_matrix[6] * transform_matrix[6] + transform_matrix[10] * transform_matrix[10])) / DirectX::XM_PI*180.0f << endl <<
@@ -210,7 +237,7 @@ void StarterKitMain::StartRenderLoop()
 
 				OutputDebugString(ws.str().c_str());
 				
-
+				*/
 			}
 		}
 
