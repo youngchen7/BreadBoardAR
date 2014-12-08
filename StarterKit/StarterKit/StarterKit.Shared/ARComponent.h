@@ -21,6 +21,14 @@ namespace instructAR{
 			, m_orientation(_orientation), m_name(_name), m_description(_description), m_model(_model)
 		{}
 
+
+		Component(int _value, int _exponent, int _xpos, int _zpos, int _orientation, string _name, string _description, model _model)
+			: m_value(_value), m_exponent(_exponent), m_xpos(_xpos), m_zpos(_zpos)
+			, m_orientation(_orientation), m_name(_name), m_description(_description), m_model(_model)
+		{
+			m_ypos = 0;
+		}
+
 		Component(int _xpos, int _zpos, int _orientation, string _name, model _model)
 			: m_xpos(_xpos), m_zpos(_zpos), m_orientation(_orientation), m_name(_name), m_model(_model)
 		{
@@ -29,6 +37,7 @@ namespace instructAR{
 			m_value = 0;
 			m_exponent = 0;
 		}
+
 
 		int getX()
 		{

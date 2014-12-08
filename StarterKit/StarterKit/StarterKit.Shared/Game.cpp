@@ -207,8 +207,10 @@ void Game::CreateWindowSizeDependentResources()
 	
 
 	float aspectRatio = outputSize.Width / outputSize.Height;
-	float fovAngleY = 70.0f * XM_PI / 180.0f;
+	//float fovAngleY = 70.0f * XM_PI / 180.0f;
+	float fovAngleY = 67.0f * XM_PI / 180.0f;
 
+	 
 	if (aspectRatio < 1.0f)
 	{
 		// Portrait or snap view

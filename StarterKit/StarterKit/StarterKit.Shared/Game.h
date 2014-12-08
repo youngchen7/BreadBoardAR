@@ -57,7 +57,7 @@ namespace StarterKit
 		// Variables used with the rendering loop.
 		bool m_loadingComplete;
 
-		DirectX::XMMATRIX m_universal_transform = DirectX::XMMatrixTranslation(0.0f, 0.0f, 2.0f);
+		DirectX::XMMATRIX m_universal_transform = DirectX::XMMatrixTranslation(0.0f, 0.0f, 5.0f);
 
 	};
 }
