@@ -212,3 +212,15 @@ void StarterKit::DirectXPage::circuits_selection_changed(Platform::Object^ sende
 	int index = circuits_list->SelectedIndex;
 	circuits_selected->Text = "Circuit " + index;
 }
+
+
+void StarterKit::DirectXPage::next_btn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	m_main->nextStep();
+}
+
+
+void StarterKit::DirectXPage::prev_btn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	m_main->previousStep();
+}

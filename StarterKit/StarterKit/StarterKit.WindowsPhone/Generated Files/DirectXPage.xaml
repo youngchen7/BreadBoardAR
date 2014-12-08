@@ -24,15 +24,15 @@
             <!-- Left Side Buttons -->
             <Border VerticalAlignment="Bottom" HorizontalAlignment="Left"  Background="Transparent">
                 <StackPanel Orientation="Horizontal" >
-                    <Button Name ="prev_btn" Content ="&lt; &lt;" Background ="Black" Margin="5,5,5,5"/>
-                    <Button x:ConnectionId='4' Name ="circuits_btn" Content ="Circuits" Background ="Black" Margin="5,5,5,5"                            />
+                    <Button x:ConnectionId='5' Name ="prev_btn" Content ="&lt; &lt;" Background ="Black" Margin="5,5,5,5"                       />
+                    <Button x:ConnectionId='6' Name ="circuits_btn" Content ="Circuits" Background ="Black" Margin="5,5,5,5"                            />
                 </StackPanel>
             </Border>
             <!-- Right Side Buttons -->
             <Border VerticalAlignment="Bottom" HorizontalAlignment="Right"  Background="Transparent">
                 <StackPanel Orientation="Horizontal" >
                     <Button x:ConnectionId='3' Name ="schematics_btn" Content ="Schematics" Background ="Black" Margin="5,5,5,5"                              />
-                    <Button Name ="next_btn" Content ="&gt; &gt;" Background ="Black" Margin="5,5,5,5"/>
+                    <Button x:ConnectionId='4' Name ="next_btn" Content ="&gt; &gt;" Background ="Black" Margin="5,5,5,5"                       />
                 </StackPanel>
             </Border>
             <Border Name ="circuits_window" BorderBrush="White" BorderThickness="2" Background ="Black" HorizontalAlignment="Center" Height="250"  VerticalAlignment="Center" Width="400">

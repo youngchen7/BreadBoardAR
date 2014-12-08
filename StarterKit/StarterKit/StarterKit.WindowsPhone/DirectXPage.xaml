@@ -24,7 +24,7 @@
             <!-- Left Side Buttons -->
             <Border VerticalAlignment="Bottom" HorizontalAlignment="Left"  Background="Transparent">
                 <StackPanel Orientation="Horizontal" >
-                    <Button Name ="prev_btn" Content ="&lt; &lt;" Background ="Black" Margin="5,5,5,5"/>
+                    <Button Name ="prev_btn" Content ="&lt; &lt;" Background ="Black" Margin="5,5,5,5" Click="prev_btn_Click"/>
                     <Button Name ="circuits_btn" Content ="Circuits" Background ="Black" Margin="5,5,5,5" Tapped="circuits_btn_click"/>
                 </StackPanel>
             </Border>
@@ -32,7 +32,7 @@
             <Border VerticalAlignment="Bottom" HorizontalAlignment="Right"  Background="Transparent">
                 <StackPanel Orientation="Horizontal" >
                     <Button Name ="schematics_btn" Content ="Schematics" Background ="Black" Margin="5,5,5,5" Tapped="schematics_btn_click"/>
-                    <Button Name ="next_btn" Content ="&gt; &gt;" Background ="Black" Margin="5,5,5,5"/>
+                    <Button Name ="next_btn" Content ="&gt; &gt;" Background ="Black" Margin="5,5,5,5" Click="next_btn_Click"/>
                 </StackPanel>
             </Border>
             <Border Name ="circuits_window" BorderBrush="White" BorderThickness="2" Background ="Black" HorizontalAlignment="Center" Height="250"  VerticalAlignment="Center" Width="400">

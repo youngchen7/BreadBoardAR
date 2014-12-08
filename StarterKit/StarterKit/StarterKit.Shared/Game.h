@@ -30,6 +30,10 @@ namespace StarterKit
 		void Update(DX::StepTimer const& timer);
 		void Render();
 		void setUniversalTransform(DirectX::XMMATRIX & universal_transform);
+		void setBuild(int ID);
+		void nextStep();
+		void previousStep();
+		int getStep();
 		void setProjection(DirectX::XMMATRIX & projection);
 		DirectX::XMMATRIX computeMatrix(int xPos, int yPos, int zPos, int orientation);
 
@@ -58,6 +62,9 @@ namespace StarterKit
 		bool m_loadingComplete;
 
 		DirectX::XMMATRIX m_universal_transform = DirectX::XMMatrixTranslation(0.0f, 0.0f, 5.0f);
+		int my_step;
+		instructAR::componentsFactory my_factory;
+		vector<instructAR::Component> my_build;
 
 	};
 }

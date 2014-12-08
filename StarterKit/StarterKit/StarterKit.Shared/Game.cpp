@@ -186,6 +186,8 @@ void Game::CreateDeviceDependentResources()
 	{
 		// Scene is ready to be rendered.
 		m_loadingComplete = true;
+		my_build = my_factory.createBuild(0);
+		my_step = 0;
 	});
 }
 
@@ -305,6 +307,33 @@ void Game::setUniversalTransform(XMMATRIX & universal_transform)
 	m_universal_transform = universal_transform;			//set object transform
 }
 
+void Game::setBuild(int ID)
+{
+	my_build = my_factory.createBuild(ID);
+	my_step = 0;
+}
+
+void Game::nextStep()
+{
+	if (my_step < my_build.size())
+	{
+		++my_step;
+	}
+}
+
+void Game::previousStep()
+{
+	if (my_step > 0)
+	{
+		--my_step;
+	}
+}
+
+int Game::getStep()
+{
+	return my_step;
+}
+
 // Renders one frame using the Starter Kit helpers.
 void Game::Render()
 {
@@ -334,15 +363,13 @@ void Game::Render()
 							(float)0, (float)0, (float)0, (float)1 };
 	XMMATRIX modelTransform = XMMatrixIdentity()* XMMatrixRotationX(-XM_PI/2.0f)*scaleDown*m_universal_transform*XMMatrixTranslation(0.0f,0.0f,0.0f);
 
-	instructAR::componentsFactory my_factory;
-	vector<instructAR::Component> my_build = my_factory.createBuild(0);
 	int xPos = 0;
 	int yPos = 0;
 	int zPos = 0; 
 	int degrees = 0;
 	int index;
 	m_meshModels[0]->Render(m_graphics, modelTransform);
-	for (int i = 0; i < int(my_build.size()); ++i){
+	for (int i = 0; i < my_step; ++i){
 		// Update the time shader variable for the objects in our scene.
 		m_miscConstants.Time = m_time[i];
 		m_graphics.UpdateMiscConstants(m_miscConstants);
