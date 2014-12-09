@@ -212,7 +212,7 @@ void StarterKit::DirectXPage::circuits_selection_changed(Platform::Object^ sende
 	int index = circuits_list->SelectedIndex;
 	circuits_selected->Text = "Circuit " + index;
 	Object^ selected_obj = circuits_list->SelectedItem;
-	if (selected_obj != NULL)
+	if (selected_obj != nullptr)
 	{
 		if (selected != nullptr)
 		{

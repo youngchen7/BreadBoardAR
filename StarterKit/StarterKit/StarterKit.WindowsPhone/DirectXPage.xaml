@@ -61,7 +61,7 @@
                     <Grid >
                         <Button Name ="circuits_select" Content ="Select" Margin ="10,10,10,10" Background ="DeepSkyBlue" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="circuits_select_click"/>
                         <TextBlock Name ="circuits_selected" Text ="Circuit" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
-                        <Button Name ="circuits_cancel" Content ="Cancel" Margin ="10,10,10,10" Background ="#DeepSkyBlue" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="circuits_cancel_Click"/>
+                        <Button Name ="circuits_cancel" Content ="Cancel" Margin ="10,10,10,10" Background ="DeepSkyBlue" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="circuits_cancel_Click"/>
                     </Grid>
                 </StackPanel>
             </Border>
