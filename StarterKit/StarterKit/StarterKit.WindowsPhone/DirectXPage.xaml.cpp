@@ -28,6 +28,7 @@ using namespace Windows::UI::Xaml::Data;
 using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Media;
 using namespace Windows::UI::Xaml::Navigation;
+using namespace Windows::Media::Capture;
 using namespace concurrency;
 
 DirectXPage::DirectXPage() :
@@ -116,6 +117,14 @@ void DirectXPage::OnTapped(Object^ sender, TappedRoutedEventArgs^ e)
 	{
 		m_main->ToggleHitEffect(objName);
 
+	}
+	auto my_device = ref new MediaCapture();
+	auto videoControl = my_device->VideoDeviceController;
+	if (videoControl->FocusControl->Supported)
+	{
+		videoControl->FocusControl->SetPresetAsync(Windows::Media::Devices::FocusPreset::AutoMacro);
+	}else{
+		OutputDebugString(L"Focus Control not supported");
 	}
 }
 
