@@ -211,6 +211,18 @@ void StarterKit::DirectXPage::circuits_selection_changed(Platform::Object^ sende
 {
 	int index = circuits_list->SelectedIndex;
 	circuits_selected->Text = "Circuit " + index;
+	Object^ selected_obj = circuits_list->SelectedItem;
+	if (selected_obj != nullptr)
+	{
+		if (selected != nullptr)
+		{
+			SolidColorBrush^ border_color = ref new SolidColorBrush(Colors::Black);
+			selected->Background = border_color;
+		}
+		selected = dynamic_cast<ListViewItem^>(selected_obj);
+		SolidColorBrush^ border_color = ref new SolidColorBrush(Colors::DeepSkyBlue);
+		selected->Background = border_color;
+	}
 }
 
 
@@ -223,4 +235,16 @@ void StarterKit::DirectXPage::next_btn_Click(Platform::Object^ sender, Windows::
 void StarterKit::DirectXPage::prev_btn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	m_main->previousStep();
+}
+
+
+void StarterKit::DirectXPage::circuits_select_click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	m_main->setBuild(circuits_list->SelectedIndex);
+}
+
+
+void StarterKit::DirectXPage::circuits_cancel_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	circuits_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
 }

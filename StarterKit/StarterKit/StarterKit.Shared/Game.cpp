@@ -43,6 +43,10 @@ void Game::CreateDeviceDependentResources()
 	m_deviceResources->GetD3DDevice()->CreateRasterizerState(&d3dRas, &p3d3RasState);
 	m_deviceResources->GetD3DDeviceContext()->RSSetState(p3d3RasState.Get());
 
+	my_build = my_factory.createBuild(0);
+	my_step = 0;
+	m_universal_transform = XMMatrixTranslation(0.0f, 0.0f, 5.0f);
+
 	// Load the scene objects.
 	auto loadMeshTask = Mesh::LoadFromFileAsync(
 		m_graphics,
@@ -210,6 +214,7 @@ void Game::CreateDeviceDependentResources()
 		m_loadingComplete = true;
 		my_build = my_factory.createBuild(-1); //hardcoded
 		my_step = 0;
+
 	});
 }
 
