@@ -7,7 +7,7 @@ using namespace std;
 
 namespace instructAR{
 	enum model {BREADBOARD, WIRE1, WIRE2, WIRE3, WIRE4, WIREBRIDGE, WIREPOWERL, WIREPOWERR, WIREGROUNDL, WIREGROUNDR, CAP1, LED1, RESISTOR1, 
-		RESISTOR4220, POTENTIOMETER1K, RGBLED};
+		RESISTOR4220, POTENTIOMETER1K, RGBLED, RESISTOR4200};
 
 	class Component
 	{
@@ -98,6 +98,9 @@ namespace instructAR{
 				Component cap(28, 6, 90, "cap", CAP1);
 				build.push_back(cap);
 
+				Component res2(2, 8, 90, "res", RESISTOR4200);
+				build.push_back(res2);
+
 				break;
 			}
 
@@ -106,13 +109,13 @@ namespace instructAR{
 					Component gnd_wire(0, 0, 170, "gnd_wire", WIREGROUNDL);
 					build.push_back(gnd_wire);
 
-					Component res(0, 1, 90, "res", RESISTOR1);
+					Component res(0, 1, 90, "res", RESISTOR4220);
 					build.push_back(res);
 
-					Component led(2, 2, 90, "led", LED1);
+					Component led(4, 2, 90, "led", LED1);
 					build.push_back(led);
 
-					Component vcc_wire(3, 0, 170, "vcc_wire", WIREPOWERL);
+					Component vcc_wire(5, 0, 185, "vcc_wire", WIREPOWERL);
 					build.push_back(vcc_wire);
 
 					break;

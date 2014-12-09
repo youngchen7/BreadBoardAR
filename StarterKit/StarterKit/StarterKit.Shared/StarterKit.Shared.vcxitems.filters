@@ -151,6 +151,9 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\RGBLED.fbx">
       <Filter>Assets</Filter>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Resistor4200.fbx">
+      <Filter>Assets</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\CubeUVImage.png">

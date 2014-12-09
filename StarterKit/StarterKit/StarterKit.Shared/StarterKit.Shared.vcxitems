@@ -131,10 +131,14 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Resistor4220.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Resistor4200.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\Resistor4220.fbx" />
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\RGBLED.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <None Include="$(MSBuildThisFileDirectory)Assets\RGBLED.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx" />
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Wire.fbx">
       <FileType>Document</FileType>

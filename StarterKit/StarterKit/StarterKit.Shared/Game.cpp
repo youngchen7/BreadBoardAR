@@ -191,7 +191,18 @@ void Game::CreateDeviceDependentResources()
 																	L"",
 																	L"",
 																	m_meshModels,
-																	false);
+																	false)
+																.then([this]()
+																{
+
+																	return Mesh::LoadFromFileAsync(
+																		m_graphics,
+																		L"Resistor4200.cmo",
+																		L"",
+																		L"",
+																		m_meshModels,
+																		false);
+																});
 															});
 														});
 													});
@@ -206,15 +217,6 @@ void Game::CreateDeviceDependentResources()
 				});
 			});
 		});
-	})
-		.then([this]()
-	{
-		// Each mesh object has its own "time" used to control the glow effect.
-		m_time.clear();
-		for (size_t i = 0; i < m_meshModels.size(); i++)
-		{
-			m_time.push_back(0.0f);
-		}
 	});
 
 	//auto initializeSkinnedMeshRendererTask = m_skinnedMeshRenderer.InitializeAsync(m_deviceResources->GetD3DDevice(), m_deviceResources->GetD3DDeviceContext());
@@ -223,7 +225,7 @@ void Game::CreateDeviceDependentResources()
 	{
 		// Scene is ready to be rendered.
 		m_loadingComplete = true;
-		my_build = my_factory.createBuild(-1); //hardcoded
+		setBuild(-1);
 		my_step = 0;
 
 	});
@@ -307,15 +309,11 @@ void Game::Update(DX::StepTimer const& timer)
 {
 	auto timeDelta = static_cast<float>(timer.GetElapsedSeconds());
 
-	// Update animated models.
-	m_skinnedMeshRenderer.UpdateAnimation(timeDelta, m_meshModels);
-
-	// Rotate scene.
-	m_rotation = static_cast<float>(timer.GetTotalSeconds()) * -.5f;
-
+	
 	// Update the "time" variable for the glow effect.
 	for (float &time : m_time)
 	{
+		if (time!=0)
 		time = std::max<float>(0.0f, time - timeDelta);
 	}
 }
@@ -349,6 +347,11 @@ void Game::setBuild(int ID)
 {
 	my_build = my_factory.createBuild(ID);
 	my_step = 0;
+	m_time.clear();
+	for (size_t i = 0; i < my_build.size(); i++)
+	{
+		m_time.push_back(0.0f);
+	}
 }
 
 void Game::nextStep()
@@ -407,6 +410,8 @@ void Game::Render()
 	int zPos = 0; 
 	int degrees = 0;
 	int index;
+	m_miscConstants.Time = 0;
+	m_graphics.UpdateMiscConstants(m_miscConstants);
 	m_meshModels[0]->Render(m_graphics, modelTransform);	//breadboard
 	for (int i = 0; i < my_step; ++i){
 		// Update the time shader variable for the objects in our scene.
@@ -424,15 +429,9 @@ void Game::Render()
 // Starts the glow animation for an object.
 void Game::ToggleHitEffect(String^ object)
 {
-	for (UINT i = 0; i < m_meshModels.size(); i++)
-	{
-		Mesh* m = m_meshModels[i];
-		String^ meshName = ref new String(m->Name());
-		if (String::CompareOrdinal(object, meshName) == 0)
-		{
-			m_time[i] = 1.0f;
-			break;
-		}
+	if (m_loadingComplete)
+	if (my_step != 0){
+		m_time[my_step - 1] = 1.0f;
 	}
 }
 
