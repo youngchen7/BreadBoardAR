@@ -201,7 +201,18 @@ void Game::CreateDeviceDependentResources()
 																		L"",
 																		L"",
 																		m_meshModels,
-																		false);
+																		false)
+																		.then([this]()
+																	{
+
+																		return Mesh::LoadFromFileAsync(
+																			m_graphics,
+																			L"Wire8.cmo",
+																			L"",
+																			L"",
+																			m_meshModels,
+																			false);
+																	});
 																});
 															});
 														});

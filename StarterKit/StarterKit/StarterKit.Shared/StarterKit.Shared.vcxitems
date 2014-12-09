@@ -175,6 +175,9 @@
     </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\Wire3.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Wire4.fbx" />
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Wire8.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\WireBridge.fbx" />
   </ItemGroup>
   <ItemGroup>
