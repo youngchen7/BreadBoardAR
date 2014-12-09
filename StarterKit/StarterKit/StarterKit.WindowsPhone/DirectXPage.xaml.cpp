@@ -250,6 +250,7 @@ void StarterKit::DirectXPage::prev_btn_Click(Platform::Object^ sender, Windows::
 void StarterKit::DirectXPage::circuits_select_click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	m_main->setBuild(circuits_list->SelectedIndex);
+	circuits_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
 }
 
 

@@ -168,48 +168,9 @@ void StarterKitMain::StartRenderLoop()
 			aruco::CvDrawingUtils::draw3dCube(output, m_markers[i], camParam);
 			aruco::CvDrawingUtils::draw3dAxis(output, m_markers[i], camParam);
 
-			if (m_markers[i].id == 10)
+			if (m_markers[i].id == 0)
 			{
-				/*
-				Mat Rot(3,3, CV_32FC1);
-				Rodrigues(m_markers[i].Rvec, Rot);
-				//construct 4D matrix, insert 3D rotation matrix 
-				cv::Mat m44 = cv::Mat::eye(4, 4, CV_32FC1);
-				//for (int i = 0; i<3; i++)
-				//	for (int j = 0; j<3; j++)
-				//		m44.at<float>(i, j) = Rot.at<float>(i, j);
-
-				//add in translations
-				for (int z = 0; z<3; z++)
-					m44.at<float>(3, z) = m_markers[i].Tvec.at<float>(z)*150.0f;
-
-				//invert
-				//m44 = m44.inv();
 				
-				DirectX::XMMATRIX universal_transform = {	m44.at<float>(0, 0), m44.at<float>(0, 1), m44.at<float>(0, 2), m44.at<float>(0, 3),
-															m44.at<float>(1, 0), m44.at<float>(1, 1), m44.at<float>(1, 2), m44.at<float>(1, 3),
-															m44.at<float>(2, 0), m44.at<float>(2, 1), m44.at<float>(2, 2), m44.at<float>(2, 3),
-															-m44.at<float>(3, 0), -m44.at<float>(3, 1), m44.at<float>(3, 2), m44.at<float>(3, 3) };
-				
-				
-				DirectX::XMMATRIX universal_transform = {	Rot.at<float>(0, 0), Rot.at<float>(0, 1), Rot.at<float>(0, 2), 0,
-															Rot.at<float>(1, 0), Rot.at<float>(1, 1), Rot.at<float>(1, 2), 0,
-															Rot.at<float>(2, 0), Rot.at<float>(2, 1), Rot.at<float>(2, 2), 0,
-															0, 0, 0, 1 };
-				
-				m_sceneRenderer->setUniversalTransform(universal_transform);
-
-				wstringstream ws;
-				 
-				ws << L"Marker Transform Matrix: " << endl <<
-					m44.at<float>(0, 0) << " " << m44.at<float>(0, 1) << " " << m44.at<float>(0, 2) << " " << endl <<
-					m44.at<float>(1, 0) << " " << m44.at<float>(1, 1) << " " << m44.at<float>(1, 2) << " " << endl <<
-					m44.at<float>(2, 0) << " " << m44.at<float>(2, 1) << " " << m44.at<float>(2, 2) << " " << m44.at<float>(3, 3) << endl <<
-					L"Transformation " << m_markers[i].Tvec.at<float>(0) << " " << m_markers[i].Tvec.at<float>(1) << " " << m_markers[i].Tvec.at<float>(2) << endl;
-
-				OutputDebugString(ws.str().c_str());
-				*/
-
 				
 				double transform_matrix[16];
 				m_markers[i].glGetModelViewMatrix(transform_matrix);
@@ -217,15 +178,6 @@ void StarterKitMain::StartRenderLoop()
 				for (int i = 0; i<4; i++)
 					for (int j = 0; j<4; j++)
 						m44.at<float>(i, j) = transform_matrix[i*4+j];
-
-
-				//for (int i = 0; i < 4; ++i)
-					//m44.at<float>(i, 2) *= -1;
-				//for (int i = 0; i < 4; ++i)
-					//m44.at<float>(2, i) *= -1;
-
-				//m44 = m44.inv();
-
 
 				DirectX::XMMATRIX mirror = { (float)-1, (float)0, (float)0, (float)0,
 					(float)0, (float)1, (float)0, (float)0,
@@ -238,9 +190,6 @@ void StarterKitMain::StartRenderLoop()
 															-m44.at<float>(3, 0), -m44.at<float>(3, 1), -m44.at<float>(3, 2), m44.at<float>(3, 3) };
 
 				universal_transform = mirror*universal_transform;
-				DirectX::XMFLOAT3 z_floats = { 0.0f, 0.0f, 1.0f };
-				DirectX::XMVECTOR z_axis = DirectX::XMLoadFloat3(&z_floats);
-				DirectX::XMMATRIX mirror_x = DirectX::XMMatrixReflect(z_axis);
 				m_sceneRenderer->setUniversalTransform(universal_transform);
 
 				

@@ -142,13 +142,10 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\WireBridge.fbx">
       <Filter>Assets</Filter>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)Assets\Resistor5.fbx">
+    <None Include="$(MSBuildThisFileDirectory)Assets\Potentiometer1K.fbx">
       <Filter>Assets</Filter>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Assets\Resistor4220.fbx">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="$(MSBuildThisFileDirectory)Assets\Potentiometer1K.fbx">
       <Filter>Assets</Filter>
     </None>
   </ItemGroup>

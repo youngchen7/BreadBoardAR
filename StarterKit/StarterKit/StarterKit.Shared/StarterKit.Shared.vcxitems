@@ -122,6 +122,7 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Potentiometer1K.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Potentiometer1K.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Resistor.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Resistor1.fbx" />
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Resistor5.fbx">
@@ -130,6 +131,7 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Resistor4220.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Resistor4220.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx" />
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Wire.fbx">
       <FileType>Document</FileType>

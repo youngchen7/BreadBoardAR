@@ -86,11 +86,14 @@ namespace instructAR{
 			{
 			case -1: //testing purposes
 			{
-				Component res(0, 7, 90, "res", RESISTOR4220);
+				Component res(0, 6, 90, "res", RESISTOR4220);
 				build.push_back(res);
 
-				Component wire(5, 7, 90, "pot", POTENTIOMETER1K);
+				Component wire(10, 5, 90, "pot", POTENTIOMETER1K);
 				build.push_back(wire);
+
+				Component cap(28, 6, 90, "cap", CAP1);
+				build.push_back(cap);
 
 				break;
 			}
