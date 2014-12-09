@@ -6,7 +6,8 @@
 using namespace std;
 
 namespace instructAR{
-	enum model {BREADBOARD, WIRE1, WIRE2, WIRE3, WIRE4, WIREBRIDGE, WIREPOWERL, WIREPOWERR, WIREGROUNDL, WIREGROUNDR, CAP1, LED1, RESISTOR1};
+	enum model {BREADBOARD, WIRE1, WIRE2, WIRE3, WIRE4, WIREBRIDGE, WIREPOWERL, WIREPOWERR, WIREGROUNDL, WIREGROUNDR, CAP1, LED1, RESISTOR1, 
+		RESISTOR4220, POTENTIOMETER1K};
 
 	class Component
 	{
@@ -83,6 +84,17 @@ namespace instructAR{
 			vector<Component> build;
 			switch(ID)
 			{
+			case -1: //testing purposes
+			{
+				Component res(0, 7, 90, "res", RESISTOR4220);
+				build.push_back(res);
+
+				Component wire(5, 7, 90, "pot", POTENTIOMETER1K);
+				build.push_back(wire);
+
+				break;
+			}
+
 				case 0:
 				{
 					Component gnd_wire(0, 0, 170, "gnd_wire", WIREGROUNDL);

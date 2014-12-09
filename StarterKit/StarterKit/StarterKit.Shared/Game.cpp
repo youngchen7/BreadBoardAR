@@ -157,7 +157,29 @@ void Game::CreateDeviceDependentResources()
 														L"",
 														L"",
 														m_meshModels,
-														false);
+														false)
+														.then([this]()
+													{
+														
+														return Mesh::LoadFromFileAsync(
+															m_graphics,
+															L"Resistor4220.cmo",
+															L"",
+															L"",
+															m_meshModels,
+															false)
+															.then([this]()
+														{
+
+															return Mesh::LoadFromFileAsync(
+																m_graphics,
+																L"Potentiometer1K.cmo",
+																L"",
+																L"",
+																m_meshModels,
+																false);
+														});
+													});
 												});
 											});
 										});
@@ -186,7 +208,7 @@ void Game::CreateDeviceDependentResources()
 	{
 		// Scene is ready to be rendered.
 		m_loadingComplete = true;
-		my_build = my_factory.createBuild(0);
+		my_build = my_factory.createBuild(-1); //hardcoded
 		my_step = 0;
 	});
 }
@@ -361,6 +383,7 @@ void Game::Render()
 							(float)0, (float).3, (float)0, (float)0,
 							(float)0, (float)0, (float).3, (float)0, 
 							(float)0, (float)0, (float)0, (float)1 };
+
 	XMMATRIX modelTransform = XMMatrixIdentity()* XMMatrixRotationX(-XM_PI/2.0f)*scaleDown*m_universal_transform*XMMatrixTranslation(0.0f,0.0f,0.0f);
 
 	int xPos = 0;
@@ -368,7 +391,7 @@ void Game::Render()
 	int zPos = 0; 
 	int degrees = 0;
 	int index;
-	m_meshModels[0]->Render(m_graphics, modelTransform);
+	m_meshModels[0]->Render(m_graphics, modelTransform);	//breadboard
 	for (int i = 0; i < my_step; ++i){
 		// Update the time shader variable for the objects in our scene.
 		m_miscConstants.Time = m_time[i];

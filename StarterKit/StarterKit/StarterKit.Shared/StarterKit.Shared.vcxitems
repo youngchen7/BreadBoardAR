@@ -119,8 +119,17 @@
     </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\LED.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\LED1.fbx" />
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Potentiometer1K.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\Resistor.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Resistor1.fbx" />
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Resistor5.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Resistor4220.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\teapot.fbx" />
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Wire.fbx">
       <FileType>Document</FileType>
@@ -168,7 +177,11 @@
     </Image>
     <Image Include="$(MSBuildThisFileDirectory)Assets\LEDSphereUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\LEDUVImage.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Assets\Pot1K.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Assets\PotBaseWhiteUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\RedWireUVImage.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Assets\Resistor220.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Assets\Resistor5UVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\ResistorUVImage.png" />
   </ItemGroup>
 </Project>

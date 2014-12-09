@@ -218,6 +218,7 @@ void StarterKitMain::StartRenderLoop()
 					for (int j = 0; j<4; j++)
 						m44.at<float>(i, j) = transform_matrix[i*4+j];
 
+
 				//for (int i = 0; i < 4; ++i)
 					//m44.at<float>(i, 2) *= -1;
 				//for (int i = 0; i < 4; ++i)
@@ -226,11 +227,17 @@ void StarterKitMain::StartRenderLoop()
 				//m44 = m44.inv();
 
 
+				DirectX::XMMATRIX mirror = { (float)-1, (float)0, (float)0, (float)0,
+					(float)0, (float)1, (float)0, (float)0,
+					(float)0, (float)0, (float)1, (float)0,
+					(float)0, (float)0, (float)0, (float)1 };
+
 				DirectX::XMMATRIX universal_transform = {	m44.at<float>(0, 0), m44.at<float>(0, 1), m44.at<float>(0, 2), m44.at<float>(0, 3),
 															m44.at<float>(1, 0), m44.at<float>(1, 1), m44.at<float>(1, 2), m44.at<float>(1, 3),
 															m44.at<float>(2, 0), m44.at<float>(2, 1), m44.at<float>(2, 2), m44.at<float>(2, 3),
 															-m44.at<float>(3, 0), -m44.at<float>(3, 1), -m44.at<float>(3, 2), m44.at<float>(3, 3) };
 
+				universal_transform = mirror*universal_transform;
 				DirectX::XMFLOAT3 z_floats = { 0.0f, 0.0f, 1.0f };
 				DirectX::XMVECTOR z_axis = DirectX::XMLoadFloat3(&z_floats);
 				DirectX::XMMATRIX mirror_x = DirectX::XMMatrixReflect(z_axis);

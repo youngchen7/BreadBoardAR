@@ -142,6 +142,15 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\WireBridge.fbx">
       <Filter>Assets</Filter>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Resistor5.fbx">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Resistor4220.fbx">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Potentiometer1K.fbx">
+      <Filter>Assets</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\CubeUVImage.png">
@@ -166,6 +175,18 @@
       <Filter>Assets</Filter>
     </Image>
     <Image Include="$(MSBuildThisFileDirectory)Assets\ResistorUVImage.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\Resistor5UVImage.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\Resistor220.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\PotBaseWhiteUVImage.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\Pot1K.png">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>
