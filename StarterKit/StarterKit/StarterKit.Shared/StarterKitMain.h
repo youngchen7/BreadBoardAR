@@ -30,6 +30,7 @@ namespace StarterKit
 		Platform::String^ OnHitObject(int x, int y) { return m_sceneRenderer->OnHitObject(x, y); }
 		void ToggleHitEffect(Platform::String^ object) { m_sceneRenderer->ToggleHitEffect(object); }
 		void ChangeMaterialColor(Platform::String^ object, float r, float g, float b) { m_sceneRenderer->ChangeMaterialColor(object, r, g, b); }
+		void setBuild(int ID) { m_sceneRenderer->setBuild(ID); }
 		void nextStep(){ m_sceneRenderer->nextStep(); }
 		void previousStep(){ m_sceneRenderer->previousStep(); }
 		int getStep(){ return m_sceneRenderer->getStep(); }

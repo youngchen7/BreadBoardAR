@@ -54,14 +54,14 @@
                         <ListViewItem BorderBrush="White" BorderThickness="2" Margin="10,0,10,0">
                             <TextBlock Text="Attiny84" Margin="10,10,10,10" VerticalAlignment="Center"/>
                         </ListViewItem>
-                        <ListViewItem BorderBrush="White" BorderThickness="2" Margin="10,0,10,0">
+                        <ListViewItem BorderBrush="White" BorderThickness="2" Margin="10,0,10,0" >
                             <TextBlock Text="Lego Demo" Margin="10,10,10,10" VerticalAlignment="Center"/>
                         </ListViewItem>
                     </ListView>
                     <Grid >
-                        <Button Name ="circuits_select" Content ="Select" Margin ="10,10,10,10" Background ="#FF1BA1E2" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                        <TextBlock Name ="circuits_selected" Text ="Circuit" HorizontalAlignment="Center"/>
-                        <Button Name ="circuits_cancel" Content ="Cancel" Margin ="10,10,10,10" Background ="#FF1BA1E2" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                        <Button Name ="circuits_select" Content ="Select" Margin ="10,10,10,10" Background ="DeepSkyBlue" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="circuits_select_click"/>
+                        <TextBlock Name ="circuits_selected" Text ="Circuit" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                        <Button Name ="circuits_cancel" Content ="Cancel" Margin ="10,10,10,10" Background ="#DeepSkyBlue" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="circuits_cancel_Click"/>
                     </Grid>
                 </StackPanel>
             </Border>

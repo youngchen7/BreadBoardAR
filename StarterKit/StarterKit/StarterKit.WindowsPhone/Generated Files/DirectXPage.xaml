@@ -24,15 +24,15 @@
             <!-- Left Side Buttons -->
             <Border VerticalAlignment="Bottom" HorizontalAlignment="Left"  Background="Transparent">
                 <StackPanel Orientation="Horizontal" >
-                    <Button x:ConnectionId='5' Name ="prev_btn" Content ="&lt; &lt;" Background ="Black" Margin="5,5,5,5"                       />
-                    <Button x:ConnectionId='6' Name ="circuits_btn" Content ="Circuits" Background ="Black" Margin="5,5,5,5"                            />
+                    <Button x:ConnectionId='7' Name ="prev_btn" Content ="&lt; &lt;" Background ="Black" Margin="5,5,5,5"                       />
+                    <Button x:ConnectionId='8' Name ="circuits_btn" Content ="Circuits" Background ="Black" Margin="5,5,5,5"                            />
                 </StackPanel>
             </Border>
             <!-- Right Side Buttons -->
             <Border VerticalAlignment="Bottom" HorizontalAlignment="Right"  Background="Transparent">
                 <StackPanel Orientation="Horizontal" >
-                    <Button x:ConnectionId='3' Name ="schematics_btn" Content ="Schematics" Background ="Black" Margin="5,5,5,5"                              />
-                    <Button x:ConnectionId='4' Name ="next_btn" Content ="&gt; &gt;" Background ="Black" Margin="5,5,5,5"                       />
+                    <Button x:ConnectionId='5' Name ="schematics_btn" Content ="Schematics" Background ="Black" Margin="5,5,5,5"                              />
+                    <Button x:ConnectionId='6' Name ="next_btn" Content ="&gt; &gt;" Background ="Black" Margin="5,5,5,5"                       />
                 </StackPanel>
             </Border>
             <Border Name ="circuits_window" BorderBrush="White" BorderThickness="2" Background ="Black" HorizontalAlignment="Center" Height="250"  VerticalAlignment="Center" Width="400">
@@ -54,14 +54,14 @@
                         <ListViewItem BorderBrush="White" BorderThickness="2" Margin="10,0,10,0">
                             <TextBlock Text="Attiny84" Margin="10,10,10,10" VerticalAlignment="Center"/>
                         </ListViewItem>
-                        <ListViewItem BorderBrush="White" BorderThickness="2" Margin="10,0,10,0">
+                        <ListViewItem BorderBrush="White" BorderThickness="2" Margin="10,0,10,0" >
                             <TextBlock Text="Lego Demo" Margin="10,10,10,10" VerticalAlignment="Center"/>
                         </ListViewItem>
                     </ListView>
                     <Grid >
-                        <Button Name ="circuits_select" Content ="Select" Margin ="10,10,10,10" Background ="#FF1BA1E2" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                        <TextBlock Name ="circuits_selected" Text ="Circuit" HorizontalAlignment="Center"/>
-                        <Button Name ="circuits_cancel" Content ="Cancel" Margin ="10,10,10,10" Background ="#FF1BA1E2" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                        <Button x:ConnectionId='3' Name ="circuits_select" Content ="Select" Margin ="10,10,10,10" Background ="DeepSkyBlue" HorizontalAlignment="Right" VerticalAlignment="Bottom"                              />
+                        <TextBlock Name ="circuits_selected" Text ="Circuit" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+                        <Button x:ConnectionId='4' Name ="circuits_cancel" Content ="Cancel" Margin ="10,10,10,10" Background ="#DeepSkyBlue" HorizontalAlignment="Left" VerticalAlignment="Bottom"                              />
                     </Grid>
                 </StackPanel>
             </Border>

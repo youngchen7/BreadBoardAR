@@ -29,6 +29,9 @@ namespace StarterKit
 		void LoadInternalState(Windows::Foundation::Collections::IPropertySet^ state);
 
 	private:
+		// Keep a reference to the selected list item
+		Windows::UI::Xaml::Controls::ListViewItem ^ selected;
+
 		// Called when the SwapChainPanel is tapped.
 		void OnTapped(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
 
@@ -61,6 +64,8 @@ namespace StarterKit
 		void circuits_selection_changed(Platform::Object^ sender, Windows::UI::Xaml::Controls::SelectionChangedEventArgs^ e);
 		void next_btn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void prev_btn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void circuits_select_click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void circuits_cancel_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }
 
