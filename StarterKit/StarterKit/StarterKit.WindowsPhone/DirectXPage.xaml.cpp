@@ -118,14 +118,7 @@ void DirectXPage::OnTapped(Object^ sender, TappedRoutedEventArgs^ e)
 		m_main->ToggleHitEffect(objName);
 
 	}
-	auto my_device = ref new MediaCapture();
-	auto videoControl = my_device->VideoDeviceController;
-	if (videoControl->FocusControl->Supported)
-	{
-		videoControl->FocusControl->SetPresetAsync(Windows::Media::Devices::FocusPreset::AutoMacro);
-	}else{
-		OutputDebugString(L"Focus Control not supported");
-	}
+
 }
 
 
