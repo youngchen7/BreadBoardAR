@@ -7,7 +7,7 @@ using namespace std;
 
 namespace instructAR{
 	enum model {BREADBOARD, WIRE1, WIRE2, WIRE3, WIRE4, WIREBRIDGE, WIREPOWERL, WIREPOWERR, WIREGROUNDL, WIREGROUNDR, CAP1, LED1, RESISTOR1, 
-		RESISTOR4220, POTENTIOMETER1K};
+		RESISTOR4220, POTENTIOMETER1K, RGBLED};
 
 	class Component
 	{
@@ -86,6 +86,9 @@ namespace instructAR{
 			{
 			case -1: //testing purposes
 			{
+				Component rgbLED(1, 1, 90, "rgbLED", RGBLED);
+				build.push_back(rgbLED);
+				
 				Component res(0, 6, 90, "res", RESISTOR4220);
 				build.push_back(res);
 
