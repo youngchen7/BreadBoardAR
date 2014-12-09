@@ -179,30 +179,17 @@ void StarterKitMain::StartRenderLoop()
 					for (int j = 0; j<4; j++)
 						m44.at<float>(i, j) = transform_matrix[i*4+j];
 
-				DirectX::XMMATRIX mirror = { (float)-1, (float)0, (float)0, (float)0,
-					(float)0, (float)1, (float)0, (float)0,
-					(float)0, (float)0, (float)1, (float)0,
-					(float)0, (float)0, (float)0, (float)1 };
+
 
 				DirectX::XMMATRIX universal_transform = {	m44.at<float>(0, 0), m44.at<float>(0, 1), m44.at<float>(0, 2), m44.at<float>(0, 3),
 															m44.at<float>(1, 0), m44.at<float>(1, 1), m44.at<float>(1, 2), m44.at<float>(1, 3),
 															m44.at<float>(2, 0), m44.at<float>(2, 1), m44.at<float>(2, 2), m44.at<float>(2, 3),
-															-m44.at<float>(3, 0), -m44.at<float>(3, 1), -m44.at<float>(3, 2), m44.at<float>(3, 3) };
+															-m44.at<float>(3, 0), -m44.at<float>(3, 1), -m44.at<float>(3, 2)*0.5f, m44.at<float>(3, 3) };
 
-				universal_transform = mirror*universal_transform;
+				universal_transform = mirror*universal_transform*offset;
 				m_sceneRenderer->setUniversalTransform(universal_transform);
 
 				
-				wstringstream ws;
-
-
-				ws << L"Marker Transform Matrix: " << endl <<
-					m44.at<float>(0, 0) << " " << m44.at<float>(0, 1) << " " << m44.at<float>(0, 2) << " " << m44.at<float>(0, 3) << endl <<
-					m44.at<float>(1, 0) << " " << m44.at<float>(1, 1) << " " << m44.at<float>(1, 2) << " " << m44.at<float>(1, 3) << endl <<
-					m44.at<float>(2, 0) << " " << m44.at<float>(2, 1) << " " << m44.at<float>(2, 2) << " " << m44.at<float>(2, 3) << endl <<
-					-m44.at<float>(3, 0) << " " << -m44.at<float>(3, 1) << " " << -m44.at<float>(3, 2) << " " << m44.at<float>(3, 3) << endl;
-
-				OutputDebugString(ws.str().c_str());
 				
 				
 			}

@@ -70,6 +70,14 @@ namespace StarterKit
 		aruco::MarkerDetector m_mdetector;
 		vector<aruco::Marker> m_markers; 
 		aruco::CameraParameters camParam;
+		DirectX::XMMATRIX mirror = { (float)-1, (float)0, (float)0, (float)0,
+									(float)0, (float)1, (float)0, (float)0,
+									(float)0, (float)0, (float)1, (float)0,
+									(float)0, (float)0, (float)0, (float)1 };
+		DirectX::XMMATRIX offset = { (float)1, (float)0, (float)0, (float)0,
+									(float)0, (float)1, (float)0, (float)0,
+									(float)0, (float)0, (float)1, (float)0,
+									(float)2, (float)0, (float)0, (float)1 };
 
 		//3D Model Position
 		

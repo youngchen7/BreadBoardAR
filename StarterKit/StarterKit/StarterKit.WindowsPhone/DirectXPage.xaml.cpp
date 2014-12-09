@@ -119,6 +119,7 @@ void DirectXPage::OnTapped(Object^ sender, TappedRoutedEventArgs^ e)
 
 	}
 
+
 }
 
 
