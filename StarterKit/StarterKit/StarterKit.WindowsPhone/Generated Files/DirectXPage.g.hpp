@@ -44,6 +44,8 @@ void ::StarterKit::DirectXPage::InitializeComponent()
     schematics_btn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"schematics_btn"));
     // Get the Button named 'next_btn'
     next_btn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"next_btn"));
+    // Get the TextBlock named 'description_text'
+    description_text = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"description_text"));
     // Get the Button named 'prev_btn'
     prev_btn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"prev_btn"));
     // Get the Button named 'circuits_btn'

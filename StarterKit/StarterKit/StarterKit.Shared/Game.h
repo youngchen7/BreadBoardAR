@@ -34,6 +34,8 @@ namespace StarterKit
 		void nextStep();
 		void previousStep();
 		int getStep();
+		int getMaxStep();
+		String^ getDescription();
 		void setProjection(DirectX::XMMATRIX & projection);
 		DirectX::XMMATRIX computeMatrix(int xPos, int yPos, int zPos, int orientation);
 

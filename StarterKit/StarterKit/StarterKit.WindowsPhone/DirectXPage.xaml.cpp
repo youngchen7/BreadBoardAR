@@ -180,6 +180,14 @@ void DirectXPage::OnSwapChainPanelSizeChanged(Object^ sender, SizeChangedEventAr
 	m_main->CreateWindowSizeDependentResources();
 }
 
+void StarterKit::DirectXPage::UpdateHUD()
+{
+	description_text->Text = m_main->getDescription();
+	progress_bar->Maximum = m_main->getMaxStep();
+	progress_bar->Value = m_main->getStep();
+	progress_fraction->Text = m_main->getStep() + "/" + m_main->getMaxStep();
+	progress_percent->Text = (m_main->getStep()*100) / m_main->getMaxStep() + "%";
+}
 
 
 void StarterKit::DirectXPage::schematics_btn_click(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e)
@@ -249,12 +257,16 @@ void StarterKit::DirectXPage::circuits_selection_changed(Platform::Object^ sende
 void StarterKit::DirectXPage::next_btn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	m_main->nextStep();
+	UpdateHUD();
+
 }
 
 
 void StarterKit::DirectXPage::prev_btn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	m_main->previousStep();
+	UpdateHUD();
+
 }
 
 
@@ -262,6 +274,7 @@ void StarterKit::DirectXPage::circuits_select_click(Platform::Object^ sender, Wi
 {
 	m_main->setBuild(circuits_list->SelectedIndex);
 	circuits_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+	UpdateHUD();
 }
 
 

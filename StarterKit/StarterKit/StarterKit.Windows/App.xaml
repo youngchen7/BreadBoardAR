@@ -8,6 +8,10 @@
     <Application.Resources>
 
       <x:String x:Key="AppName">StarterKit</x:String>
+        
+
 
     </Application.Resources>
+    
+    
 </Application>

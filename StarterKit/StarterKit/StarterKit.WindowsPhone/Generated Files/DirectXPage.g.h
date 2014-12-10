@@ -47,6 +47,7 @@ namespace StarterKit
         private: ::Windows::UI::Xaml::Controls::Button^ circuits_cancel;
         private: ::Windows::UI::Xaml::Controls::Button^ schematics_btn;
         private: ::Windows::UI::Xaml::Controls::Button^ next_btn;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ description_text;
         private: ::Windows::UI::Xaml::Controls::Button^ prev_btn;
         private: ::Windows::UI::Xaml::Controls::Button^ circuits_btn;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ progress_percent;

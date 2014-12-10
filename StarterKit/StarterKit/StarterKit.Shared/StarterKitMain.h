@@ -34,6 +34,8 @@ namespace StarterKit
 		void nextStep(){ m_sceneRenderer->nextStep(); }
 		void previousStep(){ m_sceneRenderer->previousStep(); }
 		int getStep(){ return m_sceneRenderer->getStep(); }
+		int getMaxStep(){ return m_sceneRenderer->getMaxStep(); }
+		String^ getDescription() { return m_sceneRenderer->getDescription(); }
 
 		void CreateWindowSizeDependentResources();
 		void StartRenderLoop(int width, int height);

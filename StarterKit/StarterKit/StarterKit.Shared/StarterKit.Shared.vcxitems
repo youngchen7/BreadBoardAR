@@ -182,6 +182,7 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Calibration.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <None Include="$(MSBuildThisFileDirectory)Calibration.fbx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BlackWireUVImage.png" />
@@ -198,5 +199,6 @@
     <Image Include="$(MSBuildThisFileDirectory)Assets\Resistor220.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\Resistor5UVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\ResistorUVImage.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Assets\whiteCubeUVImage.png" />
   </ItemGroup>
 </Project>

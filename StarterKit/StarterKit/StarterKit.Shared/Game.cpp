@@ -394,9 +394,22 @@ void Game::previousStep()
 	}
 }
 
+int Game::getMaxStep()
+{
+	return my_build.size();
+}
+
 int Game::getStep()
 {
 	return my_step;
+}
+
+String^ Game::getDescription()
+{ 
+	if (my_step > 0)
+		return my_build.at(my_step - 1).getDescription();
+	else
+		return "";
 }
 
 // Renders one frame using the Starter Kit helpers.

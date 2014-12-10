@@ -16,29 +16,33 @@
             <Border VerticalAlignment="Top" HorizontalAlignment="Center"  Background="Transparent">
               
                 <StackPanel Margin ="5,5,5,5" Orientation="Horizontal" >
-                    <TextBlock Name ="progress_percent" Margin ="5,5,5,5" VerticalAlignment ="Center" FontSize ="20" Text="10%" />
-                    <ProgressBar Name ="progress_bar" Width="300" Height="15" IsIndeterminate="False" Maximum="100" Value="10"/>
-                    <TextBlock Name ="progress_fraction" Margin ="5,5,5,5" VerticalAlignment ="Center" FontSize ="20" Text="2/20"/>
+                    <TextBlock Name ="progress_percent" Margin ="5,5,5,5" Opacity="0.7" VerticalAlignment ="Center" FontSize ="20" Text="10%" />
+                    <ProgressBar Name ="progress_bar" Width="300" Height="15" Opacity="0.7" IsIndeterminate="False" Maximum="100" Value="10"/>
+                    <TextBlock Name ="progress_fraction" Margin ="5,5,5,5" Opacity="0.7" VerticalAlignment ="Center" FontSize ="20" Text="2/20"/>
                 </StackPanel>
             </Border>
             <!-- Left Side Buttons -->
             <Border VerticalAlignment="Bottom" HorizontalAlignment="Left"  Background="Transparent">
                 <StackPanel Orientation="Horizontal" >
-                    <Button x:ConnectionId='7' Name ="prev_btn" Content ="&lt; &lt;" Background ="Black" Margin="5,5,5,5"                       />
-                    <Button x:ConnectionId='8' Name ="circuits_btn" Content ="Circuits" Background ="Black" Margin="5,5,5,5"                            />
+                    <Button x:ConnectionId='7' Name ="prev_btn" Content ="&lt; &lt;" Opacity="0.7" Background ="RoyalBlue" Margin="5,5,5,5"                       />
+                    <Button x:ConnectionId='8' Name ="circuits_btn" Content ="Circuits" Opacity="0.7" Background ="Black" Margin="5,5,5,5"                            />
                 </StackPanel>
+            </Border>
+            <!-- HUD Description -->
+            <Border VerticalAlignment="Bottom" HorizontalAlignment="Center" Background="Black" Opacity="0.7" Height="50" Width="300" BorderBrush="White" BorderThickness="2" Margin="10,10,10,10">
+                <TextBlock Name="description_text" HorizontalAlignment="Center" VerticalAlignment="Center" Width="280" Text="Description" TextAlignment="Center" TextWrapping="WrapWholeWords"/>
             </Border>
             <!-- Right Side Buttons -->
             <Border VerticalAlignment="Bottom" HorizontalAlignment="Right"  Background="Transparent">
                 <StackPanel Orientation="Horizontal" >
-                    <Button x:ConnectionId='5' Name ="schematics_btn" Content ="Schematic" Background ="Black" Margin="5,5,5,5"                              />
-                    <Button x:ConnectionId='6' Name ="next_btn" Content ="&gt; &gt;" Background ="Black" Margin="5,5,5,5"                       />
+                    <Button x:ConnectionId='5' Name ="schematics_btn" Content ="Schematic"  Opacity="0.7" Background ="Black" Margin="5,5,5,5"                              />
+                    <Button x:ConnectionId='6' Name ="next_btn" Content ="&gt; &gt;" Opacity="0.7" Background ="RoyalBlue" Margin="5,5,5,5"                       />
                 </StackPanel>
             </Border>
-            <Border Name ="circuits_window" BorderBrush="White" BorderThickness="2" Background ="Black" HorizontalAlignment="Center" Height="250"  VerticalAlignment="Center" Width="400">
+            <Border Name ="circuits_window" BorderBrush="White" BorderThickness="2" Background ="Black" HorizontalAlignment="Center" Height="350"  VerticalAlignment="Center" Width="600">
                 <StackPanel>
                     <TextBlock HorizontalAlignment ="Center" TextWrapping="Wrap" Margin="5,5,5,5" Text="Circuits" FontSize="20" FontWeight="SemiBold"/>
-                    <ListView x:ConnectionId='2' Name = "circuits_list" Height="140" VerticalAlignment="Top"                                              >
+                    <ListView x:ConnectionId='2' Name = "circuits_list" Height="240" VerticalAlignment="Top"                                              >
                         <ListViewItem BorderBrush="White" BorderThickness="2" Margin="10,0,10,0" >
                             <TextBlock Text="CubeAxis" Margin="10,10,10,10" VerticalAlignment="Center"/>
                         </ListViewItem>
@@ -62,9 +66,9 @@
                         </ListViewItem>
                     </ListView>
                     <Grid >
-                        <Button x:ConnectionId='3' Name ="circuits_select" Content ="Select" Margin ="10,10,10,10" Background ="DeepSkyBlue" HorizontalAlignment="Right" VerticalAlignment="Bottom"                              />
+                        <Button x:ConnectionId='3' Name ="circuits_select" Content ="Select" Margin ="10,10,10,10" Background ="RoyalBlue" HorizontalAlignment="Right" VerticalAlignment="Bottom"                              />
                         <TextBlock Name ="circuits_selected" Text ="Circuit" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
-                        <Button x:ConnectionId='4' Name ="circuits_cancel" Content ="Cancel" Margin ="10,10,10,10" Background ="DeepSkyBlue" HorizontalAlignment="Left" VerticalAlignment="Bottom"                              />
+                        <Button x:ConnectionId='4' Name ="circuits_cancel" Content ="Cancel" Margin ="10,10,10,10" Background ="RoyalBlue" HorizontalAlignment="Left" VerticalAlignment="Bottom"                              />
                     </Grid>
                 </StackPanel>
             </Border>

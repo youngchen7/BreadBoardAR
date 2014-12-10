@@ -151,9 +151,7 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\RGBLED.fbx">
       <Filter>Assets</Filter>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)Calibration.fbx">
-      <Filter>Assets</Filter>
-    </None>
+    <None Include="$(MSBuildThisFileDirectory)Calibration.fbx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\CubeUVImage.png">
@@ -190,6 +188,9 @@
       <Filter>Assets</Filter>
     </Image>
     <Image Include="$(MSBuildThisFileDirectory)Assets\Pot1K.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\whiteCubeUVImage.png">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>

@@ -61,6 +61,7 @@ namespace StarterKit
 		void schematics_btn_click(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
 		void circuits_btn_click(Platform::Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
 		
+		void UpdateHUD();
 		void circuits_selection_changed(Platform::Object^ sender, Windows::UI::Xaml::Controls::SelectionChangedEventArgs^ e);
 		void next_btn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void prev_btn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
