@@ -42,6 +42,7 @@ namespace StarterKit
 		void ToggleHitEffect(Platform::String^ object);
 		void ChangeMaterialColor(Platform::String^ object, float r, float g, float b);
 
+		int getID();
 	private:
 		// Members used to keep track of the scene state.
 		SkinnedMeshRenderer m_skinnedMeshRenderer;
@@ -65,6 +66,9 @@ namespace StarterKit
 		int my_step;
 		instructAR::componentsFactory my_factory;
 		vector<instructAR::Component> my_build;
+
+		//ID
+		int gameID = 0;
 
 	};
 }

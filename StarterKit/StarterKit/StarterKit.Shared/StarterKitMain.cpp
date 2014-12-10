@@ -165,11 +165,12 @@ void StarterKitMain::StartRenderLoop()
 
 		for (unsigned int i = 0; i < m_markers.size(); i++) {
 			m_markers[i].draw(output, Scalar(0, 0, 255), 2);
-			aruco::CvDrawingUtils::draw3dCube(output, m_markers[i], camParam);
-			aruco::CvDrawingUtils::draw3dAxis(output, m_markers[i], camParam);
-
-			if (m_markers[i].id == 0)
-			{
+			if (m_sceneRenderer->getID() == 0){
+				aruco::CvDrawingUtils::draw3dCube(output, m_markers[i], camParam);
+				aruco::CvDrawingUtils::draw3dAxis(output, m_markers[i], camParam);
+			}
+			//if (m_markers[i].id == 0)
+			//{
 				
 				
 				double transform_matrix[16];
@@ -189,10 +190,8 @@ void StarterKitMain::StartRenderLoop()
 				universal_transform = mirror*universal_transform*offset;
 				m_sceneRenderer->setUniversalTransform(universal_transform);
 
-				
-				
-				
-			}
+							
+			//}
 		}
 
 

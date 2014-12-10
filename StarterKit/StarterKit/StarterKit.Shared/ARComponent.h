@@ -104,7 +104,7 @@ namespace instructAR{
 				break;
 			}
 
-				case 0:
+				case 1:
 				{
 					Component gnd_wire(0, 0, 170, "gnd_wire", WIREGROUNDL);
 					build.push_back(gnd_wire);
@@ -120,7 +120,7 @@ namespace instructAR{
 
 					break;
 				}
-				case 1:
+				case 2:
 				{
 					Component pwr_wire1(5, 9, 350, "pwr_wire1", WIREPOWERR);
 					build.push_back(pwr_wire1);

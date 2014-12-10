@@ -236,7 +236,7 @@ void Game::CreateDeviceDependentResources()
 	{
 		// Scene is ready to be rendered.
 		m_loadingComplete = true;
-		setBuild(-1);
+		setBuild(0);
 		my_step = 0;
 
 	});
@@ -363,6 +363,7 @@ void Game::setBuild(int ID)
 	{
 		m_time.push_back(0.0f);
 	}
+	gameID = ID;
 }
 
 void Game::nextStep()
@@ -423,7 +424,9 @@ void Game::Render()
 	int index;
 	m_miscConstants.Time = 0;
 	m_graphics.UpdateMiscConstants(m_miscConstants);
-	m_meshModels[0]->Render(m_graphics, modelTransform);	//breadboard
+	if (gameID != 0){
+		m_meshModels[0]->Render(m_graphics, modelTransform);	//breadboard
+	}
 	for (int i = 0; i < my_step; ++i){
 		// Update the time shader variable for the objects in our scene.
 		m_miscConstants.Time = m_time[i];
@@ -435,6 +438,11 @@ void Game::Render()
 		degrees = my_build.at(i).getOrientation();
 		m_meshModels[index]->Render(m_graphics, computeMatrix(xPos, yPos, zPos, degrees)*modelTransform);
 	}
+}
+
+//returns id of current build
+int Game::getID(){
+	return gameID;
 }
 
 // Starts the glow animation for an object.
