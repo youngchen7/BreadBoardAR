@@ -179,6 +179,7 @@
       <FileType>Document</FileType>
     </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Assets\WireBridge.fbx" />
+    <None Include="$(MSBuildThisFileDirectory)Calibration.fbx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BlackWireUVImage.png" />
