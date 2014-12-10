@@ -31,7 +31,7 @@
             <!-- Right Side Buttons -->
             <Border VerticalAlignment="Bottom" HorizontalAlignment="Right"  Background="Transparent">
                 <StackPanel Orientation="Horizontal" >
-                    <Button x:ConnectionId='5' Name ="schematics_btn" Content ="Schematics" Background ="Black" Margin="5,5,5,5"                              />
+                    <Button x:ConnectionId='5' Name ="schematics_btn" Content ="Schematic" Background ="Black" Margin="5,5,5,5"                              />
                     <Button x:ConnectionId='6' Name ="next_btn" Content ="&gt; &gt;" Background ="Black" Margin="5,5,5,5"                       />
                 </StackPanel>
             </Border>
@@ -68,12 +68,10 @@
                     </Grid>
                 </StackPanel>
             </Border>
-            <Border Name ="schematic_window" BorderBrush="White" BorderThickness="2" Background ="Black" HorizontalAlignment="Center" Height="250"  VerticalAlignment="Center" Width="400">
+            <Border Name ="schematic_window" BorderBrush="White" BorderThickness="2" Background ="Black" HorizontalAlignment="Center" Height="350"  VerticalAlignment="Center" Width="600">
                 <StackPanel>
                     <TextBlock HorizontalAlignment ="Center" TextWrapping="Wrap" Margin="5,5,5,5" Text="Schematic" FontSize="20" FontWeight="SemiBold"/>
-                    <Grid >
-                        <Image Name="schematic_img" Height="220"/>
-                    </Grid>
+                    <Image Name="schematic_img" Height="300" Width="550" Margin="5,5,5,5"/>
                 </StackPanel>
             </Border>
         </SwapChainPanel>

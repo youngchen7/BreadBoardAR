@@ -226,6 +226,23 @@ void StarterKit::DirectXPage::circuits_selection_changed(Platform::Object^ sende
 		SolidColorBrush^ border_color = ref new SolidColorBrush(Colors::DeepSkyBlue);
 		selected->Background = border_color;
 	}
+	//set image
+	auto bitmapImage = ref new  Windows::UI::Xaml::Media::Imaging::BitmapImage; 
+	bitmapImage->DecodePixelWidth = 400;
+	bitmapImage->DecodePixelHeight = 250;
+	switch (index){
+		case 0:
+			break;
+		case 1:
+			bitmapImage->UriSource = ref new Uri("ms-appx:///Assets/SimpleLED.png");
+			break;
+		case 2:
+			bitmapImage->UriSource = ref new Uri("ms-appx:///Assets/RGBLED.png");
+			break;
+		case 3:
+			break;
+	}
+	schematic_img->Source = bitmapImage;
 }
 
 
