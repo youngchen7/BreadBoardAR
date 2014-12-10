@@ -77,7 +77,7 @@ namespace StarterKit
 		DirectX::XMMATRIX offset = { (float)1, (float)0, (float)0, (float)0,
 									(float)0, (float)1, (float)0, (float)0,
 									(float)0, (float)0, (float)1, (float)0,
-									(float)2, (float)0, (float)0, (float)1 };
+									(float)3, (float)0, (float)0, (float)1 };
 
 		//3D Model Position
 		
