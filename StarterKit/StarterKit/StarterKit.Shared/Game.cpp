@@ -356,6 +356,7 @@ void Game::setUniversalTransform(XMMATRIX & universal_transform)
 
 void Game::setBuild(int ID)
 {
+	m_universal_transform = DirectX::XMMatrixTranslation(0.0f, 0.0f, 5.0f);
 	my_build = my_factory.createBuild(ID);
 	my_step = 0;
 	m_time.clear();
