@@ -75,6 +75,9 @@ m_windowVisible(true)
 	circuits_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
 	schematic_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
 
+	UpdateHUD();
+
+
 
 
 }
@@ -231,7 +234,7 @@ void StarterKit::DirectXPage::circuits_selection_changed(Platform::Object^ sende
 			selected->Background = border_color;
 		}
 		selected = dynamic_cast<ListViewItem^>(selected_obj);
-		SolidColorBrush^ border_color = ref new SolidColorBrush(Colors::DeepSkyBlue);
+		SolidColorBrush^ border_color = ref new SolidColorBrush(Colors::RoyalBlue);
 		selected->Background = border_color;
 	}
 	//set image
