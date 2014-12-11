@@ -38,6 +38,8 @@ namespace StarterKit
 		String^ getDescription();
 		void setProjection(DirectX::XMMATRIX & projection);
 		DirectX::XMMATRIX computeMatrix(int xPos, int yPos, int zPos, int orientation);
+		DirectX::XMMATRIX computeLegoMatrix(int xPos, int yPos, int zPos, int orientation);
+
 
 		// Methods used to manipulate the objects in the scene.
 		Platform::String^ OnHitObject(int x, int y);

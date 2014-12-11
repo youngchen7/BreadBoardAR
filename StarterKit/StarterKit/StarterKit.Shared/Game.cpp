@@ -404,6 +404,20 @@ XMMATRIX Game::computeMatrix(int xPos, int yPos, int zPos, int degrees){
 	return transformation;
 }
 
+XMMATRIX Game::computeLegoMatrix(int xPos, int yPos, int zPos, int degrees)
+{
+	XMMATRIX transformation = XMMatrixIdentity();	//final translation matrix
+	float MatRotate = degrees * -3.14159f / 180.0f;	//degrees to radians
+	XMMATRIX rotation = XMMatrixRotationY(MatRotate);	//computes rotation matrix
+	transformation = transformation*rotation;		//mulitplies in
+
+	XMMATRIX translation = XMMatrixTranslation(0.5 + xPos*1.0f, yPos*0.6f,
+		0.5f + zPos*1.0f);	//translation, 3rd term to bridge the partition
+	transformation = transformation*translation;
+
+	return transformation;
+}
+
 void Game::setProjection(XMMATRIX & projection)
 {
 	m_graphics.GetCamera().SetProjection(projection); 
@@ -506,6 +520,10 @@ void Game::Render()
 		if (gameID == 1 || gameID == 2){
 			m_meshModels[0]->Render(m_graphics, modelTransform);	//breadboard rendered only for the models that need it
 		}
+		if (gameID == 3)
+		{
+			m_meshModels[19]->Render(m_graphics, modelTransform);
+		}
 
 		for (int i = 0; i < my_step; ++i){
 			// Update the time shader variable for the objects in our scene.
@@ -516,7 +534,12 @@ void Game::Render()
 			yPos = my_build.at(i).getY();
 			zPos = my_build.at(i).getZ();
 			degrees = my_build.at(i).getOrientation();
-			m_meshModels[index]->Render(m_graphics, computeMatrix(xPos, yPos, zPos, degrees)*modelTransform);
+			if (gameID == 3){ //Lego Demo
+				m_meshModels[index]->Render(m_graphics, XMMatrixTranslation(xPos, yPos, zPos)*modelTransform);
+			} else {
+				m_meshModels[index]->Render(m_graphics, computeMatrix(xPos, yPos, zPos, degrees)*modelTransform);
+			}
+
 		}
 	}
 	else{

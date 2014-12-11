@@ -8,7 +8,7 @@ using namespace Platform;
 
 namespace instructAR{
 	enum model {BREADBOARD, WIRE1, WIRE2, WIRE3, WIRE4, WIREBRIDGE, WIREPOWERL, WIREPOWERR, WIREGROUNDL, WIREGROUNDR, CAP1, LED1, RESISTOR1, 
-		RESISTOR4220, POTENTIOMETER1K, RGBLED, RESISTOR4200, WIRE8, CALIBRATION, LEGOPLATE8X8};
+		RESISTOR4220, POTENTIOMETER1K, RGBLED, RESISTOR4200, WIRE8, CALIBRATION, LEGOPLATE8X8, LEGOBLOCK1X1, LEGOBLOCK1X2, LEGOBLOCK2X2, LEGOBLOCK2X4};
 
 	class Component
 	{
@@ -36,6 +36,14 @@ namespace instructAR{
 			: m_xpos(_xpos), m_zpos(_zpos), m_orientation(_orientation), m_name(_name), m_model(_model)
 		{
 			m_ypos = 0;
+			m_description = "No Description Available";
+			m_value = 0;
+			m_exponent = 0;
+		}
+
+		Component(int _xpos, int _ypos, int _zpos, int _orientation, String^ _name, model _model)
+			: m_xpos(_xpos), m_ypos(_ypos), m_zpos(_zpos), m_orientation(_orientation), m_name(_name), m_model(_model)
+		{
 			m_description = "No Description Available";
 			m_value = 0;
 			m_exponent = 0;
@@ -179,8 +187,14 @@ namespace instructAR{
 			}
 			case 3: 
 			{
-				Component legoPlate(0, 0, 0, "RGBLED", LEGOPLATE8X8, "Lego Plate");
-				build.push_back(legoPlate);
+				Component legoblock(0, 0, 0, 0, "block1x1", LEGOBLOCK1X1);
+				build.push_back(legoblock);
+
+				Component legoblock1(0, 2, 0, 0, "block1x1", LEGOBLOCK1X1);
+				build.push_back(legoblock1);
+
+				Component legoblock2(2, 0, 2, 0, "block1x1", LEGOBLOCK2X2);
+				build.push_back(legoblock2);
 			}
 			case 6:
 			{
