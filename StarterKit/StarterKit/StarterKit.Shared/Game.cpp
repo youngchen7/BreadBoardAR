@@ -449,7 +449,10 @@ void Game::Render()
 							(float)0, (float).3, (float)0, (float)0,
 							(float)0, (float)0, (float).3, (float)0, 
 							(float)0, (float)0, (float)0, (float)1 };
-
+	XMMATRIX scaleUp = { (float)1, (float)0, (float)0, (float)0,
+						(float)0, (float)1, (float)0, (float)0,
+						(float)0, (float)0, (float)1, (float)0,
+						(float)0, (float)1, (float)0, (float)1 };
 	XMMATRIX modelTransform = XMMatrixIdentity()* XMMatrixRotationX(-XM_PI/2.0f)*scaleDown*m_universal_transform*XMMatrixTranslation(0.0f,0.0f,0.0f);
 
 	int xPos = 0;
@@ -459,21 +462,60 @@ void Game::Render()
 	int index;
 	m_miscConstants.Time = 0;
 	m_graphics.UpdateMiscConstants(m_miscConstants);
+	if (gameID != 6){
+		if (gameID == 1 || gameID == 2){
+			m_meshModels[0]->Render(m_graphics, modelTransform);	//breadboard rendered only for the models that need it
+		}
 
-	if (gameID == 1 || gameID==2){
-		m_meshModels[0]->Render(m_graphics, modelTransform);	//breadboard rendered only for the models that need it
+		for (int i = 0; i < my_step; ++i){
+			// Update the time shader variable for the objects in our scene.
+			m_miscConstants.Time = m_time[i];
+			m_graphics.UpdateMiscConstants(m_miscConstants);
+			index = my_build.at(i).getModel();
+			xPos = my_build.at(i).getX();
+			yPos = my_build.at(i).getY();
+			zPos = my_build.at(i).getZ();
+			degrees = my_build.at(i).getOrientation();
+			m_meshModels[index]->Render(m_graphics, computeMatrix(xPos, yPos, zPos, degrees)*modelTransform);
+		}
 	}
-
-	for (int i = 0; i < my_step; ++i){
-		// Update the time shader variable for the objects in our scene.
-		m_miscConstants.Time = m_time[i];
-		m_graphics.UpdateMiscConstants(m_miscConstants);
-		index = my_build.at(i).getModel();
-		xPos = my_build.at(i).getX();
-		yPos = my_build.at(i).getY();
-		zPos = my_build.at(i).getZ();
-		degrees = my_build.at(i).getOrientation();
-		m_meshModels[index]->Render(m_graphics, computeMatrix(xPos, yPos, zPos, degrees)*modelTransform);
+	else{
+		my_build = my_factory.createBuild(6);
+		switch (m_markerID){
+		case 0: 
+			m_meshModels[0]->Render(m_graphics, modelTransform*scaleUp);
+			break;
+		case 1:
+			m_meshModels[10]->Render(m_graphics, modelTransform*scaleUp);
+			break;
+		case 2:
+			m_meshModels[11]->Render(m_graphics, modelTransform*scaleUp);
+			break;
+		case 3:
+			m_meshModels[13]->Render(m_graphics, modelTransform*scaleUp);
+			break;
+		case 4:
+			m_meshModels[14]->Render(m_graphics, modelTransform*scaleUp);
+			break;
+		case 5:
+			m_meshModels[15]->Render(m_graphics, modelTransform*scaleUp);
+			break;
+		case 6:
+			m_meshModels[16]->Render(m_graphics, modelTransform*scaleUp);
+			break;
+		case 7:
+			m_meshModels[17]->Render(m_graphics, modelTransform*scaleUp);
+			break;
+		case 8:
+			m_meshModels[13]->Render(m_graphics, modelTransform*scaleUp);
+			break;
+		case 9:
+			m_meshModels[13]->Render(m_graphics, modelTransform*scaleUp);
+			break;
+		default: 
+			m_meshModels[13]->Render(m_graphics, modelTransform*scaleUp);
+			break;
+		}
 	}
 
 }
@@ -481,6 +523,15 @@ void Game::Render()
 //returns id of current build
 int Game::getID(){
 	return gameID;
+}
+
+//returns id of current marker
+int Game::getMarkerID(){
+	return m_markerID;
+}
+//sets id of current marker
+void Game::setMarkerID(int markerID){
+	m_markerID = markerID;
 }
 
 // Starts the glow animation for an object.

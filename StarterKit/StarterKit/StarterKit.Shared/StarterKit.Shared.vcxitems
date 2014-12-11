@@ -184,6 +184,9 @@
       <FileType>Document</FileType>
     </MeshContentTask>
     <None Include="$(MSBuildThisFileDirectory)Calibration.fbx" />
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)legoplate8x8.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BlackWireUVImage.png" />

@@ -169,10 +169,6 @@ void StarterKitMain::StartRenderLoop()
 				aruco::CvDrawingUtils::draw3dCube(output, m_markers[i], camParam);
 				aruco::CvDrawingUtils::draw3dAxis(output, m_markers[i], camParam);
 			}
-			//if (m_markers[i].id == 0)
-			//{
-				
-				
 				double transform_matrix[16];
 				m_markers[i].glGetModelViewMatrix(transform_matrix);
 				cv::Mat m44 = cv::Mat::eye(4, 4, CV_32FC1);
@@ -189,9 +185,7 @@ void StarterKitMain::StartRenderLoop()
 
 				universal_transform = mirror*universal_transform*offset;
 				m_sceneRenderer->setUniversalTransform(universal_transform);
-
-							
-			//}
+				m_sceneRenderer->setMarkerID(m_markers[i].id);
 		}
 
 

@@ -177,7 +177,17 @@ namespace instructAR{
 				build.push_back(RBGLED);
 					
 			}
-
+			case 3: 
+			{
+				Component legoPlate(0, 0, 0, "RGBLED", LEGOPLATE8X8, "Lego Plate");
+				build.push_back(legoPlate);
+			}
+			case 6:
+			{
+				Component calibration_ball(0, 0, 90, "ball", CALIBRATION);
+				build.push_back(calibration_ball);
+				break;
+			}
 			default:
 				return build;
 				break;

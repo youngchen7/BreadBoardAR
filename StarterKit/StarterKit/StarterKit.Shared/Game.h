@@ -45,6 +45,8 @@ namespace StarterKit
 		void ChangeMaterialColor(Platform::String^ object, float r, float g, float b);
 
 		int getID();
+		int getMarkerID();
+		void setMarkerID(int markerID);
 	private:
 		// Members used to keep track of the scene state.
 		SkinnedMeshRenderer m_skinnedMeshRenderer;
@@ -71,6 +73,6 @@ namespace StarterKit
 
 		//ID
 		int gameID = 0;
-
+		int m_markerID = 0;
 	};
 }
