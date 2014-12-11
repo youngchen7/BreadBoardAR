@@ -266,7 +266,18 @@ void Game::CreateDeviceDependentResources()
 																									L"",
 																									L"",
 																									m_meshModels,
-																									false);
+																									false)
+																									.then([this]()
+																								{
+
+																									return Mesh::LoadFromFileAsync(
+																										m_graphics,
+																										L"Logo.cmo",
+																										L"",
+																										L"",
+																										m_meshModels,
+																										false);
+																								});
 																							});
 																						});
 																					});
@@ -381,6 +392,7 @@ void Game::Update(DX::StepTimer const& timer)
 {
 	auto timeDelta = static_cast<float>(timer.GetElapsedSeconds());
 
+	m_rotation = static_cast<float>(timer.GetTotalSeconds())*0.5f;
 	
 	// Update the "time" variable for the glow effect.
 	for (float &time : m_time)
@@ -506,9 +518,9 @@ void Game::Render()
 							(float)0, (float).3, (float)0, (float)0,
 							(float)0, (float)0, (float).3, (float)0, 
 							(float)0, (float)0, (float)0, (float)1 };
-	XMMATRIX scaleUp = { (float)1, (float)0, (float)0, (float)0,
-						(float)0, (float)1, (float)0, (float)0,
-						(float)0, (float)0, (float)1, (float)0,
+	XMMATRIX scaleUp = { (float)2, (float)0, (float)0, (float)0,
+						(float)0, (float)2, (float)0, (float)0,
+						(float)0, (float)0, (float)2, (float)0,
 						(float)0, (float)1, (float)0, (float)1 };
 	XMMATRIX modelTransform = XMMatrixIdentity()* XMMatrixRotationX(-XM_PI/2.0f)*scaleDown*m_universal_transform*XMMatrixTranslation(0.0f,0.0f,0.0f);
 
@@ -549,37 +561,37 @@ void Game::Render()
 		my_build = my_factory.createBuild(6);
 		switch (m_markerID){
 		case 0: 
-			m_meshModels[0]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[24]->Render(m_graphics, scaleUp*rotation*modelTransform);
 			break;
 		case 1:
-			m_meshModels[10]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[23]->Render(m_graphics, scaleUp*modelTransform);
 			break;
 		case 2:
-			m_meshModels[11]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[11]->Render(m_graphics, scaleUp*modelTransform);
 			break;
 		case 3:
-			m_meshModels[13]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[13]->Render(m_graphics, scaleUp*modelTransform);
 			break;
 		case 4:
-			m_meshModels[14]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[14]->Render(m_graphics, scaleUp*modelTransform);
 			break;
 		case 5:
-			m_meshModels[15]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[15]->Render(m_graphics, scaleUp*modelTransform);
 			break;
 		case 6:
-			m_meshModels[16]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[16]->Render(m_graphics, scaleUp*modelTransform);
 			break;
 		case 7:
-			m_meshModels[23]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[19]->Render(m_graphics, scaleUp*modelTransform);
 			break;
 		case 8:
-			m_meshModels[22]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[22]->Render(m_graphics, scaleUp*modelTransform);
 			break;
 		case 9:
-			m_meshModels[21]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[21]->Render(m_graphics, scaleUp*modelTransform);
 			break;
 		default: 
-			m_meshModels[20]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[20]->Render(m_graphics, scaleUp*modelTransform);
 			break;
 		}
 	}
