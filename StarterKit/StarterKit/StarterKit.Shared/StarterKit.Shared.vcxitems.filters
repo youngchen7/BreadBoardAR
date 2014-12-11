@@ -190,8 +190,6 @@
     <Image Include="$(MSBuildThisFileDirectory)Assets\Pot1K.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="$(MSBuildThisFileDirectory)Assets\whiteCubeUVImage.png">
-      <Filter>Assets</Filter>
-    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\whiteCubeUVImage.png" />
   </ItemGroup>
 </Project>
