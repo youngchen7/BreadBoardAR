@@ -121,6 +121,7 @@ namespace instructAR{
 			{
 				Component calibration_ball(0, 0, 90, "ball", CALIBRATION);
 				build.push_back(calibration_ball);
+				break;
 			}
 			case 1:
 			{

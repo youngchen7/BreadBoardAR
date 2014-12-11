@@ -453,25 +453,19 @@ void Game::Render()
 	if (gameID == 1 || gameID==2){
 		m_meshModels[0]->Render(m_graphics, modelTransform);	//breadboard rendered only for the models that need it
 	}
-	if (gameID != 0)
-	{
-		for (int i = 0; i < my_step; ++i){
-			// Update the time shader variable for the objects in our scene.
-			m_miscConstants.Time = m_time[i];
-			m_graphics.UpdateMiscConstants(m_miscConstants);
-			index = my_build.at(i).getModel();
-			xPos = my_build.at(i).getX();
-			yPos = my_build.at(i).getY();
-			zPos = my_build.at(i).getZ();
-			degrees = my_build.at(i).getOrientation();
-			m_meshModels[index]->Render(m_graphics, computeMatrix(xPos, yPos, zPos, degrees)*modelTransform);
-		}
-	}else{
-		m_miscConstants.Time = m_time[0];
+
+	for (int i = 0; i < my_step; ++i){
+		// Update the time shader variable for the objects in our scene.
+		m_miscConstants.Time = m_time[i];
 		m_graphics.UpdateMiscConstants(m_miscConstants);
-		index = my_build.at(0).getModel();
-		m_meshModels[index]->Render(m_graphics, modelTransform);
+		index = my_build.at(i).getModel();
+		xPos = my_build.at(i).getX();
+		yPos = my_build.at(i).getY();
+		zPos = my_build.at(i).getZ();
+		degrees = my_build.at(i).getOrientation();
+		m_meshModels[index]->Render(m_graphics, computeMatrix(xPos, yPos, zPos, degrees)*modelTransform);
 	}
+
 }
 
 //returns id of current build
