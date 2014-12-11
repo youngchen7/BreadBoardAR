@@ -411,7 +411,7 @@ XMMATRIX Game::computeLegoMatrix(int xPos, int yPos, int zPos, int degrees)
 	XMMATRIX rotation = XMMatrixRotationY(MatRotate);	//computes rotation matrix
 	transformation = transformation*rotation;		//mulitplies in
 
-	XMMATRIX translation = XMMatrixTranslation(0.5 + xPos*1.0f, yPos*0.6f,
+	XMMATRIX translation = XMMatrixTranslation(0.5 + xPos*1.0f, yPos*1.2f,
 		0.5f + zPos*1.0f);	//translation, 3rd term to bridge the partition
 	transformation = transformation*translation;
 
@@ -460,6 +460,9 @@ void Game::previousStep()
 
 int Game::getMaxStep()
 {
+	if (my_build.size() == 0){
+		return 1;
+	}
 	return my_build.size();
 }
 
@@ -516,7 +519,7 @@ void Game::Render()
 	int index;
 	m_miscConstants.Time = 0;
 	m_graphics.UpdateMiscConstants(m_miscConstants);
-	if (gameID != 6){
+	if (gameID != 4){
 		if (gameID == 1 || gameID == 2){
 			m_meshModels[0]->Render(m_graphics, modelTransform);	//breadboard rendered only for the models that need it
 		}
@@ -567,16 +570,16 @@ void Game::Render()
 			m_meshModels[16]->Render(m_graphics, modelTransform*scaleUp);
 			break;
 		case 7:
-			m_meshModels[17]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[23]->Render(m_graphics, modelTransform*scaleUp);
 			break;
 		case 8:
-			m_meshModels[13]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[22]->Render(m_graphics, modelTransform*scaleUp);
 			break;
 		case 9:
-			m_meshModels[13]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[21]->Render(m_graphics, modelTransform*scaleUp);
 			break;
 		default: 
-			m_meshModels[13]->Render(m_graphics, modelTransform*scaleUp);
+			m_meshModels[20]->Render(m_graphics, modelTransform*scaleUp);
 			break;
 		}
 	}

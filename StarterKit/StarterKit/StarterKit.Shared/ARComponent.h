@@ -183,20 +183,22 @@ namespace instructAR{
 				build.push_back(gnd_wire1);
 				Component RBGLED(20, 8, 90, "RGBLED", RGBLED, "Finally, add the RGB LED and connect to a 5V power source. The longer leg is colored black. [END]");
 				build.push_back(RBGLED);
-					
+				
+				break;
 			}
 			case 3: 
 			{
 				Component legoblock(0, 0, 0, 0, "block1x1", LEGOBLOCK1X1);
 				build.push_back(legoblock);
 
-				Component legoblock1(0, 2, 0, 0, "block1x1", LEGOBLOCK1X1);
+				Component legoblock1(0, 1, 0, 0, "block1x1", LEGOBLOCK1X1);
 				build.push_back(legoblock1);
 
 				Component legoblock2(2, 0, 2, 0, "block1x1", LEGOBLOCK2X2);
 				build.push_back(legoblock2);
+				break;
 			}
-			case 6:
+			case 4:
 			{
 				Component calibration_ball(0, 0, 90, "ball", CALIBRATION);
 				build.push_back(calibration_ball);
