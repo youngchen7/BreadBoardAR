@@ -196,6 +196,12 @@ namespace instructAR{
 
 				Component legoblock2(2, 0, 2, 0, "block1x1", LEGOBLOCK2X2);
 				build.push_back(legoblock2);
+
+				Component legoblock3(2, 0, -2, 0, "block1x1", LEGOBLOCK2X4);
+				build.push_back(legoblock3);
+
+				Component legoblock4(-1, 0, -1, 90, "block1x1", LEGOBLOCK1X2);
+				build.push_back(legoblock4);
 				break;
 			}
 			case 4:
