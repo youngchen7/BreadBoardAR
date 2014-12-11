@@ -76,7 +76,7 @@ m_windowVisible(true)
 	schematic_window->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
 
 	UpdateHUD();
-
+	m_main->setBuild(0);
 
 
 
