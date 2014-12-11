@@ -155,6 +155,9 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\Resistor4200.fbx">
       <Filter>Assets</Filter>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)legoplate8x8.fbx">
+      <Filter>Assets</Filter>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Assets\legoblock1x1.fbx">
       <Filter>Assets</Filter>
     </None>
@@ -167,7 +170,7 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\legoblock2x4.fbx">
       <Filter>Assets</Filter>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)legoplate8x8.fbx">
+    <None Include="$(MSBuildThisFileDirectory)Logo.fbx">
       <Filter>Assets</Filter>
     </None>
   </ItemGroup>
@@ -213,6 +216,9 @@
       <Filter>Assets</Filter>
     </Image>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BlueUVImage.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\LOGOUVImage.png">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>

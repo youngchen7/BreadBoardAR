@@ -8,7 +8,8 @@ using namespace Platform;
 
 namespace instructAR{
 	enum model {BREADBOARD, WIRE1, WIRE2, WIRE3, WIRE4, WIREBRIDGE, WIREPOWERL, WIREPOWERR, WIREGROUNDL, WIREGROUNDR, CAP1, LED1, RESISTOR1, 
-		RESISTOR4220, POTENTIOMETER1K, RGBLED, RESISTOR4200, WIRE8, CALIBRATION, LEGOPLATE8X8, LEGOBLOCK1X1, LEGOBLOCK1X2, LEGOBLOCK2X2, LEGOBLOCK2X4};
+		RESISTOR4220, POTENTIOMETER1K, RGBLED, RESISTOR4200, WIRE8, CALIBRATION, LEGOPLATE8X8, LEGOBLOCK1X1, LEGOBLOCK1X2, LEGOBLOCK2X2, LEGOBLOCK2X4,
+		LOGO};
 
 	class Component
 	{
@@ -136,7 +137,7 @@ namespace instructAR{
 				Component gnd_wire(0, 0, 170, "gnd_wire", WIREGROUNDL, "Add a wire to ground");
 				build.push_back(gnd_wire);
 
-				Component res(0, 1, 90, "res", RESISTOR4220, "Add a ballast resistor for the LED");
+				Component res(0, 1, 90, "res", RESISTOR4220, "Add a ballast resistor (200 ohm) for the LED");
 				build.push_back(res);
 
 				Component led(4, 2, 90, "led", LED1, "Add the LED");
@@ -200,7 +201,7 @@ namespace instructAR{
 				Component legoblock3(2, 0, -2, 0, "block1x1", LEGOBLOCK2X4);
 				build.push_back(legoblock3);
 
-				Component legoblock4(-1, 0, -1, 90, "block1x1", LEGOBLOCK1X2);
+				Component legoblock4(-2, 0, -2, 0, "block1x1", LEGOBLOCK1X2);
 				build.push_back(legoblock4);
 				break;
 			}

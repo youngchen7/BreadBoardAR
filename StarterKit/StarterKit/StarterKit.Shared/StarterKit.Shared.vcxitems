@@ -199,7 +199,9 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)legoplate8x8.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
-    <None Include="$(MSBuildThisFileDirectory)legoplate8x8.fbx" />
+    <MeshContentTask Include="$(MSBuildThisFileDirectory)Logo.fbx">
+      <FileType>Document</FileType>
+    </MeshContentTask>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BlackWireUVImage.png" />
@@ -212,6 +214,7 @@
     <Image Include="$(MSBuildThisFileDirectory)Assets\GreenUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\LEDSphereUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\LEDUVImage.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Assets\LOGOUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\Pot1K.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\PotBaseWhiteUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\RedWireUVImage.png" />
