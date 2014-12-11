@@ -8,7 +8,7 @@ using namespace Platform;
 
 namespace instructAR{
 	enum model {BREADBOARD, WIRE1, WIRE2, WIRE3, WIRE4, WIREBRIDGE, WIREPOWERL, WIREPOWERR, WIREGROUNDL, WIREGROUNDR, CAP1, LED1, RESISTOR1, 
-		RESISTOR4220, POTENTIOMETER1K, RGBLED, RESISTOR4200, WIRE8, CALIBRATION};
+		RESISTOR4220, POTENTIOMETER1K, RGBLED, RESISTOR4200, WIRE8, CALIBRATION, LEGOPLATE8X8};
 
 	class Component
 	{
@@ -173,7 +173,7 @@ namespace instructAR{
 
 				Component gnd_wire1(21, 9, 350, "gnd_wire1", WIREGROUNDR, "Connect a wire from GND to row 22. This will connect to our common cathode RGB LED");
 				build.push_back(gnd_wire1);
-				Component RBGLED(20, 8, 90, "RGBLED", RGBLED, "Finally, add the RGB LED and connect to a 5V power source. [END]");
+				Component RBGLED(20, 8, 90, "RGBLED", RGBLED, "Finally, add the RGB LED and connect to a 5V power source. The longer leg is colored black. [END]");
 				build.push_back(RBGLED);
 					
 			}
