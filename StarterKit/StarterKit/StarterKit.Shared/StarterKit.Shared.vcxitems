@@ -134,6 +134,7 @@
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\Resistor4200.fbx">
       <FileType>Document</FileType>
     </MeshContentTask>
+    <None Include="$(MSBuildThisFileDirectory)Assets\Resistor4200.fbx" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Resistor4220.fbx" />
     <MeshContentTask Include="$(MSBuildThisFileDirectory)Assets\RGBLED.fbx">
       <FileType>Document</FileType>
@@ -186,11 +187,13 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\BlackWireUVImage.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Assets\BlueUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\BreadboardUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\CapUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\CubeUVImage.png">
       <DeploymentContent>false</DeploymentContent>
     </Image>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\GreenUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\LEDSphereUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\LEDUVImage.png" />
     <Image Include="$(MSBuildThisFileDirectory)Assets\Pot1K.png" />

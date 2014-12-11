@@ -152,6 +152,9 @@
       <Filter>Assets</Filter>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Calibration.fbx" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\Resistor4200.fbx">
+      <Filter>Assets</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\CubeUVImage.png">
@@ -191,5 +194,11 @@
       <Filter>Assets</Filter>
     </Image>
     <Image Include="$(MSBuildThisFileDirectory)Assets\whiteCubeUVImage.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Assets\GreenUVImage.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)Assets\BlueUVImage.png">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>
