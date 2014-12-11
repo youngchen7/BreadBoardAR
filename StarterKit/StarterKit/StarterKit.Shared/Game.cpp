@@ -230,7 +230,47 @@ void Game::CreateDeviceDependentResources()
 																					L"",
 																					L"",
 																					m_meshModels,
-																					false);
+																					false).then([this]()
+																				{
+
+																					return Mesh::LoadFromFileAsync(
+																						m_graphics,
+																						L"legoblock1x1.cmo",
+																						L"",
+																						L"",
+																						m_meshModels,
+																						false).then([this]()
+																					{
+
+																						return Mesh::LoadFromFileAsync(
+																							m_graphics,
+																							L"legoblock1x2.cmo",
+																							L"",
+																							L"",
+																							m_meshModels,
+																							false).then([this]()
+																						{
+
+																							return Mesh::LoadFromFileAsync(
+																								m_graphics,
+																								L"legoblock2x2.cmo",
+																								L"",
+																								L"",
+																								m_meshModels,
+																								false).then([this]()
+																							{
+
+																								return Mesh::LoadFromFileAsync(
+																									m_graphics,
+																									L"legoblock2x4.cmo",
+																									L"",
+																									L"",
+																									m_meshModels,
+																									false);
+																							});
+																						});
+																					});
+																				});
 																			});
 																		});
 																	});
